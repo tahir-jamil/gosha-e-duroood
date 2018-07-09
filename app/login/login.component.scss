@@ -1,0 +1,34 @@
+.wrapper{
+    margin: 8% 11% 5% 11%;
+}
+
+.m-t-8{
+    margin-top: 8%;
+}
+.m-b-8{
+    margin-bottom: 8%;
+}
+.m-b-2{margin-bottom: 2%;}
+.btn-sep{
+    margin: 0 5;
+}
+.forget-txt{
+    color: #363941;
+    font-size: 12px;
+    font-style: italic;
+    horizontal-align: right;
+    vertical-align: middle;
+}
+.login-bottom-nav{
+    font-size: 14px;
+    .login-label{
+        color: #9F9F9F;
+        font-weight: 500;
+    }
+
+    .login-link{
+        font-weight: bold;
+        text-decoration: underline;
+        color: #232B41;
+    }
+}

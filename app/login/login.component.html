@@ -1,0 +1,46 @@
+<ActionBar title="Title" icon="" class="action-bar">
+</ActionBar>
+<StackLayout class="page">
+    <GridLayout rows="*,5*,18%" columns="*" class="wrapper">
+        <StackLayout>
+            <!-- <Image src="res://login_logo" width="100%" height="100%"></Image> -->
+        </StackLayout>
+
+        <GridLayout row="1" rows="*" columns="*" class="m-t-8">
+            
+            <StackLayout>
+                <StackLayout class="m-b-2">
+                    <StackLayout  >
+                        <!-- <ns-text-field hint="Name"  ></ns-text-field> -->
+                    </StackLayout>
+
+                    <ns-text-field keyboardType="email" hint="Email"></ns-text-field>
+                    <GridLayout rows="auto" columns="auto,*">
+                            <!-- <ns-text-field col="0" colSpan="2" hint="Password" secure="true"></ns-text-field> -->
+                        <Label col="0" text="Forgot?" class="forget-txt" (tap)="forget()"></Label>
+                    </GridLayout>
+
+                </StackLayout>
+
+                
+                
+                <GridLayout columns="*,auto,*" rows="auto">
+                    <StackLayout col="0" >
+                    </StackLayout>
+                    
+                    <StackLayout col="2" >
+                    </StackLayout>
+                                           
+
+                    <StackLayout col="1" class="btn-sep"></StackLayout>
+                </GridLayout>
+            </StackLayout>
+        </GridLayout>
+        <StackLayout class="login-bottom-nav" row="2" horizontalAlignment="center" verticalAlignment="bottom" orientation="horizontal" >
+            <Label  text="Dont have an account?" verticalAlignment="bottom" class="login-label"></Label>
+            <Label   text="SIGN UP" verticalAlignment="bottom" class="login-link" (tap)="signTap()"></Label>
+            
+        </StackLayout>
+
+    </GridLayout>
+</StackLayout>

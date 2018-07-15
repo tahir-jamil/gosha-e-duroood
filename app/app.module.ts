@@ -10,24 +10,26 @@ import { LoginComponent } from "~/login/login.component";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
-
+import { SignupComponent } from './signup/signup.component';
+import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 @NgModule({
-    bootstrap: [
-        AppComponent
-    ],
-    imports: [
-        NativeScriptModule,
-        AppRoutingModule
-    ],
-    declarations: [
-        AppComponent,
-        LoginComponent
-    ],
-    providers: [
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+   bootstrap: [
+      AppComponent
+   ],
+   imports: [
+      NativeScriptModule,
+      AppRoutingModule,
+      NativeScriptUIDataFormModule
+   ],
+   declarations: [
+      AppComponent,
+      LoginComponent,
+      SignupComponent
+   ],
+   providers: [],
+   schemas: [
+      NO_ERRORS_SCHEMA
+   ]
 })
 /*
 Pass your application module to the bootstrapModule function located in main.ts to start your app

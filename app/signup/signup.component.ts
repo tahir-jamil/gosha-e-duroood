@@ -8,9 +8,10 @@ import { Page } from 'tns-core-modules/ui/page/page';
   styleUrls: ['./signup.component.css'],
   moduleId: module.id
 })
+
 export class SignupComponent implements OnInit {
 
-  private _user: RemoteUser;
+  private _user: RemoteUssser;
   constructor(private _page: Page) {
   }
 

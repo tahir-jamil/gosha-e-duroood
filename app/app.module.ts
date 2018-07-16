@@ -14,6 +14,7 @@ import { LoginComponent } from "~/login/login.component";
 import { SignupComponent } from './signup/signup.component';
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 import { GettingStartedComponent } from './getting-started/getting-started.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
    bootstrap: [
       AppComponent
@@ -27,7 +28,8 @@ import { GettingStartedComponent } from './getting-started/getting-started.compo
       AppComponent,
       LoginComponent,
       SignupComponent,
-      GettingStartedComponent
+      GettingStartedComponent,
+      DashboardComponent
    ],
    providers: [],
    schemas: [

@@ -12,12 +12,11 @@ export class SignupComponent implements OnInit {
 
   private _user: RemoteUser;
   constructor(private _page: Page) {
-      
   }
 
   ngOnInit() {
     this._user = new RemoteUser("", "", "", "", "", "", "", "", "", "", "", 0, 0, 0, "", false, "");
-      this._page.actionBarHidden = true;
+      // this._page.actionBarHidden = true;
   }
 
   get user(): RemoteUser {

@@ -23,4 +23,5 @@ export class SignupComponent implements OnInit {
   get user(): RemoteUser {
     return this._user;
   }
+
 }

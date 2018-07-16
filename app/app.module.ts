@@ -10,6 +10,7 @@ import { LoginComponent } from "~/login/login.component";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
+
 import { SignupComponent } from './signup/signup.component';
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 import { GettingStartedComponent } from './getting-started/getting-started.component';

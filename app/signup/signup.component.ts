@@ -11,7 +11,7 @@ import { Page } from 'tns-core-modules/ui/page/page';
 
 export class SignupComponent implements OnInit {
 
-  private _user: RemoteUssser;
+  private _user: RemoteUser;
   constructor(private _page: Page) {
   }
 

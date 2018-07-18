@@ -16,12 +16,11 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._user = new RemoteUser("", "", "", "", "", "", "", "", "", "", "", 0, 0, 0, "", false, "");
-      // this._page.actionBarHidden = true;
+    this._user = new RemoteUser( "" , "" , "" , "" , "" , "" , "" , "" , "" , "" , "" , "" ,"",  0,0,0, true,);
   }
-
   get user(): RemoteUser {
     return this._user;
   }
+  options_edu=["Post Graduation", "Under Graduation ","Graduation", "Matriculation","Diploma" ];
 
 }

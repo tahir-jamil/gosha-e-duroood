@@ -2,40 +2,42 @@ export class RemoteUser {
 
     public username: string;
     public name: string;
+    public email: string;
+    public password: string;
     public education: string;
     public dateOfBirth: string;
-    public password: string;
     public fatherName: string;
     public profession: string;
     public nic: string;
     public postalAddress: string;
-    public country: string;
+    public city: string;
     public district: string;
+    public country: string;
     public phoneRes: number;
     public phoneOff: number;
-    public phoneCell: number;
-    public email: string;
+    public phoneCell: number; 
     public holyQuran: boolean;
-    public userType: string;
+    
 
-    constructor(username: string, name: string, education: string, dateOfBirth: string, password: string, fatherName: string, profession: string, nic: string, postalAddress: string, country: string, district: string, phoneRes: number, phoneOff: number, phoneCell: number, email: string, holyQuran: boolean, userType: string) {
-        this.username = username;
-        this.name = name;
-        this.education = education;
-        this.dateOfBirth = dateOfBirth;
-        this.password = password;
-        this.fatherName = fatherName;
-        this.profession = profession;
-        this.nic = nic;
-        this.postalAddress = postalAddress;
-        this.country = country;
-        this.district = district;
-        this.phoneRes = phoneRes;
-        this.phoneOff = phoneOff;
-        this.phoneCell = phoneCell;
-        this.email = email;
-        this.holyQuran = holyQuran;
-        this.userType = userType;
+    constructor( username: string,name: string,email: string,password: string,education: string,dateOfBirth: string,fatherName: string,profession: string,nic: string,postalAddress: string,city: string,district: string,country: string,phoneRes: number,phoneOff: number,phoneCell: number,holyQuran: boolean,) {
+   this. username=username;
+   this. name= name;
+   this. email=  email;
+   this. password=  password;
+   this. education= education;
+   this. dateOfBirth= dateOfBirth;
+   this. fatherName= dateOfBirth;
+   this. profession= profession;
+   this. nic= nic;
+   this. postalAddress= postalAddress;
+   this. city= city;
+   this. district= district;
+   this. country= country;
+   this. phoneRes= phoneRes;
+   this. phoneOff= phoneOff;
+   this. phoneCell= phoneCell; 
+   this. holyQuran= holyQuran;
+   
     }
 
 

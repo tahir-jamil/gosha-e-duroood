@@ -13,8 +13,14 @@ import { LoginComponent } from "~/login/login.component";
 
 import { SignupComponent } from './signup/signup.component';
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
+import { NativeScriptUISideDrawerModule  } from "nativescript-ui-sidedrawer/angular";
 import { GettingStartedComponent } from './getting-started/getting-started.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AccountComponent } from './account/account.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { ApplyGoashaENasheenComponent } from './apply-goasha-e-nasheen/apply-goasha-e-nasheen.component';
+import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
+
 @NgModule({
    bootstrap: [
       AppComponent
@@ -22,14 +28,19 @@ import { DashboardComponent } from './dashboard/dashboard.component';
    imports: [
       NativeScriptModule,
       AppRoutingModule,
-      NativeScriptUIDataFormModule
+      NativeScriptUIDataFormModule,
+      NativeScriptUISideDrawerModule
    ],
    declarations: [
       AppComponent,
       LoginComponent,
       SignupComponent,
       GettingStartedComponent,
-      DashboardComponent
+      DashboardComponent,
+      AccountComponent,
+      StatisticsComponent,
+      ApplyGoashaENasheenComponent,
+      DashboardContentComponent
    ],
    providers: [],
    schemas: [

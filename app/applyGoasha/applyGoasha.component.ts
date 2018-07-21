@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Page } from 'tns-core-modules/ui/page/page';
 
 @Component({
-  selector: 'app-apply-goasha-e-nasheen',
-  templateUrl: './apply-goasha-e-nasheen.component.html',
-  styleUrls: ['./apply-goasha-e-nasheen.component.css'],
+  selector: 'app-applyGoasha',
+  templateUrl: './applyGoasha.component.html',
+  styleUrls: ['./applyGoasha.component.css'],
   moduleId:module.id
 })
-export class ApplyGoashaENasheenComponent implements OnInit {
+export class ApplyGoashaComponent implements OnInit {
 
   constructor(private _page: Page) { }
 
@@ -15,5 +15,4 @@ export class ApplyGoashaENasheenComponent implements OnInit {
     this._page.actionBarHidden = true;
   }
   
-
 }

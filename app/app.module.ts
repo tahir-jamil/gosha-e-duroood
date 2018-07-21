@@ -18,8 +18,8 @@ import { GettingStartedComponent } from './getting-started/getting-started.compo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountComponent } from './account/account.component';
 import { StatisticsComponent } from './statistics/statistics.component';
-import { ApplyGoashaENasheenComponent } from './apply-goasha-e-nasheen/apply-goasha-e-nasheen.component';
 import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
+import { ApplyGoashaComponent } from './applyGoasha/applyGoasha.component';
 
 @NgModule({
    bootstrap: [
@@ -39,8 +39,8 @@ import { DashboardContentComponent } from './dashboard-content/dashboard-content
       DashboardComponent,
       AccountComponent,
       StatisticsComponent,
-      ApplyGoashaENasheenComponent,
-      DashboardContentComponent
+      DashboardContentComponent,
+      ApplyGoashaComponent
    ],
    providers: [],
    schemas: [

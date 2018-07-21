@@ -1,18 +1,26 @@
-<ActionBar title="Dashboard">
-  <ActionItem android:position="actionBar"  backgroundColor="blue">
-    <Label horizontalAlignment="left" class="text-left md-icon f-s-25" (tap)="openDrawer()" text="&#xe5d2;" color="#8C489F"></Label>
+<ActionBar *ngIf="isIos" [title]="title">
+  <ActionItem android:position="actionBar" >
+    <Label horizontalAlignment="left" class="text-left md-icon f-s-25 color-menu" (tap)="openDrawer()" text="&#xe5d2;" ></Label>
   </ActionItem>
   <NavigationButton visibility="collapsed" icon="res://ic_arrow_back_black_24dp" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+<ActionBar *ngIf="isAndroid" >
+  <GridLayout>
+    <StackLayout  horizontalAlignment="left">
+        <Label  class="md-icon f-s-25 padding-icon color-menu" (tap)="openDrawer()" text="&#xe5d2;" ></Label>
+    </StackLayout>
+    <Label [text]="title"  verticalAlignment="middle" class="text-center titleAndroid h4" textWrap="true"></Label>
+  </GridLayout>
 </ActionBar>
 <GridLayout>
   <RadSideDrawer tkExampleTitle tkToggleNavButton drawerTransition="SlideAlongTransition">
     <GridLayout rows="auto" tkDrawerContent class="sideStackLayout">
       <StackLayout row="0" class="sideStackLayout">
-        <Label text="Dashboard" class="sideLabel sideLightGrayLabel" (tap)="routeTo('/dashboard')"></Label>
-        <Label text="Account" class="sideLabel" (tap)="routeTo('/dashboard/account')"></Label>
-        <Label text="Statistics" class="sideLabel" (tap)="routeTo('/dashboard/statistics')"></Label>
-        <Label text="Apply for Goasha e Nasheen" class="sideLabel" (tap)="routeTo('/dashboard/applyGoashaENasheen')"></Label>
-        <Label text="logout" class="sideLabel logout text-center vertical-middle" (tap)="routeTo('/logout')" ></Label>
+        <Label text="Dashboard" class="sideLabel sideLightGrayLabel" (tap)="routeTo('/dashboard','Dashboard')"></Label>
+        <Label text="Account" class="sideLabel" (tap)="routeTo('/dashboard/account','Account')"></Label>
+        <Label text="Statistics" class="sideLabel" (tap)="routeTo('/dashboard/statistics','Statistics')"></Label>
+        <Label text="Apply for Goasha E Nasheen" class="sideLabel" (tap)="routeTo('/dashboard/applyGoasha','Goasha E Nasheen')"></Label>
+        <Label text="logout" class="sideLabel logout text-center vertical-middle" (tap)="routeTo('/logout')"></Label>
       </StackLayout>
     </GridLayout>
     <page-router-outlet tkMainContent></page-router-outlet>

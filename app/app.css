@@ -1,0 +1,6 @@
+@import '~nativescript-theme-core/scss/light';
+@import './theme/custom.css';
+
+.md-icon {
+    font-family: "Material Icons", "MaterialIcons-Regular","materialicons";
+}

@@ -14,6 +14,7 @@ import { LoginComponent } from "~/login/login.component";
 import { SignupComponent } from './signup/signup.component';
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 import { NativeScriptUISideDrawerModule  } from "nativescript-ui-sidedrawer/angular";
+import { NativeScriptUIListViewModule  } from "nativescript-ui-listview/angular";
 import { GettingStartedComponent } from './getting-started/getting-started.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountComponent } from './account/account.component';
@@ -29,7 +30,8 @@ import { ApplyGoashaComponent } from './applyGoasha/applyGoasha.component';
       NativeScriptModule,
       AppRoutingModule,
       NativeScriptUIDataFormModule,
-      NativeScriptUISideDrawerModule
+      NativeScriptUISideDrawerModule,
+      NativeScriptUIListViewModule,
    ],
    declarations: [
       AppComponent,

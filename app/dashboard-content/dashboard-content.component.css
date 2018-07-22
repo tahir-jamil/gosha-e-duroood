@@ -1,0 +1,67 @@
+
+.remoteUser {
+    /* padding-top: 2%; */
+    /* padding-bottom: 2%; */
+    /* padding-left: 15%;
+    padding-right: 15%; */
+    font-size: 13dp;
+}
+
+.button-durood {
+    width: 30%;
+    height: 40%;
+    border-radius: 100%;
+    background-color: yellow;
+}
+
+.tabs {
+    border-radius: 21.7%;
+    width: 40%;
+    height: 7%;
+}
+
+.tab-color {
+    background-color: white;
+}
+
+.min-margin {
+    margin-bottom: 10%;
+}
+/* listview */
+.listview {
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    padding-top: 5%;
+}
+
+.list-item-padding {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    border-bottom-color: rgb(59, 59, 59);
+    border-bottom-width: 0.1%;
+}
+
+.srNo {
+    font-size: 18dp;
+    padding-right: 5%;
+}
+
+.duroodCout {
+    font-size: 20dp;
+    text-align: center;
+}
+
+.date {
+    font-size: 14dp;
+    text-align: center;
+    padding-right: 10%;
+}
+
+.time{
+    text-align: right;
+    font-size: 12dp;
+    padding-right: 10%;
+}
+

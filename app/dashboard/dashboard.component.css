@@ -1,0 +1,63 @@
+
+/* side drawer */
+.drawerContentText {
+    font-size: 13;
+    padding: 10;
+}
+.sideStackLayout {
+    background-color: gray;
+}
+
+.sideLabel {
+    padding: 10%;
+}
+
+.logout {
+    background-color: #eeeeee;
+}
+
+.sideLightGrayLabel {
+    background-color: lightgray;
+}
+
+.logout-align {
+
+}
+
+.text-middle-align {
+    margin-bottom: 15%;
+}
+
+.drawer-item {
+    padding-top:10%;
+    padding-bottom: 10%;
+    padding-left: 18%;
+}
+
+.m-t-9 {
+    padding-top: 9%;
+}
+
+/* icon size */
+
+.f-s-25 {
+font-size: 25dp;
+}
+
+.f-s-22 {
+    font-size: 22dp;
+}
+
+.color-menu {
+    color: black;
+}
+
+/* android icon actionbar */
+.padding-icon {
+    padding: 5%;
+}
+
+.titleAndroid {
+    font-size: 18dp;
+    font-weight: 400;
+}

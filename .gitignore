@@ -42,7 +42,7 @@ testem.log
 Thumbs.db
 
 /**/*.js
-/***/*.css
+
 !/app/fonts/*.*
 
 /platforms

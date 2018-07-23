@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Goshaenasheen } from '~/Apply-for-GoshaENasheen/goshaenasheen';
+import { Goshaenasheen } from "../data-services/user";
 import { Page } from 'tns-core-modules/ui/page/page';
+
 
 @Component({
   selector: 'app-Apply-for-GoshaENasheen',
@@ -14,7 +15,7 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._user = new Goshaenasheen( "","","","","","","","","","","","",0,0,0,true,true,"");
+    this._user = new Goshaenasheen("","",0,0,0,false,"","","","","","","","","","","","",false,"" );
   }
   get user(): Goshaenasheen {
     return this._user;

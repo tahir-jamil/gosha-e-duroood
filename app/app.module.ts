@@ -14,8 +14,11 @@ import { LoginComponent } from "~/login/login.component";
 import { SignupComponent } from './signup/signup.component';
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 import { GettingStartedComponent } from './getting-started/getting-started.component';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApplyForGoshaENasheenComponent } from './Apply-for-GoshaENasheen/Apply-for-GoshaENasheen.component';
+import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
+
 @NgModule({
    bootstrap: [
       AppComponent
@@ -23,7 +26,8 @@ import { ApplyForGoshaENasheenComponent } from './Apply-for-GoshaENasheen/Apply-
    imports: [
       NativeScriptModule,
       AppRoutingModule,
-      NativeScriptUIDataFormModule
+      NativeScriptUIDataFormModule,
+      NativeScriptUISideDrawerModule
    ],
    declarations: [
       AppComponent,
@@ -31,7 +35,8 @@ import { ApplyForGoshaENasheenComponent } from './Apply-for-GoshaENasheen/Apply-
       SignupComponent,
       GettingStartedComponent,
       DashboardComponent,
-      ApplyForGoshaENasheenComponent
+      ApplyForGoshaENasheenComponent,
+     
    ],
    providers: [],
    schemas: [

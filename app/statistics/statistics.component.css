@@ -7,12 +7,16 @@
 .margin-horizontal-list {
     background-color: rgb(139, 56, 177); 
     border-radius: 5%;
-    height: 65%;
+    height: 55%;
     margin-right:10dp;
 }
+.hor-list-hight {
+    height: 10%;
+}
 .label-hor-list {
-    padding: 3% 20% 0% 20%;
+    padding: 0% 20% 0% 20%;
     color: white;
+    font-size: 14dp;
 }
 .z-index1 {
     z-index: 1;

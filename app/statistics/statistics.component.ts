@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Page } from 'tns-core-modules/ui/page/page';
+import { SwissArmyKnife, IScreenHeight } from "nativescript-swiss-army-knife";
+import { topmost } from "ui/frame";
+import { ScrollView } from 'tns-core-modules/ui/scroll-view/scroll-view';
 
 @Component({
   selector: 'app-statistics',
@@ -7,13 +10,21 @@ import { Page } from 'tns-core-modules/ui/page/page';
   styleUrls: ['./statistics.component.css'],
   moduleId: module.id
 })
-export class StatisticsComponent implements OnInit {
+export class StatisticsComponent implements OnInit, AfterViewInit {
 
+  @ViewChild('tagView') scrollView: ElementRef;
 
   constructor(private _page: Page) {
   }
   ngOnInit(): void {
     this._page.actionBarHidden = true;
+  }
+
+  ngAfterViewInit(): void {
+    const scrollV = this.scrollView.nativeElement;
+    setTimeout(function () {
+      SwissArmyKnife.removeHorizontalScrollBars(scrollV);
+    }, 10);
   }
 
   pieSource: { Brand: string, Amount: number }[] = [
@@ -26,8 +37,10 @@ export class StatisticsComponent implements OnInit {
 
   onfilterSelect() {
     console.log("working");
+
   }
 
-
   dataItems = ["1", "2", "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"];
+
+
 }

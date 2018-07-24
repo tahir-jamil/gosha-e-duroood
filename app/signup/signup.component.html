@@ -62,10 +62,10 @@
         </StackLayout>
     </GridLayout>
 
-    <GridLayout row="1"  rows="*,auto">
+    <GridLayout row="1"  rows="*,auto" >
 
 
-            <Pager [items]="items | async" #pager [selectedIndex]="currentPagerIndex" (selectedIndexChange)="onIndexChanged($event)"
+            <Pager [items]="items | async" backgroundColor="#f3f3f3" #pager [selectedIndex]="currentPagerIndex" (selectedIndexChange)="onIndexChanged($event)"
                 class="pager" >
                 <ng-template let-i="index" let-item="item">
                     <Gridlayout >
@@ -126,7 +126,7 @@
                 </ng-template>
             </Pager>
 
-            <GridLayout row="1" class="controls-row" >
+            <GridLayout row="1" class="controls-row" backgroundColor="white" >
                     <Button text="nextbutton" verticalAlignment="middle" horizontalAlignment="center" class="btn  btn-primary nextButton margin-bottom" ></Button>        
                 <StackLayout verticalAlignment="bottom" height="60%">
                     <Image class="ribble-pic" src="res://ribble_pic" stretch="fill"></Image>

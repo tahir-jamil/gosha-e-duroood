@@ -1,0 +1,30 @@
+
+
+.header{
+  width: 100%;
+  height: 65;
+  text-align: center;
+}
+.title{
+    vertical-align: center;
+    font-weight: bold;
+    font-size: 20;
+}
+
+.pager {
+
+}
+
+.controls-row{
+    height:17%;
+}
+.nextButton {
+    height: 40%;
+    width: 40%;
+    border-radius: 30%;
+}
+ 
+.margin-bottom {
+    margin-bottom: 25%;
+}
+

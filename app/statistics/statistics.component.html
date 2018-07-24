@@ -1,4 +1,47 @@
-<StackLayout>
-    <Label text="statistics " textWrap="true"></Label>
-    
-</StackLayout>
+<ActionBar title="Home" class="action-bar">
+</ActionBar>
+
+<GridLayout class="color">
+	<GridLayout height="12%" verticalAlignment="top" backgroundColor="#eeeeee">
+		<ScrollView id="adtsumscrl" orientation="horizontal" class="scrolview">
+			<GridLayout class="padding-hor-list" columns="auto auto auto auto">
+				<GridLayout class="margin-horizontal-list" (tap)="onfilterSelect()">
+					<Label class="h3 label-hor-list" horizontalAlignment="center" verticalAlignment="middle" col="0" text="Title 1"></Label>
+				</GridLayout>
+				<GridLayout class="margin-horizontal-list" col="1" (tap)="onfilterSelect()">
+					<Label class="h3 label-hor-list" horizontalAlignment="center" verticalAlignment="middle" col="0" text="this"></Label>
+				</GridLayout>
+				<GridLayout class="margin-horizontal-list" col="2" (tap)="onfilterSelect()">
+					<Label class="h3 label-hor-list" horizontalAlignment="center" verticalAlignment="middle" col="0" text="Title 1"></Label>
+				</GridLayout>
+				<GridLayout class="margin-horizontal-list" col="3" (tap)="onfilterSelect()">
+					<Label class="h3 label-hor-list" horizontalAlignment="center" verticalAlignment="middle" col="0" text="Title 1"></Label>
+				</GridLayout>
+			</GridLayout>
+		</ScrollView>
+	</GridLayout>
+
+	<GridLayout height="88%" verticalAlignment="bottom">
+		<GridLayout height="40%"   tkExampleTitle tkToggleNavButton rows="*" verticalAlignment="top">
+			<RadPieChart allowAnimation="true" height="100%" row="0">
+				<PieSeries tkPieSeries selectionMode="DataPoint" expandRadius="0.4" outerRadiusFactor="0.7" [items]="pieSource" valueProperty="Amount"
+				 legendLabel="Brand"></PieSeries>
+				<RadLegendView tkPieLegend position="Right" title="Brands" offsetOrigin="TopRight" width="110" enableSelection="true"></RadLegendView>
+			</RadPieChart>
+			<Label text="Top 5 rated countries" verticalAlignment="top" class="ratedText"></Label>
+		</GridLayout>
+
+		<GridLayout height="60%" tkExampleTitle tkToggleNavButton  class="z-index1" verticalAlignment="bottom">
+			<GridLayout tkExampleTitle tkToggleNavButton backgroundColor="#f3f3f3">
+            <RadListView [items]="dataItems" class="listview" backgroundColor="#f3f3f3">
+                <ng-template tkListItemTemplate let-item="item">
+					<GridLayout columns="auto,auto,*" class="list-item-padding">
+						<Label text="1)" class="srNo" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+						<Label text="Pakistan" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+					</GridLayout>
+                </ng-template>
+            </RadListView>
+        </GridLayout>
+		</GridLayout>
+	</GridLayout>
+</GridLayout>

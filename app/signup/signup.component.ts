@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { RemoteUser } from '~/signup/user-data-service';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -13,14 +14,9 @@ import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-
 export class SignupComponent implements OnInit {
 
   private _user: RemoteUser;
+  titleName: string ="Personal Information";
   @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
 
-  constructor(private _page: Page) {
-  }
-
-  ngOnInit() {
-    this._user = new RemoteUser("", "", "", "", "", "", "", "", "", "", "", "", "", 0, 0, 0, true, );
-  }
   
   get user(): RemoteUser {
     return this._user;
@@ -35,4 +31,79 @@ export class SignupComponent implements OnInit {
 
   }
 
+  numItems;
+  currentPagerIndex = 0;
+  latestReceivedIndex = 0;
+  items: any;
+ 
+  @ViewChild('pager') pager: any;
+  // tslint:disable-next-line:semicolon
+  public templateSelector = (item: any, index: number, items: any) => {
+    return index % 2 === 0 ? 'even' : 'odd';
+  }
+
+  constructor(private _page: Page) {
+    this.items = new BehaviorSubject([
+      {
+        title: 'Personal Information',
+        items: []
+      },
+      {
+        title: 'Education and Profession',
+        items: []
+      },
+      {
+        title: 'Address',
+        items: []
+      },
+      {
+        title: 'Contact',
+        items: []
+      },
+      {
+        title: 'Others',
+        items: []
+      }
+      
+      
+    ]);
+    this.numItems = this.items.value.length;
+  }
+
+  ngOnInit(): void {
+    this._user = new RemoteUser("", "", "", "", "", "", "", "", "", "", "", "", "", 0, 0, 0, true, );
+    this._page.actionBarHidden = true;
+  }
+
+  loadedImage($event) {
+    console.log(`loaded image ${JSON.stringify($event)}`);
+  }
+
+  prevPage() {
+    // this.debugObj(this.pager);
+    const newIndex = Math.max(0, this.currentPagerIndex - 1);
+    this.currentPagerIndex = newIndex;
+    this.latestReceivedIndex = newIndex;
+  }
+
+  nextPage() {
+    const newIndex = Math.min(this.numItems - 1, this.currentPagerIndex + 1);
+    this.currentPagerIndex = newIndex;
+    this.latestReceivedIndex = newIndex;
+  }
+
+  onIndexChanged($event) {
+    this.latestReceivedIndex = $event.newIndex;
+    this.titleName = this.items[this.latestReceivedIndex].title;
+  }
+
+  pageChanged(index: number) {
+    console.log(`pageChanged ${JSON.stringify(index)}`);
+  }
+
+  get getTitle() {
+    if(!!this.items[this.currentPagerIndex].title) {
+      return this.items[this.currentPagerIndex].title;
+    }
+  }
 }

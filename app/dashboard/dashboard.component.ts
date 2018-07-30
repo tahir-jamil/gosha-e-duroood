@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
     }
     else if (isIOS) {
       this.isIos = true;
-    } 
+    }
   }
 
   private _mainContentText: string;
@@ -60,9 +60,7 @@ export class DashboardComponent implements OnInit {
 
   routeTo(path, title) {
     this.title = title;
-    if(this.isAndroid == true) {
-      this.onCloseDrawerTap();
-    }
+    this.onCloseDrawerTap();
     this.router.navigate([path], {
       transition: {
         name: 'fade',

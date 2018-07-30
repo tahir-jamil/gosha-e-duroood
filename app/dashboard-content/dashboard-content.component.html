@@ -1,4 +1,24 @@
-<StackLayout>
-    <Label text="this is dashabord content" textWrap="true"></Label>
-    
-</StackLayout>
+<GridLayout>
+    <GridLayout height="45%" verticalAlignment="top" backgroundColor="blue">
+        <Button text="100,000" class="button-durood"></Button>
+    </GridLayout>
+    <GridLayout height="55%" verticalAlignment="bottom" backgroundColor="#f3f3f3">
+        <GridLayout tkExampleTitle tkToggleNavButton backgroundColor="#f3f3f3">
+            <RadListView [items]="dataItems" class="listview" backgroundColor="#f3f3f3">
+                <ng-template tkListItemTemplate let-item="item">
+                    <GridLayout columns="auto,auto,*" class="list-item-padding" backgroundColor="#f3f3f3">
+                        <Label text="1)" class="srNo" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+                        <Label text="100" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+                        <StackLayout col="2" horizontalAlignment="right" verticalAlignment="middle">
+                            <Label text="2/02/2014" class="date" textWrap="true"></Label>
+                            <Label text="3:00 am" class="time" textWrap="true"></Label>
+                        </StackLayout>
+                    </GridLayout>
+                </ng-template>
+            </RadListView>
+        </GridLayout>
+    </GridLayout>
+    <GridLayout class="tabs min-margin tab-color">
+        <Label text="Remote User" class="remoteUser" horizontalAlignment="center" verticalAlignment="middle" textWrap="true"></Label>
+    </GridLayout>
+</GridLayout>

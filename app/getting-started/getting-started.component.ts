@@ -14,6 +14,7 @@ export class GettingStartedComponent implements OnInit {
   ngOnInit() {
   }
 
+  
   navigateTo(path) {
     this.routerExtensions.navigate([path], {
       transition: {

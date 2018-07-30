@@ -6,7 +6,7 @@
 	"nativescript": {
 		"id": "org.nativescript.goshaedurood",
 		"tns-ios": {
-			"version": "4.1.1"
+			"version": "4.2.0-2018-07-17-01"
 		},
 		"tns-android": {
 			"version": "4.2.0-2018-07-20-02"
@@ -24,8 +24,11 @@
 		"@angular/router": "~6.0.0",
 		"nativescript-angular": "~6.0.0",
 		"nativescript-pager": "^8.0.2",
+		"nativescript-swiss-army-knife": "^3.0.0",
 		"nativescript-theme-core": "~1.0.4",
+		"nativescript-ui-chart": "^3.7.0",
 		"nativescript-ui-dataform": "^3.6.1",
+		"nativescript-ui-listview": "^3.5.10",
 		"nativescript-ui-sidedrawer": "^4.1.1",
 		"reflect-metadata": "~0.1.8",
 		"rxjs": "~6.1.0",

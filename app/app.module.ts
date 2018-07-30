@@ -14,6 +14,8 @@ import { LoginComponent } from "~/login/login.component";
 import { SignupComponent } from './signup/signup.component';
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 import { NativeScriptUISideDrawerModule  } from "nativescript-ui-sidedrawer/angular";
+import { NativeScriptUIChartModule  } from "nativescript-ui-chart/angular";
+import { NativeScriptUIListViewModule  } from "nativescript-ui-listview/angular";
 import { GettingStartedComponent } from './getting-started/getting-started.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,6 +23,7 @@ import { AccountComponent } from './account/account.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
 import { ApplyGoashaComponent } from './applyGoasha/applyGoasha.component';
+import { PagerModule } from "nativescript-pager/angular";
 
 @NgModule({
    bootstrap: [
@@ -30,7 +33,10 @@ import { ApplyGoashaComponent } from './applyGoasha/applyGoasha.component';
       NativeScriptModule,
       AppRoutingModule,
       NativeScriptUIDataFormModule,
-      NativeScriptUISideDrawerModule
+      NativeScriptUISideDrawerModule,
+      NativeScriptUIListViewModule,
+      NativeScriptUIChartModule,
+      PagerModule
    ],
    declarations: [
       AppComponent,

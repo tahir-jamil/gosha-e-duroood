@@ -9,7 +9,7 @@
     <StackLayout  horizontalAlignment="left">
         <Label  class="md-icon f-s-25 padding-icon color-menu" (tap)="openDrawer()" text="&#xe5d2;" ></Label>
     </StackLayout>
-    <Label [text]="title"  verticalAlignment="middle" class="text-center titleAndroid h4" textWrap="true"></Label>
+    <Label [text]="title"  verticalAlignment="middle"  horizontalAlignment="center" class="text-center titleAndroid h4" textWrap="true"></Label>
   </GridLayout>
 </ActionBar>
 <GridLayout>
@@ -20,7 +20,7 @@
         <Label text="Account" class="sideLabel" (tap)="routeTo('/dashboard/account','Account')"></Label>
         <Label text="Statistics" class="sideLabel" (tap)="routeTo('/dashboard/statistics','Statistics')"></Label>
         <Label text="Apply for Goasha E Nasheen" class="sideLabel" (tap)="routeTo('/dashboard/applyGoasha','Goasha E Nasheen')"></Label>
-        <Label text="logout" class="sideLabel logout text-center vertical-middle" (tap)="routeTo('/logout')"></Label>
+        <Label text="logout" class="sideLabel logout text-center vertical-middle" (tap)="routeTo('/getting-started')"></Label>
       </StackLayout>
     </GridLayout>
     <page-router-outlet tkMainContent></page-router-outlet>

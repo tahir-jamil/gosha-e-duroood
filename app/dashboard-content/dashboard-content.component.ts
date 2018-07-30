@@ -15,4 +15,7 @@ export class DashboardContentComponent implements OnInit {
     this._page.actionBarHidden = true;
   }
 
+  dataItems =['1','2','3','4','5','6','7','8','9'];
+
+
 }

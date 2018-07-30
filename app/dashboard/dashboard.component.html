@@ -1,22 +1,28 @@
-<RadSideDrawer tkExampleTitle tkToggleNavButton>
-  <StackLayout tkDrawerContent class="sideStackLayout">
-      <StackLayout class="sideTitleStackLayout">
-          <Label text="Navigation Menu"></Label>
+<ActionBar *ngIf="isIos" [title]="title">
+  <ActionItem android:position="actionBar" >
+    <Label horizontalAlignment="left" class="text-left md-icon f-s-25 color-menu" (tap)="openDrawer()" text="&#xe5d2;" ></Label>
+  </ActionItem>
+  <NavigationButton visibility="collapsed" icon="res://ic_arrow_back_black_24dp" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+<ActionBar *ngIf="isAndroid" >
+  <GridLayout>
+    <StackLayout  horizontalAlignment="left">
+        <Label  class="md-icon f-s-25 padding-icon color-menu" (tap)="openDrawer()" text="&#xe5d2;" ></Label>
+    </StackLayout>
+    <Label [text]="title"  verticalAlignment="middle" class="text-center titleAndroid h4" textWrap="true"></Label>
+  </GridLayout>
+</ActionBar>
+<GridLayout>
+  <RadSideDrawer tkExampleTitle tkToggleNavButton drawerTransition="SlideAlongTransition">
+    <GridLayout rows="auto" tkDrawerContent class="sideStackLayout">
+      <StackLayout row="0" class="sideStackLayout">
+        <Label text="Dashboard" class="sideLabel sideLightGrayLabel" (tap)="routeTo('/dashboard','Dashboard')"></Label>
+        <Label text="Account" class="sideLabel" (tap)="routeTo('/dashboard/account','Account')"></Label>
+        <Label text="Statistics" class="sideLabel" (tap)="routeTo('/dashboard/statistics','Statistics')"></Label>
+        <Label text="Apply for Goasha E Nasheen" class="sideLabel" (tap)="routeTo('/dashboard/applyGoasha','Goasha E Nasheen')"></Label>
+        <Label text="logout" class="sideLabel logout text-center vertical-middle" (tap)="routeTo('/logout')"></Label>
       </StackLayout>
-      <StackLayout class="sideStackLayout">
-          <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
-          <Label text="Social" class="sideLabel"></Label>
-          <Label text="Promotions" class="sideLabel"></Label>
-          <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
-          <Label text="Important" class="sideLabel"></Label>
-          <Label text="Starred" class="sideLabel"></Label>
-          <Label text="Sent Mail" class="sideLabel"></Label>
-          <Label text="Drafts" class="sideLabel"></Label>
-      </StackLayout>
-      <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label>
-  </StackLayout>
-  <StackLayout tkMainContent>
-      <Label [text]="mainContentText" textWrap="true" class="drawerContentText"></Label>
-      <Button text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button>
-  </StackLayout>
-</RadSideDrawer>
+    </GridLayout>
+    <page-router-outlet tkMainContent></page-router-outlet>
+  </RadSideDrawer>
+</GridLayout>

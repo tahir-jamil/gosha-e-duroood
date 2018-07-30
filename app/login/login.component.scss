@@ -1,34 +1,40 @@
-.wrapper{
-    margin: 8% 11% 5% 11%;
+
+.padding-12 {
+    padding-top: 50%;
+    padding-bottom: 50%;
+    padding-left: 60%;
+    padding-right:60%;
 }
 
-.m-t-8{
-    margin-top: 8%;
+.page {
+    background-color: #f3f3f3;    
 }
-.m-b-8{
-    margin-bottom: 8%;
-}
-.m-b-2{margin-bottom: 2%;}
-.btn-sep{
-    margin: 0 5;
-}
-.forget-txt{
-    color: #363941;
-    font-size: 12px;
-    font-style: italic;
-    horizontal-align: right;
-    vertical-align: middle;
-}
-.login-bottom-nav{
-    font-size: 14px;
-    .login-label{
-        color: #9F9F9F;
-        font-weight: 500;
-    }
 
-    .login-link{
-        font-weight: bold;
-        text-decoration: underline;
-        color: #232B41;
-    }
+/* buttons  */
+.uppercase {
+    text-transform: uppercase;
+}
+
+.b-r-10 {
+    border-radius: 23%;
+}
+
+.p-b-10 {
+    padding-bottom: 15%;
+}
+
+.width-100 {
+    width: 100%
+}
+
+
+.height-8 {
+    height: 7.8%;
+}
+
+.f-s-14 {
+    font-size: 14dp;
+}
+.undeline {
+    text-decoration: underline;
 }

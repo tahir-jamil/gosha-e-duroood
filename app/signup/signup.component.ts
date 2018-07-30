@@ -49,21 +49,21 @@ export class SignupComponent implements OnInit {
         items: []
       },
       {
-        title: 'Education and Profession',
+       title: 'Education and Profession',
         items: []
-      },
-      {
-        title: 'Address',
-        items: []
-      },
-      {
-        title: 'Contact',
-        items: []
-      },
-      {
-        title: 'Others',
-        items: []
-      }
+       },
+       {
+         title: 'Address',
+         items: []
+       },
+       {
+         title: 'Contact',
+         items: []
+       },
+       {
+         title: 'Others',
+         items: []
+       }
       
       
     ]);

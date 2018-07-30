@@ -56,81 +56,34 @@
 <GridLayout rows="auto,*" class="page">
 
     <GridLayout class="header" verticalAlignment="top">
-        <Label class="title" verticalAlignment="middle" [text]="titleName" textWrap="true"></Label>
+        <Label class="title" verticalAlignment="middle" text="Information" textWrap="true"></Label>
         <StackLayout verticalAlignment="bottom" (tap)="nextPage()">
             <Progress value="20" class="progress"></Progress>
         </StackLayout>
     </GridLayout>
 
-    <GridLayout row="1"  rows="*,auto" >
+    <GridLayout row="1" rows="*,auto">
 
 
-            <Pager [items]="items | async" backgroundColor="#f3f3f3" #pager [selectedIndex]="currentPagerIndex" (selectedIndexChange)="onIndexChanged($event)"
-                class="pager" >
-                <ng-template let-i="index" let-item="item">
-                    <Gridlayout >
-                        <RadDataForm   #myCommitDataForm tkExampleTitle tkToggleNavButton [source]="user" commitMode="OnLostFocus" (propertyCommitted)="onPropertyCommitted()">
-                            <TKEntityProperty tkDataFormProperty name="username" displayName="Type username">
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty>
-                           <TKEntityProperty tkDataFormProperty name="name" displayName="Type your name" >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="email" displayName="Enter your E-mail  ID " >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Email"></TKPropertyEditor>
-                           </TKEntityProperty>
-                           <TKEntityProperty tkDataFormProperty name="password" displayName="Chose your password">
-                               <TKPropertyEditor tkEntityPropertyEditor type="Password"></TKPropertyEditor>
-                           </TKEntityProperty>
-                           <TKEntityProperty tkDataFormProperty name="education" displayName="Select Your education Level"  [valuesProvider]="options_edu">
-                               <TKPropertyEditor tkEntityPropertyEditor type="Picker"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="dateOfBirth" displayName="select your Date of Birth " >
-                               <TKPropertyEditor tkEntityPropertyEditor type="DatePicker"></TKPropertyEditor>
-                           </TKEntityProperty>
-                           <TKEntityProperty tkDataFormProperty name="fatherName" displayName="Father's name" >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty>
-                           <TKEntityProperty tkDataFormProperty name="profession" displayName="Profession " >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty>
-                           <TKEntityProperty tkDataFormProperty name="nic" displayName="Enter your National Identity Card Number " >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="postalAddress" displayName="Your Postal Address" >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty>
-                           <TKEntityProperty tkDataFormProperty name="city" displayName="City" >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="district" displayName="District " >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="country" displayName="Country" >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="phoneRes" displayName="phone Home" >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="phoneOff" displayName="Phone Office" >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="phoneCell" displayName="Cell Number" >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
-                           </TKEntityProperty> 
-                           <TKEntityProperty tkDataFormProperty name="holyQuran" displayName="Can you Read The Holy Quran " >
-                               <TKPropertyEditor tkEntityPropertyEditor type="Switch"></TKPropertyEditor>
-                           </TKEntityProperty>  
-                           </RadDataForm>
-                    </Gridlayout>
-                </ng-template>
-            </Pager>
 
-            <GridLayout row="1" class="controls-row" backgroundColor="white" >
-                    <Button text="nextbutton" verticalAlignment="middle" horizontalAlignment="center" class="btn  btn-primary nextButton margin-bottom" ></Button>        
-                <StackLayout verticalAlignment="bottom" height="60%">
-                    <Image class="ribble-pic" src="res://ribble_pic" stretch="fill"></Image>
-                </StackLayout>
-            </GridLayout>
+        <Pager [items]="items | async" backgroundColor="#f3f3f3" #pager [selectedIndex]="currentPagerIndex" (selectedIndexChange)="onIndexChanged($event)"
+            class="pager">
+            <ng-template let-i="index" let-item="item">
+                <Gridlayout>
+                 <RadDataForm #myCommitDataForm tkExampleTitle tkToggleNavButton [source]="user" commitMode="OnLostFocus" (propertyCommitted)="onPropertyCommitted()">
+                        <TKEntityProperty tkDataFormProperty [name]="name" displayName="Enter your Name">
+                            <TKPropertyEditor tkEntityPropertyEditor type="text"></TKPropertyEditor>
+                        </TKEntityProperty>
+                    </RadDataForm> 
+                </Gridlayout>
+            </ng-template>
+        </Pager>
+
+        <GridLayout row="1" class="controls-row" backgroundColor="white">
+            <Button text="nextbutton" verticalAlignment="middle" horizontalAlignment="center" class="btn  btn-primary nextButton margin-bottom"></Button>
+            <StackLayout verticalAlignment="bottom" height="60%">
+                <Image class="ribble-pic" src="res://ribble_pic" stretch="fill"></Image>
+            </StackLayout>
+        </GridLayout>
     </GridLayout>
 </GridLayout>

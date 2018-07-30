@@ -8,7 +8,8 @@ import { DashboardComponent } from "~/dashboard/dashboard.component";
 import { AccountComponent } from "~/account/account.component";
 import { StatisticsComponent } from "~/statistics/statistics.component";
 import { DashboardContentComponent } from "~/dashboard-content/dashboard-content.component";
-import { ApplyGoashaComponent } from "~/applyGoasha/applyGoasha.component";
+import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.component";
+import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 
 
 const routes: Routes = [
@@ -16,12 +17,14 @@ const routes: Routes = [
     { path: "getting-started", component: GettingStartedComponent },
     { path: "login", component: LoginComponent },
     { path: "signup", component: SignupComponent },
+    { path: "about-gosha",component:ApplyForGoshaENasheenComponent },
     {
         path: 'dashboard', component: DashboardComponent, children: [
             { path: '', component: DashboardContentComponent },
             { path: 'account', component: AccountComponent },
-            { path: 'applyGoasha', component: ApplyGoashaComponent },
+            { path: 'about-gosha', component:AboutGoshaComponent },
             { path: 'statistics', component: StatisticsComponent },
+            
         ]
     },
 ];

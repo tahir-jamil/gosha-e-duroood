@@ -1,7 +1,7 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { AppRoutingModule } from "./app.routing";
-import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "~/app.routing";
+import { AppComponent } from "~/app.component";
 import { LoginComponent } from "~/login/login.component";
 
 
@@ -11,19 +11,20 @@ import { LoginComponent } from "~/login/login.component";
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
 
-import { SignupComponent } from './signup/signup.component';
-import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
-import { NativeScriptUISideDrawerModule  } from "nativescript-ui-sidedrawer/angular";
-import { NativeScriptUIChartModule  } from "nativescript-ui-chart/angular";
-import { NativeScriptUIListViewModule  } from "nativescript-ui-listview/angular";
-import { GettingStartedComponent } from './getting-started/getting-started.component';
+import { SignupComponent } from '~/signup/signup.component';
+import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular/dataform-directives";
+import { NativeScriptUISideDrawerModule  } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
+import { NativeScriptUIChartModule  } from "nativescript-ui-chart/angular/chart-directives";
+import { NativeScriptUIListViewModule  } from "nativescript-ui-listview/angular/listview-directives";
+import { GettingStartedComponent } from '~/getting-started/getting-started.component';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AccountComponent } from './account/account.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { DashboardContentComponent } from './dashboard-content/dashboard-content.component';
-import { ApplyGoashaComponent } from './applyGoasha/applyGoasha.component';
+import { DashboardComponent } from '~/dashboard/dashboard.component';
+import { AccountComponent } from '~/account/account.component';
+import { StatisticsComponent } from '~/statistics/statistics.component';
+import { DashboardContentComponent } from '~/dashboard-content/dashboard-content.component';
 import { PagerModule } from "nativescript-pager/angular";
+import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.component";
+import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 
 @NgModule({
    bootstrap: [
@@ -47,7 +48,8 @@ import { PagerModule } from "nativescript-pager/angular";
       AccountComponent,
       StatisticsComponent,
       DashboardContentComponent,
-      ApplyGoashaComponent
+      ApplyForGoshaENasheenComponent,
+      AboutGoshaComponent
    ],
    providers: [],
    schemas: [

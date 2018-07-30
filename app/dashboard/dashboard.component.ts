@@ -1,8 +1,8 @@
 import { Component, ViewChild, OnInit, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { Page, isAndroid, isIOS } from "ui/page";
-import { ActionItem } from "ui/action-bar";
-import { Observable } from "data/observable";
-import { RadSideDrawerComponent, SideDrawerType } from "nativescript-ui-sidedrawer/angular";
+import { Page, isAndroid, isIOS } from "tns-core-modules/ui/page/page";
+import { ActionItem } from "tns-core-modules/ui/action-bar/action-bar";
+import { Observable } from "tns-core-modules/data/observable/observable";
+import { RadSideDrawerComponent, SideDrawerType } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { RouterExtensions } from "nativescript-angular/router";
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { SwissArmyKnife, IScreenHeight } from "nativescript-swiss-army-knife";
-import { topmost } from "ui/frame";
+import { topmost } from "tns-core-modules/ui/frame/frame";
 import { ScrollView } from 'tns-core-modules/ui/scroll-view/scroll-view';
 
 @Component({

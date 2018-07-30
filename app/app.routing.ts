@@ -17,18 +17,18 @@ const routes: Routes = [
     { path: "getting-started", component: GettingStartedComponent },
     { path: "login", component: LoginComponent },
     { path: "signup", component: SignupComponent },
-    { path: "about-gosha",component:ApplyForGoshaENasheenComponent },
     {
         path: 'dashboard', component: DashboardComponent, children: [
             { path: '', component: DashboardContentComponent },
             { path: 'account', component: AccountComponent },
             { path: 'about-gosha', component:AboutGoshaComponent },
+            { path: 'applyForGosha', component:ApplyForGoshaENasheenComponent },
             { path: 'statistics', component: StatisticsComponent },
             
         ]
     },
 ];
-
+ApplyForGoshaENasheenComponent
 @NgModule({
     imports: [NativeScriptRouterModule.forRoot(routes)],
     exports: [NativeScriptRouterModule]

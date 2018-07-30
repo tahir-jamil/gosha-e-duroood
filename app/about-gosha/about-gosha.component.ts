@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'app-about-gosha',
@@ -8,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutGoshaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: RouterExtensions) { }
 
   ngOnInit() {
   }
 
+  navigateTo(path) {
+    this.router.navigate([path], {
+      transition: {
+        name: 'fade',
+        curve: 'linear'
+      }
+    });
+  }
 }

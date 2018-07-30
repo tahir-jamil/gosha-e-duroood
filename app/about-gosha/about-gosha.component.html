@@ -1,5 +1,26 @@
-
-  <StackLayout row="0">
-    <label text="hellow world"></label>
-  </StackLayout>
+<GridLayout>
+    <ScrollView class="page">
+      <GridLayout margin="2%" rows="auto,auto,auto">
+        <StackLayout row="0">
+            <Image src="http://www.gosha-e-durood.com/js-slider/Minarat-us-Salam_750x.jpg"></Image>
+        </StackLayout>
+        <StackLayout row="1">
+          <label  textAlignment="center" margin="4%" textWrap="true" text="For the first time in history a full time institution has been setup where anybody can apply to sit for reciting Salat and Salam on the beloved Prophet Muhammad (SWS) a unique way to promote the love for the beloved and to increase spiritually.
+      
+      That blessed place will have people reciting Durood Sharif and reciting the Holy Qur'an non stop on daily basis, 24 hours a day, every week, every month and it will continue inshah allah forever. A group of 8 people will be sitting in the blessed area to take part in the unique spiritual retreat for at least 10 days or however they wish to. The 8 people will be replaced by another 8 people who will recite at night. The participants will be fasting and will stay in Wudu all the time. Food will be provided by Minhaj-ul-Quran. Monthly, over 50 million greetings and salutations will be presented to the beloved Prophet (sws) along with 30 Qur'ans.
+      
+      The official opening ceremony of Gosha-e-Durood was held at the hands of Shaykh-ul-Islam on 3rd December 2005 after monthly spiritual programme, shab e bedari, at Jamy e Masjid Minhaj ul Quran.
+      
+      Gosha-e-Durood was launched at the headquarters of Minhaj-ul-Quran International on 1st December. The office of Shaykh-ul-Islam at the headquarters temporarily serving the purpose. The aim of the Gosha-e-Durood is to send blessings to the Holy Prophet SAW continually 24/7/365.
+      
+      The first group consists of 18 persons arrived at the headquarters on 30th September. Next day, people began sending greetings and salutations on the Holy Prophet (SAW) collectively.
+      
+      We Appeal to all members of Minhaj ul Quran International to recite salutations on the Holy Prophet (SAW) at least 100 times a day. Thus the total number of greetings and salutations would amount to 50 million every month."></label>
+        </StackLayout>
+        <StackLayout row="2">
+          <Button text="Sign Up" (tap)="navigateTo('dashboard/applyForGosha')" class="btn btn-outline  btn-rounded-lg uppercase b-r-10  width-90 height-70 signup"></Button>
+        </StackLayout>
+      </GridLayout>
+    </ScrollView>
+  </GridLayout>
 

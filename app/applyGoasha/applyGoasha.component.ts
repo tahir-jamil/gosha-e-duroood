@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Goshaenasheen } from "~/data-services/user";
 import { Page } from 'tns-core-modules/ui/page/page';
-
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'app-applyGoasha',
@@ -11,7 +11,8 @@ import { Page } from 'tns-core-modules/ui/page/page';
 })
 export class ApplyForGoshaENasheenComponent implements OnInit {
   private _user: Goshaenasheen;
-  constructor(private _page: Page) {
+  
+  constructor(private routerExtensions: RouterExtensions ,private _page: Page) {
   }
 
   ngOnInit() {
@@ -22,5 +23,12 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
   }
   options_edu=["Post Graduation", "Under Graduation ","Graduation", "Matriculation","Diploma" ];
   options_ashra=["first","Second","Third" ];
-
+  navigateTo(path) {
+    this.routerExtensions.navigate([path], {
+      transition: {
+        name: "fade",
+        curve: "linear"
+      }
+    });
+  }
 }

@@ -24,8 +24,8 @@ export class LoginComponent implements OnInit {
     console.log("the use is "+this.user.email);
   }
 
-  navigateTo() {
-    this.routerExtensions.navigate(['./signup'], {
+  navigateTo(path) {
+    this.routerExtensions.navigate([path], {
       transition: {
         name: "fade",
         curve: "linear"

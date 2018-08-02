@@ -1,15 +1,17 @@
-<GridLayout class="page padding-12" height="120%">
+<GridLayout  opacity="0.6" class="bs" backgroundImage="res://abcd">
+</GridLayout>
+<GridLayout class=" padding-12" height="120%">
     <GridLayout height="100%" verticalAlignment="middle">
-        <Image src="res://icon" verticalAlignment="top" width="140dp" height="140dp"></Image>
+        <Image src="res://gedlogo" verticalAlignment="top" width="150dp" height="150dp"></Image>
         <GridLayout rows="auto,auto,auto,auto" verticalAlignment="middle">
             <StackLayout row="0" class="p-b-10 form">
                 <TextField hint="Email" [text]="user.email" class="input input-rounded"></TextField>
                 <TextField hint="Password" [text]="user.password" class="input input-rounded m-t-10"></TextField>
             </StackLayout>
-            <Button text="Sign In" row="1" (tap)="login()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+            <Button text="Sign In" row="1" (tap)="navigateTo('/dashboard')" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
         </GridLayout>
 
-        <Label verticalAlignment="bottom" (tap)="navigateTo('')" class="text-center">
+        <Label verticalAlignment="bottom" (tap)="navigateTo('/signup')" class="text-center">
             <FormattedString>
                 <Span text="Don't have an account? " class="f-s-14"></Span>
                 <Span text="SignUp " class="f-s-12 undeline text-primary"></Span>

@@ -22,9 +22,9 @@
 
 /* circle */
 .circle {
-    width: 20%;
-    height: 11%;
-    background-color: yellow;
+    width: 23%;
+    height: 12%;
+    background-color: gray;
     border-radius: 100%;
     vertical-align: middle;
 }
@@ -32,6 +32,7 @@
 .circle-text {
     font-size: 13dp;
     text-align: center;
+
 }
 
 

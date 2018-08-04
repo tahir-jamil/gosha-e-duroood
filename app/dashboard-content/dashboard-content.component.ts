@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Page } from 'tns-core-modules/ui/page/page';
+import { Page, isIOS, Color } from 'tns-core-modules/ui/page/page';
 
 @Component({
   selector: 'app-dashboard-content',
@@ -16,6 +16,14 @@ export class DashboardContentComponent implements OnInit {
   }
 
   dataItems =['1','2','3','4','5','6','7','8','9'];
-
+  
+  onItemLoading(args) {
+    console.log("onItemLoading");
+    if (isIOS) {
+      console.log(args.ios);
+      var newcolor = new Color("transparent");
+      args.ios.backgroundView.backgroundColor = newcolor.ios;
+    }
+  }
 
 }

@@ -7,6 +7,21 @@
     font-size: 13dp;
 }
 
+.total-count {
+    margin-top: 20%;
+    padding-top: 20%;
+}
+
+.totalCountText {
+    font-size: 32dp;
+    padding-top: 5%;
+}
+
+.header-count {
+    /* color: #eeeeee; */
+    font-size: 16dp;
+}
+
 .button-durood {
     width: 30%;
     height: 40%;
@@ -25,7 +40,7 @@
 }
 
 .min-margin {
-    margin-bottom: 10%;
+    margin-bottom: 30%;
 }
 /* listview */
 .listview {
@@ -63,5 +78,13 @@
     text-align: right;
     font-size: 12dp;
     padding-right: 10%;
+}
+
+.submitDurood {
+    width: 13.5%;
+    height: 8.5%;
+    background-color: rgba(45, 86, 202,0.95);
+    border-radius: 100%;
+    margin: 0% 5% 5% 0%;
 }
 

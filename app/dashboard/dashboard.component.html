@@ -4,14 +4,7 @@
   </ActionItem>
   <NavigationButton visibility="collapsed" icon="res://ic_arrow_back_black_24dp" (tap)="goBack()"></NavigationButton>
 </ActionBar>
-<ActionBar *ngIf="isAndroid" >
-  <GridLayout>
-    <StackLayout  horizontalAlignment="left">
-        <Label  class="md-icon f-s-25 padding-icon color-menu" (tap)="openDrawer()" text="&#xe5d2;" ></Label>
-    </StackLayout>
-    <Label [text]="title"  verticalAlignment="middle"  horizontalAlignment="center" class="text-center titleAndroid h4" textWrap="true"></Label>
-  </GridLayout>
-</ActionBar>
+
 <GridLayout>
   <RadSideDrawer tkExampleTitle tkToggleNavButton drawerTransition="SlideAlongTransition">
     <GridLayout rows="auto" tkDrawerContent class="sideStackLayout">

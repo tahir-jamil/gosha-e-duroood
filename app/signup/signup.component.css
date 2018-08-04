@@ -1,6 +1,6 @@
 
 
-.header{
+/* .header{
   width: 100%;
   height: 65;
   text-align: center;
@@ -27,4 +27,8 @@
 .margin-bottom {
     margin-bottom: 25%;
 }
+ */
 
+.alignForm {
+    padding:  10% 12% 10% 12%;
+}

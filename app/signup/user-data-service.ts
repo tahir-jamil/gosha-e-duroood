@@ -1,15 +1,8 @@
 export class RemoteUser {
 
-    public username: string;
-    public name: string;
+    public firstName: string;
+    public lastName: string;
     public email: string;
-    public password: string;
-    public education: string;
-    public dateOfBirth: string;
-    public fatherName: string;
-    public profession: string;
-    public nic: string;
-    public postalAddress: string;
     public city: string;
     public district: string;
     public country: string;
@@ -19,24 +12,18 @@ export class RemoteUser {
     public holyQuran: boolean;
 
 
-    constructor(username: string, name: string, email: string, password: string, education: string, dateOfBirth: string, fatherName: string, profession: string, nic: string, postalAddress: string, city: string, district: string, country: string, phoneRes: number, phoneOff: number, phoneCell: number, holyQuran: boolean, ) {
-        this.username = username;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.education = education;
-        this.dateOfBirth = dateOfBirth;
-        this.fatherName = dateOfBirth;
-        this.profession = profession;
-        this.nic = nic;
-        this.postalAddress = postalAddress;
-        this.city = city;
-        this.district = district;
-        this.country = country;
-        this.phoneRes = phoneRes;
-        this.phoneOff = phoneOff;
-        this.phoneCell = phoneCell;
-        this.holyQuran = holyQuran;
+
+    constructor(firstName: string,lastName: string,email: string,city: string,district: string,country: string,phoneRes: number,phoneOff: number,phoneCell: number, holyQuran: boolean) {
+        firstName = firstName; 
+        lastName = lastName;
+        email = email;
+        city = city;
+        district = district;
+        country = country;
+        phoneRes = phoneRes;
+        phoneOff = phoneOff;
+        phoneCell = phoneCell;
+        holyQuran = holyQuran;
     }
     // personal information
     // username,name,email,password,dob,fathername

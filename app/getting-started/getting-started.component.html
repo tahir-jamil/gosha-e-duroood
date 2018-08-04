@@ -1,17 +1,20 @@
-<GridLayout rows="*" columns="*" class="page page-margin">
-  <GridLayout height="90%">
-    <Label  text="Apply For Gosha E darood"  (tap)="navigateTo('/dashboard/about-gosha')"  class="circle circle-text animate-one" textWrap="true"></Label>
-    <Label text="label 3"   (tap)="navigateTo('/about-gosha')" class="circle circle-text animate-three" textWrap="true"></Label>
-    <Label text="label 4"   (tap)="navigateTo('/about-gosha')" class="circle circle-text animate-four" textWrap="true"></Label>
-    <Label text="Wazaif O Azkar"  (tap)="navigateTo('/about-gosha')"  class="circle circle-text animate-two" textWrap="true"></Label>
-  </GridLayout>
+<GridLayout class="page">
+  <GridLayout rows="*" columns="*" class="page-margin">
+    <GridLayout height="90%">
+      <Label text="Apply For Gosha E darood" (tap)="navigateTo('/dashboard/about-gosha')" class="circle circle-text animate-one"
+        textWrap="true"></Label>
+      <Label text="label 3" (tap)="navigateTo('/about-gosha')" class="circle circle-text animate-three" textWrap="true"></Label>
+      <Label text="label 4" (tap)="navigateTo('/about-gosha')" class="circle circle-text animate-four" textWrap="true"></Label>
+      <Label text="Wazaif O Azkar" (tap)="navigateTo('/about-gosha')" class="circle circle-text animate-two" textWrap="true"></Label>
+    </GridLayout>
 
-  <GridLayout columns="*,*" height="10%" verticalAlignment="bottom">
-    <StackLayout>
-      <Button text="Sign In" (tap)="navigateTo('/login')" class="btn  btn-primary btn-rounded-lg uppercase b-r-10  width-90 height-70 signin"></Button>
-    </StackLayout>
-    <StackLayout col="1">
-      <Button text="Sign Up" (tap)="navigateTo('/signup')" class="btn btn-outline  btn-rounded-lg uppercase b-r-10  width-90 height-70 signup"></Button>
-    </StackLayout>
+    <GridLayout columns="*,*" height="10%" verticalAlignment="bottom">
+      <StackLayout>
+        <Button text="Sign In" (tap)="navigateTo('/login')" class="btn  btn-primary btn-rounded-lg uppercase b-r-10  width-90 height-70 signin"></Button>
+      </StackLayout>
+      <StackLayout col="1">
+        <Button text="Sign Up" (tap)="navigateTo('/signup')" class="btn btn-outline  btn-rounded-lg uppercase b-r-10  width-90 height-70 signup"></Button>
+      </StackLayout>
+    </GridLayout>
   </GridLayout>
 </GridLayout>

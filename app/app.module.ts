@@ -25,6 +25,7 @@ import { DashboardContentComponent } from '~/dashboard-content/dashboard-content
 import { PagerModule } from "nativescript-pager/angular";
 import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.component";
 import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
+import { SubmitDuroodComponent } from './submitDurood/submitDurood.component';
 
 @NgModule({
    bootstrap: [
@@ -49,7 +50,8 @@ import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
       StatisticsComponent,
       DashboardContentComponent,
       ApplyForGoshaENasheenComponent,
-      AboutGoshaComponent
+      AboutGoshaComponent,
+      SubmitDuroodComponent
    ],
    providers: [],
    schemas: [

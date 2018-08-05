@@ -4,6 +4,9 @@ import { Page } from 'tns-core-modules/ui/page/page';
 import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
 import { BehaviorSubject } from 'rxjs';
 
+import * as geolocation from "nativescript-geolocation";
+import { Accuracy } from "ui/enums"; // used to describe at what accuracy the location should be get
+import { Console } from '@angular/core/src/console';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -17,8 +20,10 @@ export class SignupComponent implements OnInit {
   titleName: string = "Personal Information";
   @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
 
+  currentLocation;
   ngOnInit(): void {
-    // this._user = new RemoteUser("", "", "", "", "", "", null, null, null, false);
+    geolocation.enableLocationRequest();
+    this.currentLocation = geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.high, maximumAge: 5000, timeout: 20000 })
   }
   
   signUPUser = {
@@ -34,6 +39,7 @@ export class SignupComponent implements OnInit {
     holyQuran: "",
   };
 
+
   // options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
 
   onPropertyCommitted() {
@@ -45,18 +51,12 @@ export class SignupComponent implements OnInit {
   submit() {
     console.log("submit form");
     console.dir(this.myCommitDataFormComp.dataForm.editedObject);
+    console.log(this.currentLocation);
+    
   }
 
-  // numItems;
-  // currentPagerIndex = 0;
-  // latestReceivedIndex = 0;
-  // items: any;
+ 
 
-  // @ViewChild('pager') pager: any;
-  // // tslint:disable-next-line:semicolon
-  // public templateSelector = (item: any, index: number, items: any) => {
-  //   return index % 2 === 0 ? 'even' : 'odd';
-  // }
 
   constructor(private _page: Page) {
     //   this.items = new BehaviorSubject([

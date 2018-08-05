@@ -1,18 +1,25 @@
 <GridLayout class="page">
-    <GridLayout height="35%" verticalAlignment="top" >
+    <GridLayout height="35%" class="gradient" verticalAlignment="top">
         <GridLayout height="50%" verticalAlignment="top" class="total-count" horizontalAlignment="center" width="80%">
             <StackLayout>
-                <Label text="Total Counts" horizontalAlignment="center"  class="header-count" textWrap="true"></Label>
-                <Label text="520003000" horizontalAlignment="center" class="totalCountText" textWrap="true"></Label>
+                <Label text="Total Counts" horizontalAlignment="center" class="sec-font header-count" textWrap="true"></Label>
+                <Label text="520003000" horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
             </StackLayout>
+        </GridLayout>
+
+        <GridLayout rows="auto" columns="auto" class="notification" [ngClass]="{'notication-animation' : loaded == true , 'notication-animation-close' : loaded == false}" verticalAlignment="top" horizontalAlignment="right">
+            <Label text="pending" class="color-white font-size-12" textWrap="true"></Label>
         </GridLayout>
     </GridLayout>
     <GridLayout height="65%" verticalAlignment="bottom">
-        <GridLayout tkExampleTitle tkToggleNavButton>
-            <RadListView   #myRadListView   (itemLoading)="onItemLoading($event)"  [items]="dataItems" class="listview page">
+        <GridLayout rows="auto,*" tkExampleTitle tkToggleNavButton>
+            <GridLayout backgroundColor="#eeeeee"  (tap)="working()" class="header-list main-font">
+                <Label text="Remote User" class="muted-color font-size-13"></Label>
+            </GridLayout>
+
+            <RadListView row="1" #myRadListView (itemLoading)="onItemLoading($event)" [items]="dataItems" class="listview page">
                 <ng-template tkListItemTemplate let-item="item">
-                    <GridLayout columns="auto,auto,*" class="list-item-padding">
-                        <Label text="1)" class="srNo" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+                    <GridLayout columns="auto,auto,*" class="list-item-padding main-font">
                         <Label text="100" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
                         <StackLayout col="2" horizontalAlignment="right" verticalAlignment="middle">
                             <Label text="2/02/2014" class="date" textWrap="true"></Label>
@@ -23,11 +30,15 @@
             </RadListView>
         </GridLayout>
     </GridLayout>
-    <GridLayout class="tabs min-margin tab-color">
+    <!-- <GridLayout class="tabs min-margin tab-color">
         <Label text="Remote User" class="remoteUser" horizontalAlignment="center" verticalAlignment="middle" textWrap="true"></Label>
-    </GridLayout>
+    </GridLayout> -->
 
-    <GridLayout class="submitDurood" verticalAlignment="bottom" horizontalAlignment="right">
-        
+    <GridLayout class="submitDurood" (tap)="onTap($event)" [ngClass]="{'icon-animation' : isTapped }" verticalAlignment="bottom"
+        horizontalAlignment="right">
+        <Label text="&#xe145;" class="md-icon f-23 text-center color-white " horizontalAlignment="center" textWrap="true"></Label>
     </GridLayout>
 </GridLayout>
+
+
+<!-- last time druood recitation -->

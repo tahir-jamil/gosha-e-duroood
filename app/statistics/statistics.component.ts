@@ -7,7 +7,7 @@ import { ScrollView } from 'tns-core-modules/ui/scroll-view/scroll-view';
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.css'],
+  styleUrls: ['./statistics.css'],
   moduleId: module.id
 })
 export class StatisticsComponent implements OnInit, AfterViewInit {

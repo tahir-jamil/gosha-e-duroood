@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Page, isIOS, Color } from 'tns-core-modules/ui/page/page';
+import { GestureEventData } from 'tns-core-modules/ui/gestures/gestures';
+import { Console } from '@angular/core/src/console';
 
 @Component({
   selector: 'app-dashboard-content',
   templateUrl: './dashboard-content.component.html',
-  styleUrls: ['./dashboard-content.component.css'],
+  styleUrls: ['./dashboard-content.css'],
   moduleId:module.id
 })
 export class DashboardContentComponent implements OnInit {
+  
+  isTapped: boolean = false;
+  notificationState:boolean = false;
 
   constructor(private _page: Page) { }
 
@@ -26,4 +31,20 @@ export class DashboardContentComponent implements OnInit {
     }
   }
 
+  onTap(event: GestureEventData) {
+    
+    setTimeout(() => {
+      this.isTapped = true;
+    }, 10);
+    this.isTapped = false;
+  }
+  
+  get loaded() {
+    return this.notificationState;
+  }
+  
+  working() {
+    console.log("working");
+    this.notificationState = !this.notificationState;
+  }
 }

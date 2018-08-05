@@ -1,0 +1,32 @@
+
+
+// @import '~nativescript-theme-core/css/core.light.css';
+
+// Import the theme
+@import '~nativescript-theme-core/scss/light';
+// Customize any of the theme’s variables here
+// Import the theme’s main ruleset.
+// @import '~nativescript-theme-core/scss/index';
+
+// your theme
+// @import 'theme/sass/index';
+
+
+@import './theme/theme.scss';
+.md-icon {
+    font-family: "Material Icons", "MaterialIcons-Regular","materialicons";
+}
+
+
+.main-font {
+    font-family:'Roboto'; 
+}
+
+.sec-font {
+    font-family: "DINPro, DIN Pro"; 
+}
+
+
+.font-size-12 {
+    font-size: 12dp;
+}

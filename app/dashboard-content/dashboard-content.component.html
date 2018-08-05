@@ -7,8 +7,8 @@
             </StackLayout>
         </GridLayout>
 
-        <GridLayout rows="auto" columns="auto" class="notification" [ngClass]="{'notication-animation' : loaded == true , 'notication-animation-close' : loaded == false}" verticalAlignment="top" horizontalAlignment="right">
-            <Label text="pending" class="color-white font-size-12" textWrap="true"></Label>
+        <GridLayout rows="auto" columns="auto" class="notification" [visibility]="loaded == true ? 'visible' : 'collapsed'" [ngClass]="{'notication-animation' : loaded == true , 'notication-animation-close' : loaded == false}" verticalAlignment="top" horizontalAlignment="right">
+            <Label text="pending" class="color-white font-size-10" textWrap="true"></Label>
         </GridLayout>
     </GridLayout>
     <GridLayout height="65%" verticalAlignment="bottom">

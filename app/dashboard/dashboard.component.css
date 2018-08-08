@@ -61,3 +61,27 @@ font-size: 25dp;
     font-size: 18dp;
     font-weight: 400;
 }
+.margin{
+    margin-top : 3%;
+    margin-bottom: 3%;
+    font-size: 14;
+    margin-left: 4%;
+}
+.border{
+    
+    border-bottom-width: 1dp;
+    border-bottom-color: #a19c9c;
+    padding-bottom: 14dp;
+    padding-top: 14dp;
+    padding-left: 18dp;
+    font-size: 14;
+   
+}
+
+.icon-size {
+    font-size: 23dp;
+}
+.margintext{
+    margin-top: 5%;
+    margin-left:3%
+}

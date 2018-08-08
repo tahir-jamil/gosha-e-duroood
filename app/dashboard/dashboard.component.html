@@ -5,26 +5,46 @@
   <NavigationButton visibility="collapsed" icon="res://ic_arrow_back_black_24dp" (tap)="goBack()"></NavigationButton>
 </ActionBar>
 
-
-<ActionBar *ngIf="isAndroid" >
-    <GridLayout>
-      <StackLayout  horizontalAlignment="left">
-          <Label  class="md-icon f-s-25 padding-icon color-menu" (tap)="openDrawer()" text="&#xe5d2;" ></Label>
-      </StackLayout>
-      <Label [text]="title"  verticalAlignment="middle"  horizontalAlignment="center" class="text-center titleAndroid h4" textWrap="true"></Label>
-    </GridLayout>
-  </ActionBar>
-
+<ActionBar *ngIf="isAndroid">
+  <GridLayout>
+    <StackLayout horizontalAlignment="left">
+      <Label class="md-icon f-s-25 padding-icon color-menu" (tap)="openDrawer()" text="&#xe5d2;"></Label>
+    </StackLayout>
+    <Label [text]="title" verticalAlignment="middle" horizontalAlignment="center" class="text-center titleAndroid h4" textWrap="true"></Label>
+  </GridLayout>
+</ActionBar>
 <GridLayout>
   <RadSideDrawer tkExampleTitle tkToggleNavButton drawerTransition="SlideAlongTransition">
-    <GridLayout rows="auto" tkDrawerContent class="sideStackLayout">
-      <StackLayout row="0" class="sideStackLayout">
-        <Label text="Dashboard" class="sideLabel sideLightGrayLabel" (tap)="routeTo('/dashboard','Dashboard')"></Label>
-        <Label text="Account" class="sideLabel" (tap)="routeTo('/dashboard/account','Account')"></Label>
-        <Label text="Statistics" class="sideLabel" (tap)="routeTo('/dashboard/statistics','Statistics')"></Label>
-        <Label text="Apply for Goasha E Nasheen" class="sideLabel" (tap)="routeTo('/dashboard/about-gosha','Goasha E Nasheen')"></Label>
-        <Label text="logout" class="sideLabel logout text-center vertical-middle" (tap)="routeTo('/getting-started')"></Label>
-      </StackLayout>
+    <GridLayout tkDrawerContent>
+      <GridLayout padding="10%" rows="*,auto" verticalAlignment="top" height="30%" backgroundColor="#2c8c9d">
+        <Image class="margin" row="0" horizontalAlignment="left" src="https://play.nativescript.org/dist/assets/img/NativeScript_logo.png"></Image>
+        <StackLayout row="1">
+          <Label fontSize="13" class="margin" text="Muhammad Tahir Awais"> </Label>
+          <Label class="margin" fontSize="10" text="tahirawais113@yahoo.com"></Label>
+        </StackLayout>
+      </GridLayout>
+      <GridLayout paddingtop="5%" paddingbottom="5%" rows="auto,auto,auto,auto,auto" verticalAlignment="bottom" height="70%" backgroundColor="#e1efe7">
+        <GridLayout row="0" columns="auto,*" class=" border">
+          <Label text=" &#xe871;" color="#006600" class="icon-size md-icon"></Label>
+          <Label class="margintext" text="Dashboard" col="1" (tap)="routeTo('/dashboard','Dashboard')"></Label>
+        </GridLayout>
+        <GridLayout row="1" columns="auto,*" class=" border">
+          <Label text=" &#xe853;" color="#006600" class="icon-size md-icon"></Label>
+          <Label class="margintext" text="Account" col="1" (tap)="routeTo('/dashboard/account','Account')"></Label>
+        </GridLayout>
+        <GridLayout row="2" columns="auto,*" class=" border">
+          <Label text=" &#xe6c4;" color="#006600" class="icon-size md-icon"></Label>
+          <Label class="margintext" text="Statistics" col="1" (tap)="routeTo('/dashboard/statistics','Statistics')"></Label>
+        </GridLayout>
+        <GridLayout row="3" columns="auto,*" class=" border">
+          <Label text=" &#xe913;" color="#006600" class="icon-size md-icon"></Label>
+          <Label class="margintext" text="Apply for Gosha E darood" col="1" (tap)="routeTo('/dashboard/about-gosha','Goasha E Nasheen')"></Label>
+        </GridLayout>
+        <GridLayout row="4" columns="auto,*" class=" border">
+          <Label text=" &#xe860;" color="#006600" class="icon-size md-icon"></Label>
+          <Label class="margintext" text="Logout" col="1" (tap)="routeTo('/getting-started')"></Label>
+        </GridLayout>
+      </GridLayout>
     </GridLayout>
     <page-router-outlet tkMainContent></page-router-outlet>
   </RadSideDrawer>

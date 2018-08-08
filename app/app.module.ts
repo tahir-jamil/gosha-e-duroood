@@ -17,7 +17,6 @@ import { NativeScriptUISideDrawerModule  } from "nativescript-ui-sidedrawer/angu
 import { NativeScriptUIChartModule  } from "nativescript-ui-chart/angular/chart-directives";
 import { NativeScriptUIListViewModule  } from "nativescript-ui-listview/angular/listview-directives";
 import { GettingStartedComponent } from '~/getting-started/getting-started.component';
-
 import { DashboardComponent } from '~/dashboard/dashboard.component';
 import { AccountComponent } from '~/account/account.component';
 import { StatisticsComponent } from '~/statistics/statistics.component';

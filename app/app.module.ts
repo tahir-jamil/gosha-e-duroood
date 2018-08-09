@@ -18,13 +18,13 @@ import { NativeScriptUIChartModule  } from "nativescript-ui-chart/angular/chart-
 import { NativeScriptUIListViewModule  } from "nativescript-ui-listview/angular/listview-directives";
 import { GettingStartedComponent } from '~/getting-started/getting-started.component';
 import { DashboardComponent } from '~/dashboard/dashboard.component';
-import { AccountComponent } from '~/account/account.component';
 import { StatisticsComponent } from '~/statistics/statistics.component';
 import { DashboardContentComponent } from '~/dashboard-content/dashboard-content.component';
 import { PagerModule } from "nativescript-pager/angular";
 import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.component";
 import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 import { SubmitDuroodComponent } from './submitDurood/submitDurood.component';
+import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
 
 @NgModule({
    bootstrap: [
@@ -45,12 +45,12 @@ import { SubmitDuroodComponent } from './submitDurood/submitDurood.component';
       SignupComponent,
       GettingStartedComponent,
       DashboardComponent,
-      AccountComponent,
       StatisticsComponent,
       DashboardContentComponent,
       ApplyForGoshaENasheenComponent,
       AboutGoshaComponent,
-      SubmitDuroodComponent
+      SubmitDuroodComponent,
+      CounterdaroodComponent,
    ],
    providers: [],
    schemas: [

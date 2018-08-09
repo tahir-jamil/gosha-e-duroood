@@ -1,21 +1,19 @@
 export class BasicUser {
-
+    public name: string;
+    public fatherName: string;
+    public city: string;
+    public postalAddress: string;
     public district: string;
     public country: string;
+    public profession: string;
+    public education: string;
     public phoneRes: number;
     public phoneOff: number;
     public phoneCell: number;
-    public holyQuran: boolean;
-    public name: string;
     public email: string;
-    public education: string;
-    public dateOfBirth: string;
-    public fatherName: string;
-    public profession: string;
     public nic: string;
-    public postalAddress: string;
-    public city: string;
-
+    public dateOfBirth: string;
+    public holyQuran: boolean;
     constructor(district: string, country: string, phoneRes: number, phoneOff: number, phoneCell: number, holyQuran: boolean, name: string, email: string, education: string, dateOfBirth: string, fatherName: string, profession: string, nic: string, postalAddress: string, city: string ) {
      
         this.district = district;
@@ -36,8 +34,6 @@ export class BasicUser {
         this.city = city;
     }
 }
-
-
 
 export class Goshaenasheen extends BasicUser {
     public union_council: string;

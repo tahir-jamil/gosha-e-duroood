@@ -4,26 +4,27 @@
     </ActionItem>
 </ActionBar>
 <GridLayout class="page alignForm"  >
-    <RadDataForm backgroundColor="transparent" #myCommitDataForm tkExampleTitle tkToggleNavButton [source]="signUPUser"  (propertyCommitted)="onPropertyCommitted()" commitMode="OnLostFocus" >
-        <TKEntityProperty tkDataFormProperty index="0" name="firstName" displayName="First Name">
+     <RadDataForm backgroundColor="transparent" #myCommitDataForm tkExampleTitle tkToggleNavButton [source]="signUPUser"  (propertyCommitted)="onPropertyCommitted()" commitMode="OnLostFocus" >
+        <TKEntityProperty tkDataFormProperty index="0" name="firstName" displayName="First Name"  >
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="1" name="lastName" displayName="Last Name">
+        <TKEntityProperty tkDataFormProperty index="1" name="lastName" displayName="Last Name" >
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="2" name="email" displayName="Email ">
+        <TKEntityProperty tkDataFormProperty index="2" name="email" displayName="Email " >
             <TKPropertyEditor tkEntityPropertyEditor type="Email"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="3" name="city" displayName="City">
+        <TKEntityProperty tkDataFormProperty index="3" name="city" displayName="City" >
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
         <TKEntityProperty tkDataFormProperty index="4" name="district" displayName="District" [valuesProvider]="options_edu">
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="5" name="country" displayName="Country">
+        <TKEntityProperty tkDataFormProperty index="5" name="country" displayName="Country" >
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="6" name="phoneRes" displayName="Phone Residence">
+        
+        <!-- <TKEntityProperty tkDataFormProperty index="6" name="phoneRes" displayName="Phone Residence">
             <TKPropertyEditor tkEntityPropertyEditor type="Phone"></TKPropertyEditor>
         </TKEntityProperty>
         <TKEntityProperty tkDataFormProperty index="7" name="phoneOff" displayName="Phone Office">
@@ -31,11 +32,11 @@
         </TKEntityProperty>
         <TKEntityProperty tkDataFormProperty index="8" name="phoneCell" displayName="Personal Number">
             <TKPropertyEditor tkEntityPropertyEditor type="Phone"></TKPropertyEditor>
-        </TKEntityProperty>
+        </TKEntityProperty>  -->
         <TKEntityProperty tkDataFormProperty index="9" name="holyQuran" displayName="Read Holy Quran">
             <TKPropertyEditor tkEntityPropertyEditor type="Switch"></TKPropertyEditor>
         </TKEntityProperty>
-    </RadDataForm>
+    </RadDataForm> 
 </GridLayout>
 <!-- <GridLayout rows="auto,*" class="page">
 

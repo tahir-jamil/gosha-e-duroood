@@ -33,10 +33,10 @@ export class SignupComponent implements OnInit {
     city: "",
     district: "",
     country: "",
-    phoneRes: "",
-    phoneOff: "",
-    phoneCell: "",
-    holyQuran: "",
+    phoneRes: 0,
+    phoneOff: 0,
+    phoneCell: 0,
+    holyQuran: true,
   };
 
 

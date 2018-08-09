@@ -5,11 +5,11 @@ import { LoginComponent } from "~/login/login.component";
 import { SignupComponent } from "~/signup/signup.component";
 import { GettingStartedComponent } from "~/getting-started/getting-started.component";
 import { DashboardComponent } from "~/dashboard/dashboard.component";
-import { AccountComponent } from "~/account/account.component";
 import { StatisticsComponent } from "~/statistics/statistics.component";
 import { DashboardContentComponent } from "~/dashboard-content/dashboard-content.component";
 import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.component";
 import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
+import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
 
 
 const routes: Routes = [
@@ -20,10 +20,10 @@ const routes: Routes = [
     {
         path: 'dashboard', component: DashboardComponent, children: [
             { path: '', component: DashboardContentComponent },
-            { path: 'account', component: AccountComponent },
             { path: 'about-gosha', component:AboutGoshaComponent },
             { path: 'applyForGosha', component:ApplyForGoshaENasheenComponent },
             { path: 'statistics', component: StatisticsComponent },
+            { path: 'counterdarood', component: CounterdaroodComponent},
             
         ]
     },

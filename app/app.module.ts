@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { YoutubePlayerModule } from 'nativescript-youtubeplayer/angular';
 import { AppRoutingModule } from "~/app.routing";
 import { AppComponent } from "~/app.component";
 import { LoginComponent } from "~/login/login.component";
@@ -25,6 +26,8 @@ import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.compon
 import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 import { SubmitDuroodComponent } from './submitDurood/submitDurood.component';
 import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
+import { DropDownModule } from "nativescript-drop-down/angular";
+
 
 @NgModule({
    bootstrap: [
@@ -37,7 +40,9 @@ import { CounterdaroodComponent } from './counterdarood/counterdarood.component'
       NativeScriptUISideDrawerModule,
       NativeScriptUIListViewModule,
       NativeScriptUIChartModule,
-      PagerModule
+      PagerModule,
+      YoutubePlayerModule,
+      DropDownModule,
    ],
    declarations: [
       AppComponent,
@@ -51,6 +56,7 @@ import { CounterdaroodComponent } from './counterdarood/counterdarood.component'
       AboutGoshaComponent,
       SubmitDuroodComponent,
       CounterdaroodComponent,
+    
    ],
    providers: [],
    schemas: [

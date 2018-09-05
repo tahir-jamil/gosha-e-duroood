@@ -27,20 +27,29 @@ export class SignupComponent implements OnInit {
   }
   
   signUPUser = {
-    firstName: "",
-    lastName: "",
+    name: "",
+    username: "",
     email: "",
+    Password:"",
     city: "",
     district: "",
     country: "",
     phoneRes: 0,
     phoneOff: 0,
     phoneCell: 0,
-    holyQuran: true,
+    holyQuran: true,  
+    education: "",
+    dateOfBirth:"",
+    fatherName: "",
+    profession: "", 
+    nic:"",
+    postalAddress: "",
+               
+ 
   };
 
 
-  // options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
+  options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
 
   onPropertyCommitted() {
     if (this.myCommitDataFormComp.dataForm.editedObject) {

@@ -1,74 +1,60 @@
 <ActionBar title="Sign  UP" icon="" class="action-bar">
-    <ActionItem (tap)="submit()">
-      <Button class="" text="Submit" class="action-item"></Button>
-    </ActionItem>
 </ActionBar>
-<GridLayout class="page alignForm"  >
-     <RadDataForm backgroundColor="transparent" #myCommitDataForm tkExampleTitle tkToggleNavButton [source]="signUPUser"  (propertyCommitted)="onPropertyCommitted()" commitMode="OnLostFocus" >
-        <TKEntityProperty tkDataFormProperty index="0" name="firstName" displayName="First Name"  >
+<GridLayout>
+<GridLayout marginBottom="10%">
+    <RadDataForm tkExampleTitle tkToggleNavButton [source]="signUPUser">
+        <TKEntityProperty tkDataFormProperty name="name" displayName="Name" index="0">
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="1" name="lastName" displayName="Last Name" >
+        <TKEntityProperty tkDataFormProperty name="fatherName" displayName="Father's name" index="1">
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="2" name="email" displayName="Email " >
+        <TKEntityProperty tkDataFormProperty name="nic" displayName="Enter your National Identity Card Number " index="2">
+            <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="dateOfBirth" displayName="select your Date of Birth " index="3">
+            <TKPropertyEditor tkEntityPropertyEditor type="DatePicker"></TKPropertyEditor>
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="username" displayName="chose your Username" index="4">
+            <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="email" displayName="Enter your E-mail  ID " index="5">
             <TKPropertyEditor tkEntityPropertyEditor type="Email"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="3" name="city" displayName="City" >
+        <TKEntityProperty tkDataFormProperty name="Password" displayName="Chose Your Password" index="6">
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="4" name="district" displayName="District" [valuesProvider]="options_edu">
+        <TKEntityProperty tkDataFormProperty name="city" displayName="City" index="7">
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="5" name="country" displayName="Country" >
+        <TKEntityProperty tkDataFormProperty name="district" displayName="District " index="8">
             <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        
-        <!-- <TKEntityProperty tkDataFormProperty index="6" name="phoneRes" displayName="Phone Residence">
-            <TKPropertyEditor tkEntityPropertyEditor type="Phone"></TKPropertyEditor>
+        <TKEntityProperty tkDataFormProperty name="country" displayName="Country" index="9">
+            <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="7" name="phoneOff" displayName="Phone Office">
-            <TKPropertyEditor tkEntityPropertyEditor type="Phone"></TKPropertyEditor>
+        <TKEntityProperty tkDataFormProperty name="phoneCell" displayName="Cell Number" index="10">
+            <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
         </TKEntityProperty>
-        <TKEntityProperty tkDataFormProperty index="8" name="phoneCell" displayName="Personal Number">
-            <TKPropertyEditor tkEntityPropertyEditor type="Phone"></TKPropertyEditor>
-        </TKEntityProperty>  -->
-        <TKEntityProperty tkDataFormProperty index="9" name="holyQuran" displayName="Read Holy Quran">
+        <TKEntityProperty tkDataFormProperty name="phoneRes" displayName="phone Home" index="11">
+            <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="phoneOff" displayName="Phone Office" index="12">
+            <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="holyQuran" displayName="Can you Read The Holy Quran " index="13">
             <TKPropertyEditor tkEntityPropertyEditor type="Switch"></TKPropertyEditor>
         </TKEntityProperty>
-    </RadDataForm> 
+        <TKEntityProperty tkDataFormProperty name="education" displayName="Select Your education Level" index="14" [valuesProvider]="options_edu">
+            <TKPropertyEditor tkEntityPropertyEditor type="Picker"></TKPropertyEditor>
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="profession" displayName="Profession " index="15">
+            <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
+        </TKEntityProperty>
+        <TKEntityProperty tkDataFormProperty name="postalAddress" displayName="Your Postal Address" index="16">
+            <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
+        </TKEntityProperty>
+    </RadDataForm>
 </GridLayout>
-<!-- <GridLayout rows="auto,*" class="page">
-
-    <GridLayout class="header" verticalAlignment="top">
-        <Label class="title" verticalAlignment="middle" text="Information" textWrap="true"></Label>
-        <StackLayout verticalAlignment="bottom" (tap)="nextPage()">
-            <Progress value="20" class="progress"></Progress>
-        </StackLayout>
-    </GridLayout>
-
-    <GridLayout row="1" rows="*,auto">
-
-
-
-        <Pager [items]="items | async" backgroundColor="#f3f3f3" #pager [selectedIndex]="currentPagerIndex" (selectedIndexChange)="onIndexChanged($event)"
-            class="pager">
-            <ng-template let-i="index" let-item="item">
-                <Gridlayout>
-                 <RadDataForm #myCommitDataForm tkExampleTitle tkToggleNavButton [source]="user" commitMode="OnLostFocus" (propertyCommitted)="onPropertyCommitted()">
-                        <TKEntityProperty tkDataFormProperty [name]="name" displayName="Enter your Name">
-                            <TKPropertyEditor tkEntityPropertyEditor type="text"></TKPropertyEditor>
-                        </TKEntityProperty>
-                    </RadDataForm> 
-                </Gridlayout>
-            </ng-template>
-        </Pager>
-
-        <GridLayout row="1" class="controls-row" backgroundColor="white">
-            <Button text="nextbutton" verticalAlignment="middle" horizontalAlignment="center" class="btn  btn-primary nextButton margin-bottom"></Button>
-            <StackLayout verticalAlignment="bottom" height="60%">
-                <Image class="ribble-pic" src="res://ribble_pic" stretch="fill"></Image>
-            </StackLayout>
-        </GridLayout>
-    </GridLayout>
-</GridLayout> -->
+<Button verticalAlignment="bottom" text="Apply" row="1" (tap)="navigateTo('/dashboard')" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+</GridLayout>

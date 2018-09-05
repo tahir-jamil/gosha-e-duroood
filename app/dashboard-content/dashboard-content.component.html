@@ -3,7 +3,7 @@
         <GridLayout height="50%" verticalAlignment="top" class="total-count" horizontalAlignment="center" width="80%">
             <StackLayout>
                 <Label text="Total Counts" horizontalAlignment="center" class="sec-font header-count" textWrap="true"></Label>
-                <Label text="520003000" horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
+                <Label  [text]='sum' horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
             </StackLayout>
         </GridLayout>
 
@@ -14,7 +14,7 @@
     <GridLayout height="65%" verticalAlignment="bottom">
         <GridLayout rows="auto,*" tkExampleTitle tkToggleNavButton>
             <GridLayout backgroundColor="#eeeeee"  (tap)="working()" class="header-list main-font">
-                <Label text="Remote User" class="muted-color font-size-13"></Label>
+                <Label text="Status of GoshaE darood Application" class="muted-color font-size-13"></Label>
             </GridLayout>
 
             <RadListView row="1" #myRadListView (itemLoading)="onItemLoading($event)" [items]="dataItems" class="listview page">

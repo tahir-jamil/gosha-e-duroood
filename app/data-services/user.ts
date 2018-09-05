@@ -41,7 +41,7 @@ export class Goshaenasheen extends BasicUser {
     public member: boolean;
     public ashra: string;
 
-    constructor(district: string, country: string, phoneRes: number, phoneOff: number, phoneCell: number, holyQuran: boolean, name: string, email: string, education: string, dateOfBirth: string, fatherName: string, profession: string, nic: string, postalAddress: string, city: string, password: string, union_council: string,Tehsil: string, member: boolean, ashra: string, ) {  
+    constructor(district: string, country: string, phoneRes: number, phoneOff: number, phoneCell: number, holyQuran: boolean, name: string, email: string, education: string, dateOfBirth: string, fatherName: string, profession: string, nic: string, postalAddress: string, city: string, union_council: string,Tehsil: string, member: boolean, ashra: string, ) {  
         
         super(district, country, phoneRes, phoneOff, phoneCell, holyQuran, name, email, education, dateOfBirth, fatherName, profession, nic, postalAddress, city); 
        
@@ -55,11 +55,14 @@ export class Goshaenasheen extends BasicUser {
 
 export class RemoteUser  extends BasicUser {
     public username: string; 
+    public password: string;
+
     
     constructor(district: string, country: string, phoneRes: number, phoneOff: number, phoneCell: number, holyQuran: boolean, name: string, email: string, education: string, dateOfBirth: string, fatherName: string, profession: string, nic: string, postalAddress: string, city: string, username: string , password: string) {
        
         super(district, country, phoneRes, phoneOff, phoneCell, holyQuran, name, email, education, dateOfBirth, fatherName, profession, nic, postalAddress, city); 
        
         this. username = username;
+        this.password = password;
     }
 }

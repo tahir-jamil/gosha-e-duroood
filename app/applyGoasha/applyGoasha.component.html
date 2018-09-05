@@ -1,67 +1,64 @@
 <GridLayout>
     <GridLayout marginBottom="10%">
         <RadDataForm tkExampleTitle tkToggleNavButton [source]="user">
-            <TKEntityProperty tkDataFormProperty name="name" displayName="name">
+            <TKEntityProperty tkDataFormProperty name="name" displayName="name" index="0" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="fatherName" displayName="Father's name">
+            <TKEntityProperty tkDataFormProperty name="fatherName" displayName="Father's name" index="1" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="postalAddress" displayName="Your Postal Address">
+            <TKEntityProperty tkDataFormProperty name="postalAddress" displayName="Your Postal Address" index="2" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="union_council" displayName="Your Union Council">
+            <TKEntityProperty tkDataFormProperty name="union_council" displayName="Your Union Council" index="3" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="Tehsil" displayName="Tehsil ">
+            <TKEntityProperty tkDataFormProperty name="Tehsil" displayName="Tehsil " index="4" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="city" displayName="City">
+            <TKEntityProperty tkDataFormProperty name="city" displayName="City" index="5" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="district" displayName="District ">
+            <TKEntityProperty tkDataFormProperty name="district" displayName="District " index="6" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="country" displayName="Country">
+            <TKEntityProperty tkDataFormProperty name="country" displayName="Country" index="7" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="education" displayName="Select Your education Level" [valuesProvider]="options_edu">
+            <TKEntityProperty tkDataFormProperty name="education" displayName="Select Your education Level" index="8" [valuesProvider]="options_edu">
                 <TKPropertyEditor tkEntityPropertyEditor type="Picker"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="profession" displayName="Profession ">
+            <TKEntityProperty tkDataFormProperty name="profession" displayName="Profession " index="9" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="dateOfBirth" displayName="select your Date of Birth ">
+            <TKEntityProperty tkDataFormProperty name="dateOfBirth" displayName="select your Date of Birth " index="10" >
                 <TKPropertyEditor tkEntityPropertyEditor type="DatePicker"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="nic" displayName="Enter your National Identity Card Number ">
+            <TKEntityProperty tkDataFormProperty name="nic" displayName="Enter your National Identity Card Number " index="11" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="email" displayName="Enter your E-mail  ID ">
+            <TKEntityProperty tkDataFormProperty name="email" displayName="Enter your E-mail  ID " index="12" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Email"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="password" displayName="Chose your password">
-                <TKPropertyEditor tkEntityPropertyEditor type="Password"></TKPropertyEditor>
-            </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="phoneCell" displayName="Cell Number">
+            <TKEntityProperty tkDataFormProperty name="phoneCell" displayName="Cell Number" index="13" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="phoneRes" displayName="phone Home">
+            <TKEntityProperty tkDataFormProperty name="phoneRes" displayName="phone Home" index="14" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="phoneOff" displayName="Phone Office">
+            <TKEntityProperty tkDataFormProperty name="phoneOff" displayName="Phone Office" index="15" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="holyQuran" displayName="Can you Read The Holy Quran ">
+            <TKEntityProperty tkDataFormProperty name="holyQuran" displayName="Can you Read The Holy Quran " index="16" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Switch"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="member" displayName="Are you Member of MQI ">
+            <TKEntityProperty tkDataFormProperty name="member" displayName="Are you Member of MQI " index="17" >
                 <TKPropertyEditor tkEntityPropertyEditor type="Switch"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="ashra" displayName="Select Your Desired Ashra" [valuesProvider]="options_ashra">
+            <TKEntityProperty tkDataFormProperty name="ashra" displayName="Select Your Desired Ashra" index="18"  [valuesProvider]="options_ashra">
                 <TKPropertyEditor tkEntityPropertyEditor type="Picker"></TKPropertyEditor>
             </TKEntityProperty>
         </RadDataForm>
     </GridLayout>
-    <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="navigateTo('/dashboard')" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+    <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="showSuccess()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
 </GridLayout>

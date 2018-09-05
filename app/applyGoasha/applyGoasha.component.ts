@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Goshaenasheen } from "~/data-services/user";
 import { Page } from 'tns-core-modules/ui/page/page';
 import { RouterExtensions } from 'nativescript-angular/router';
+import { TNSFancyAlert } from "nativescript-fancyalert";
 
 @Component({
   selector: 'app-applyGoasha',
@@ -14,9 +15,16 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
   
   constructor(private routerExtensions: RouterExtensions ,private _page: Page) {
   }
+  public showSuccess() {
+    TNSFancyAlert.showSuccess("Successful", "You Have successfully Apply for Gosha nasheen" , "navigateTo('/dashboard')");
+}
+
+public showError() {
+    TNSFancyAlert.showError("Error!", "Oh no, something went wrong.", "Dismiss");
+}
 
   ngOnInit() {
-    this._user = new Goshaenasheen("","",0,0,0,false,"","","","","","","","","","","","",false,"" );
+    this._user = new Goshaenasheen("","",0,0,0,false,"","","","","","","","","","","",false,"" );
     this._page.actionBarHidden = true;
   }
   get user(): Goshaenasheen {

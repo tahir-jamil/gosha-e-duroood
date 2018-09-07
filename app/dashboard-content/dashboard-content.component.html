@@ -17,7 +17,8 @@
                 <Label text="Status of GoshaE darood Application" class="muted-color font-size-13"></Label>
             </GridLayout>
 
-            <RadListView row="1" #myRadListView (itemLoading)="onItemLoading($event)" [items]="dataItems" class="listview page">
+            <!-- (itemLoading)="onItemLoading($event)" -->
+            <RadListView row="1" #myRadListView [items]="dataItems" class="listview page">
                 <ng-template tkListItemTemplate let-item="item">
                     <GridLayout columns="auto,auto,*" class="list-item-padding main-font">
                         <Label text="100" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>

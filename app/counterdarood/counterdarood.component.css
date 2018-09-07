@@ -5,3 +5,8 @@
     height: 300dp;
     width: 300dp;
 }
+.count{
+    background-color:#86f442;
+    font-size: 40%;
+    text-align: center;
+}

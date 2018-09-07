@@ -24,7 +24,7 @@ public showError() {
 }
 
   ngOnInit() {
-    this._user = new Goshaenasheen("","",0,0,0,false,"","","","","","","","","","","",false,"" );
+    this._user = new Goshaenasheen("","","",0,0,0,false,"","","","","","","","","","","",false,"" );
     this._page.actionBarHidden = true;
   }
   get user(): Goshaenasheen {

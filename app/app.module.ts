@@ -27,7 +27,7 @@ import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 import { SubmitDuroodComponent } from './submitDurood/submitDurood.component';
 import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
 import { DropDownModule } from "nativescript-drop-down/angular";
-
+import { UserDataService } from "~/data-services/user-data.service";
 
 @NgModule({
    bootstrap: [
@@ -42,7 +42,7 @@ import { DropDownModule } from "nativescript-drop-down/angular";
       NativeScriptUIChartModule,
       PagerModule,
       YoutubePlayerModule,
-      DropDownModule,
+      DropDownModule
    ],
    declarations: [
       AppComponent,
@@ -56,9 +56,8 @@ import { DropDownModule } from "nativescript-drop-down/angular";
       AboutGoshaComponent,
       SubmitDuroodComponent,
       CounterdaroodComponent,
-    
    ],
-   providers: [],
+   providers: [UserDataService],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

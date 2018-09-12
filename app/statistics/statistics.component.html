@@ -44,11 +44,11 @@
 
 		<GridLayout height="60%" tkExampleTitle tkToggleNavButton class="z-index1" verticalAlignment="bottom">
 			<GridLayout tkExampleTitle tkToggleNavButton backgroundColor="#f3f3f3">
-				<RadListView [items]="dataItems" class="listview" backgroundColor="#f3f3f3">
+				<RadListView [items]="statisticsData" class="listview" backgroundColor="#f3f3f3">
 					<ng-template tkListItemTemplate let-item="item">
 						<GridLayout columns="auto,auto,*" class="list-item-padding">
-							<Label text="1)" class="srNo" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
-							<Label text="Pakistan" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+							<Label text="*" class="srNo" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+							<Label [text]="item.dataList" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
 						</GridLayout>
 					</ng-template>
 				</RadListView>

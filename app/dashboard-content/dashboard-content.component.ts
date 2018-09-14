@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Page, isIOS, Color } from 'tns-core-modules/ui/page/page';
 import { GestureEventData } from 'tns-core-modules/ui/gestures/gestures';
 import { Console } from '@angular/core/src/console';
-
+import { UserDataService } from '~/data-services/user-data.service';
+import * as _ from "lodash";
 @Component({
   selector: 'app-dashboard-content',
   templateUrl: './dashboard-content.component.html',
@@ -13,11 +14,18 @@ export class DashboardContentComponent implements OnInit {
   
   isTapped: boolean = false;
   notificationState:boolean = false;
+  service: { date: string; time: string; count: number; }[];
+  pTotal: number;
 
-  constructor(private _page: Page) { }
+  constructor(private _page: Page, private  pCount: UserDataService) {
+    
+   }
 
   ngOnInit() {
     this._page.actionBarHidden = true;
+    this.service=this.pCount.countData;
+    this.pTotal=_.sumBy(this.service);
+    
   }
 
   dataItems =['1','2','3','4','5','6','7','8','9'];

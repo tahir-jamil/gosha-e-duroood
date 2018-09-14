@@ -13,10 +13,12 @@ import { UserDataService } from '~/data-services/user-data.service';
   styleUrls: ['./statistics.css'],
   moduleId: module.id
 })
-export class StatisticsComponent implements OnInit, AfterViewInit {
+export class StatisticsComponent implements OnInit {
 
 
   statisticsData = [];
+  rangeList = [];
+  chartData = [];
 
 
   constructor(private _page: Page, private userData : UserDataService) {
@@ -25,11 +27,10 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this._page.actionBarHidden = true;
     this.onfilterSelect("city");
-  }
-
-  ngAfterViewInit(): void {
+    this.statisticsData = this.userData.rangeListFilteredData;
 
   }
+
 
   pieSource: { Brand: string, Amount: number }[] = [
     { Brand: "Audi", Amount: 10 },
@@ -40,25 +41,14 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
   ];
 
   onfilterSelect(rangeName) {
-    console.log(rangeName);
-     this.statisticsData = _.map(this.userData.bussinessData, function(o){
-        if(rangeName ==  "city") {
-          return {dataList: o.city}
-        }
-        else if(rangeName ==  "district") {
-          return {dataList: o.district}
-        }
-        else if(rangeName == "country") {
-          return {dataList: o.country}
-        }
-        else if(rangeName == "provience") {
-          return {dataList: o.provience}
-        }
-     });
+    this.rangeList = this.statisticsData;
+    
+    let sortedArray = _.orderBy(this.rangeList, ['count'], ['desc']);
+    this.chartData =  _.slice(sortedArray, 0, 5);
   }
 
 
-  dataItems = ["1", "2", "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"];
+  // dataItems = ["1", "2", "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"];
 
   statisitcs = [
     { range: "city" },

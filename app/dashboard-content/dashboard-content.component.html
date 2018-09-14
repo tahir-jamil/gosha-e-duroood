@@ -3,7 +3,7 @@
         <GridLayout height="50%" verticalAlignment="top" class="total-count" horizontalAlignment="center" width="80%">
             <StackLayout>
                 <Label text="Total Counts" horizontalAlignment="center" class="sec-font header-count" textWrap="true"></Label>
-                <Label  [text]='sum' horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
+                <Label  [text]='pTotal' horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
             </StackLayout>
         </GridLayout>
 
@@ -18,13 +18,13 @@
             </GridLayout>
 
             <!-- (itemLoading)="onItemLoading($event)" -->
-            <RadListView row="1" #myRadListView [items]="dataItems" class="listview page">
+            <RadListView row="1" #myRadListView [items]="service" class="listview page">
                 <ng-template tkListItemTemplate let-item="item">
                     <GridLayout columns="auto,auto,*" class="list-item-padding main-font">
-                        <Label text="100" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+                        <Label [text]= "item.count" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
                         <StackLayout col="2" horizontalAlignment="right" verticalAlignment="middle">
-                            <Label text="2/02/2014" class="date" textWrap="true"></Label>
-                            <Label text="3:00 am" class="time" textWrap="true"></Label>
+                            <Label [text]="item.date" class="date" textWrap="true"></Label>
+                            <Label [text]="item.time"  class="time" textWrap="true"></Label>
                         </StackLayout>
                     </GridLayout>
                 </ng-template>

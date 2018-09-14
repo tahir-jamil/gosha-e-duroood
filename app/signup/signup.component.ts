@@ -3,7 +3,7 @@ import { RemoteUser } from '~/signup/user-data-service';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
 import { BehaviorSubject } from 'rxjs';
-
+import { UserDataService } from '~/data-services/user-data.service';
 import * as geolocation from "nativescript-geolocation";
 import { Accuracy } from "ui/enums"; // used to describe at what accuracy the location should be get
 import { Console } from '@angular/core/src/console';
@@ -19,86 +19,86 @@ export class SignupComponent implements OnInit {
   // private _user: RemoteUser;
   titleName: string = "Personal Information";
   @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
-
-  currentLocation;
-  ngOnInit(): void {
-    geolocation.enableLocationRequest();
-    this.currentLocation = geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.high, maximumAge: 5000, timeout: 20000 })
+  constructor(private _page: Page, private userData: UserDataService) {
   }
-  
+
+  ngOnInit(): void {
+
+  }
+
   signUPUser = {
     name: "",
     username: "",
     email: "",
-    Password:"",
+    Password: "",
     city: "",
     district: "",
-    provience:"",
+    provience: "",
     country: "",
     phoneRes: 0,
     phoneOff: 0,
     phoneCell: 0,
-    holyQuran: true,  
+    holyQuran: true,
     education: "",
-    dateOfBirth:"",
+    dateOfBirth: "",
     fatherName: "",
-    profession: "", 
-    nic:"",
+    profession: "",
+    nic: "",
     postalAddress: "",
-               
- 
+
+
   };
 
 
   options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
 
   onPropertyCommitted() {
-    if (this.myCommitDataFormComp.dataForm.editedObject) {
-      console.dir(this.myCommitDataFormComp.dataForm.editedObject);
-    }
+    if (this.signUPUser.name && this.signUPUser.username && this.signUPUser.email && this.signUPUser.Password && this.signUPUser.city && this.signUPUser.country)
+      UserDataService.setString("bussinessData", JSON.stringify(this.signUPUser));
+
   }
-
-  submit() {
-    console.log("submit form");
-    console.dir(this.myCommitDataFormComp.dataForm.editedObject);
-    console.log(this.currentLocation);
-    
-  }
-
- 
+  
+  // submit() {
+  //   console.log("submit form");
+  //   console.dir(this.myCommitDataFormComp.dataForm.editedObject);
 
 
-  constructor(private _page: Page) {
-    //   this.items = new BehaviorSubject([
-    //     {
-    //       title: 'Personal Information',
-    //       items: []
-    //     },
+  // }
 
 
-    //     {
-    //      title: 'Education and Profession',
-    //       items: []
-    //      },
-    //      {
-    //        title: 'Address',
-    //        items: []
-    //      },
-    //      {
-    //        title: 'Contact',
-    //        items: []
-    //      },
-    //      {
-    //        title: 'Others',
-    //        items: []
-  }
+
+
+
+  //   this.items = new BehaviorSubject([
+  //     {
+  //       title: 'Personal Information',
+  //       items: []
+  //     },
+
+
+  //     {
+  //      title: 'Education and Profession',
+  //       items: []
+  //      },
+  //      {
+  //        title: 'Address',
+  //        items: []
+  //      },
+  //      {
+  //        title: 'Contact',
+  //        items: []
+  //      },
+  //      {
+  //        title: 'Others',
+  //        items: []
+
 
 
   //   ]);
   //   this.numItems = this.items.value.length;
   // }
 
-  
+
 
   // loadedImage($event) {
   //   console.log(`loaded image ${JSON.stringify($event)}`);

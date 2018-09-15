@@ -1,24 +1,32 @@
 
 
-.padding-hor-list {
-    padding-left: 20%;
-    padding-right: 20%;
-}
-.margin-horizontal-list {
+
+.label-horizontal {
     background: linear-gradient(to right, #5c258d, #4389a2);
     border-radius: 5%;
-    height: 55%;
     margin-right:10dp;
-}
-.hor-list-hight {
-    height: 10%;
-}
-.label-hor-list {
-    padding: 0% 20% 0% 20%;
-    
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     color: white;
     font-size: 14dp;
 }
+
+.heading-filter {
+    padding: 3% 0% 3% 10%;
+    font-size: 18;   
+}
+
+.heading-filter-list {
+    padding: 0% 0% 3% 10%;
+    font-size: 18;   
+}
+
+.alignScroll {
+    padding: 10% 0% 10% 10%;
+}
+
 .z-index1 {
     z-index: 1;
 }
@@ -30,10 +38,10 @@
 
 
 /* listview */
-.listview {
+.listview-align {
     padding-bottom: 5%;
-    margin-left: 2%;
-    margin-right: 2%;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .list-item-padding {

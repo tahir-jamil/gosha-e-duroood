@@ -19,7 +19,10 @@ export class StatisticsComponent implements OnInit {
   statisticsData = [];
   rangeList = [];
   chartData = [];
-
+  Filters = [
+    {name:"Country"},
+    {name:"City"}
+  ]
 
   constructor(private _page: Page, private userData : UserDataService) {
   }
@@ -28,6 +31,8 @@ export class StatisticsComponent implements OnInit {
     this._page.actionBarHidden = true;
     this.onfilterSelect("city");
     this.statisticsData = this.userData.rangeListFilteredData;
+    this.rangeList = this.statisticsData;
+
 
   }
 

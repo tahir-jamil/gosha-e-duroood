@@ -15,7 +15,7 @@ export class UserDataService {
 
   postData(data: any) {
     let options = this.createRequestOptions();
-    return this.http.post("http://192.168.1.76", { data }, { headers: options });
+    return this.http.post("http://bf7de10f.ngrok.io/database", { data }, { headers: options });
   }
 
   private createRequestOptions() {

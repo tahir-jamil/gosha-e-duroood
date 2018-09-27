@@ -1,14 +1,29 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class UserDataService {
+  email: string;
+
   static setString(arg0: any, arg1: any): any {
     throw new Error("Method not implemented.");
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
 
+
+  postData(data: any) {
+    let options = this.createRequestOptions();
+    return this.http.post("http://192.168.1.76", { data }, { headers: options });
+  }
+
+  private createRequestOptions() {
+    let headers = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+    return headers;
+  }
 
   countData = [
     { date: '22/08/18', time: '2:30am', count: 100 },
@@ -30,7 +45,7 @@ export class UserDataService {
     { rangeName: "Rawalpindi", count: 7 },
     { rangeName: "Wazirabad", count: 8 },
     { rangeName: "Alipur", count: 9 },
-  ];  
+  ];
 
 
 
@@ -78,7 +93,7 @@ export class UserDataService {
     {
       username: "itstahirjamil",
       name: "tahir jamil 2",
-      email: "tahirjamil9292@gmail.com",
+      email: "taamil9292@gmail.com",
       password: "abc123.",
       fathername: "Jameel",
       nic: "3510564781557",
@@ -98,7 +113,7 @@ export class UserDataService {
     {
       username: "itstahirjamil",
       name: "tahir jamil 2",
-      email: "tahirjamil9292@gmail.com",
+      email: "tahirjamil92@gmail.com",
       password: "abc123.",
       fathername: "Jameel",
       nic: "3510564781557",
@@ -118,7 +133,7 @@ export class UserDataService {
     {
       username: "itstahirjamil",
       name: "tahir jamil 2",
-      email: "tahirjamil9292@gmail.com",
+      email: "t292@gmail.com",
       password: "abc123.",
       fathername: "Jameel",
       nic: "3510564781557",
@@ -138,7 +153,7 @@ export class UserDataService {
     {
       username: "itstahirjamil",
       name: "tahir jamil 2",
-      email: "tahirjamil9292@gmail.com",
+      email: "tgmail.com",
       password: "abc123.",
       fathername: "Jameel",
       nic: "3510564781557",
@@ -158,7 +173,7 @@ export class UserDataService {
     {
       username: "itstahirjamil",
       name: "as",
-      email: "tahirjamil9292@gmail.com",
+      email: "tahirjamil9292@.com",
       password: "abc123.",
       fathername: "Jameel",
       nic: "3510564781557",
@@ -178,7 +193,7 @@ export class UserDataService {
     {
       username: "itstahirjamil",
       name: "ca",
-      email: "tahrjamil9292@gmail.com",
+      email: "tahrjamil.com",
       password: "abc123.",
       fathername: "Jameel",
       nic: "3510564781557",
@@ -198,7 +213,7 @@ export class UserDataService {
     {
       username: "itstahirjamil",
       name: "awais",
-      email: "tahirjamil9292@gmail.com",
+      email: "ta.com",
       password: "abc123.",
       fathername: "Jameel",
       nic: "3510564781557",

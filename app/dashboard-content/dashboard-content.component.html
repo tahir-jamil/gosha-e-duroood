@@ -3,7 +3,7 @@
         <GridLayout height="50%" verticalAlignment="top" class="total-count" horizontalAlignment="center" width="80%">
             <StackLayout>
                 <Label text="Total Counts" horizontalAlignment="center" class="sec-font header-count" textWrap="true"></Label>
-                <Label  [text]='pTotal' horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
+                <Label  [text]='fildata' horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
             </StackLayout>
         </GridLayout>
 
@@ -18,7 +18,7 @@
             </GridLayout>
 
             <!-- (itemLoading)="onItemLoading($event)" -->
-            <RadListView row="1" #myRadListView [items]="service" class="listview page">
+            <RadListView row="1" #myRadListView [items]="counting" class="listview page">
                 <ng-template tkListItemTemplate let-item="item">
                     <GridLayout columns="auto,auto,*" class="list-item-padding main-font">
                         <Label [text]= "item.count" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>

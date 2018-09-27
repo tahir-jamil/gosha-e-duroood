@@ -14,17 +14,18 @@ export class DashboardContentComponent implements OnInit {
   
   isTapped: boolean = false;
   notificationState:boolean = false;
-  service: { date: string; time: string; count: number; }[];
+  counting: { date: string; time: string; count: number; }[];
   pTotal: number;
-
+  fildata: any;
   constructor(private _page: Page, private  pCount: UserDataService) {
     
    }
 
   ngOnInit() {
     this._page.actionBarHidden = true;
-    this.service=this.pCount.countData;
-    this.pTotal=_.sumBy(this.service);
+    this.counting=this.pCount.countData;
+   this.fildata= _.filter(this.counting, function(o) { return o.count; });
+  //  this.pTotal=_.sumBy(this.fildata);
     
   }
 

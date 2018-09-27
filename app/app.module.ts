@@ -28,6 +28,7 @@ import { SubmitDuroodComponent } from './submitDurood/submitDurood.component';
 import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
 import { DropDownModule } from "nativescript-drop-down/angular";
 import { UserDataService } from "~/data-services/user-data.service";
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 
 @NgModule({
    bootstrap: [
@@ -43,7 +44,8 @@ import { UserDataService } from "~/data-services/user-data.service";
       PagerModule,
       YoutubePlayerModule,
       DropDownModule,
-      NativeScriptFormsModule
+      NativeScriptFormsModule,
+      NativeScriptHttpClientModule
    ],
    declarations: [
       AppComponent,

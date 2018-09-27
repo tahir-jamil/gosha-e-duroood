@@ -26,9 +26,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if((this.user.email== this.userData.bussinessData[0].email) && (this.user.password== this.userData.bussinessData[0].password) )
-  
-    this.navigateTo(DashboardComponent);
+    // if((this.user.email== this.userData.bussinessData[0].email) && (this.user.password== this.userData.bussinessData[0].password) )
+    // this.navigateTo(DashboardComponent);
+      this.userData
+          .postData({action:"login", username: "tahir", password: "tahir" })
+          .subscribe(res => {
+              console.dir(res);
+          });
+  // }
   }
 
   navigateTo(path) {

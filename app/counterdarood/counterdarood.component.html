@@ -1,13 +1,6 @@
-<ActionBar >
-    <ActionItem (tap)="showSuccess()">
-        <Button class="" text="Submit"  textAlignment="right"  class="action-item"></Button>
-    </ActionItem>
-</ActionBar>
-<GridLayout rows="auto,auto,auto,auto*,auto" columns="*,*" >
-    <Label row="0" colSpan="2"  text="Counter "  class="count" ></Label>
-    <Label row="1" textwrap="true" textAlignment="top" colSpan="2" fontsize="10%" text="Tap Butoon for Count"  class="count" ></Label>
-    <Label row="2" textwrap="true" textAlignment="center" colSpan="2" fontsize="10%" text="'RESET' for Reset and "  class="count" ></Label>
-    <Label row="3" textwrap="true" textAlignment="bottom" colSpan="2" fontsize="10%" text="'SUBMIT' for Submit your darood E pak"  class="count" ></Label>
-    <Button  class="bt" [ngModel]='mt' row="4" colSpan="2"  (tap)="onTap($event)" ></Button>
-    <Button row="5"  col="1"  text="Reset" (tap)="onButtonTap()"></Button>
+<GridLayout rows="*,3*" columns="*">
+    <Label text="324" class="count sec-font" verticalAlignment="middle" textWrap="true"></Label>
+    
+    <Button text="&#xe148;" row="1" class="md-icon buttonAdd font23" ></Button>
+    
 </GridLayout>

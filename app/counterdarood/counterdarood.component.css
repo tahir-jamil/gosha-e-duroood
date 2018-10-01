@@ -5,8 +5,17 @@
     height: 300dp;
     width: 300dp;
 }
+
 .count{
-    background-color:#86f442;
-    font-size: 40%;
+    font-size: 30;
     text-align: center;
+}
+
+.font23 {
+ font-size: 23dp;   
+}
+
+.buttonAdd {
+    background-color: rgba(53, 70, 140, 0.801);
+    color: white;
 }

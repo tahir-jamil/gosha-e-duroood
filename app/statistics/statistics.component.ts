@@ -19,18 +19,19 @@ export class StatisticsComponent implements OnInit {
   statisticsData = [];
   rangeList = [];
   chartData = [];
+
   Filters = [
-    {name:"Country"},
-    {name:"City"}
+    { name: "Country" },
+    { name: "City" }
   ]
 
-  constructor(private _page: Page, private userData : UserDataService) {
+  constructor(private _page: Page, private userData: UserDataService) {
   }
 
   ngOnInit(): void {
     this._page.actionBarHidden = true;
     this.onfilterSelect("city");
-    this.statisticsData = this.userData.rangeListFilteredData;
+    // this.statisticsData = this.userData.rangeListFilteredData;
     this.rangeList = this.statisticsData;
 
 
@@ -47,9 +48,9 @@ export class StatisticsComponent implements OnInit {
 
   onfilterSelect(rangeName) {
     this.rangeList = this.statisticsData;
-    
-    let sortedArray = _.orderBy(this.rangeList, ['count'], ['desc']);
-    this.chartData =  _.slice(sortedArray, 0, 5);
+
+    let sortedArray = _.orderBy(this.rangeList,  ['count'],  ['desc']);
+    this.chartData = _.slice(sortedArray, 0, 5);
   }
 
 

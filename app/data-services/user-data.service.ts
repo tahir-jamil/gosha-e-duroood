@@ -11,19 +11,48 @@ export class UserDataService {
 
   constructor(private http: HttpClient) { }
 
+  private serverUrl = "http://localhost:8000/api";
 
+  private createRequestHeader() {
+    // set headers here e.g.
+    let headers = new HttpHeaders({
+      "AuthKey": "my-key",
+      "AuthToken": "my-token",
+      "Content-Type": "application/json",
+    });
+
+    return headers;
+  }
+
+  // party Queries
+  getParty() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/party', { headers: headers });
+  }
 
   postData(data: any) {
     let options = this.createRequestOptions();
-    return this.http.post("http://bf7de10f.ngrok.io/database", { data }, { headers: options });
+    return this.http.post(this.serverUrl+'/party', { data }, { headers: options });
+  }
+
+  // Counts Queries
+  getCounts() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/counts', { headers: headers });
+  }
+
+  postCountsData(data: any) {
+    let options = this.createRequestOptions();
+    return this.http.post(this.serverUrl+'/counts', { data }, { headers: options } );
   }
 
   private createRequestOptions() {
     let headers = new HttpHeaders({
-      "Content-Type": "application/json"
+      "Content-Type": "application/x-www-form-urlencoded"
     });
     return headers;
   }
+
 
   countData = [
     { date: '22/08/18', time: '2:30am', count: 100 },

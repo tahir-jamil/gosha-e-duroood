@@ -29,6 +29,7 @@ import { CounterdaroodComponent } from './counterdarood/counterdarood.component'
 import { DropDownModule } from "nativescript-drop-down/angular";
 import { UserDataService } from "~/data-services/user-data.service";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { CommonService } from "~/data-services/common.service";
 
 @NgModule({
    bootstrap: [
@@ -60,7 +61,7 @@ import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
       SubmitDuroodComponent,
       CounterdaroodComponent,
    ],
-   providers: [UserDataService],
+   providers: [UserDataService,CommonService],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

@@ -20,9 +20,6 @@
     background-color: lightgray;
 }
 
-.logout-align {
-
-}
 
 .text-middle-align {
     margin-bottom: 15%;
@@ -52,6 +49,12 @@ font-size: 25dp;
     color: black;
 }
 
+
+/* ios action bar */
+.action-item {
+    color: black;
+}
+
 /* android icon actionbar */
 .padding-icon {
     padding: 5%;
@@ -67,6 +70,7 @@ font-size: 25dp;
     font-size: 14;
     margin-left: 4%;
 }
+
 .border{
     
     border-bottom-width: 1dp;
@@ -81,16 +85,19 @@ font-size: 25dp;
 .icon-size {
     font-size: 23dp;
 }
+
 .margintext{
     margin-top: 5%;
     margin-left:3%
 }
-.bg{
+
+.bg {
     background-size: 100%;
     background-repeat: no-repeat;
-    }
-.rad{
+}
+
+.rad {
         border-radius: 100;
         height: 100;
         width: 100;
-    }
+}

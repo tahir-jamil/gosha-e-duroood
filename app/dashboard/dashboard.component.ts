@@ -1,10 +1,10 @@
-import { Component, ViewChild, OnInit, AfterViewInit, ChangeDetectorRef } from "@angular/core";
-import { Page, isAndroid, isIOS } from "tns-core-modules/ui/page/page";
-import { ActionItem } from "tns-core-modules/ui/action-bar/action-bar";
-import { Observable } from "tns-core-modules/data/observable/observable";
-import { RadSideDrawerComponent, SideDrawerType } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
+import { Component, ViewChild, OnInit, ChangeDetectorRef } from "@angular/core";
+import { isAndroid, isIOS } from "tns-core-modules/ui/page/page";
+import { RadSideDrawerComponent } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { RouterExtensions } from "nativescript-angular/router";
+import { CommonService } from "~/data-services/common.service";
+import * as dialogs from "tns-core-modules/ui/dialogs";
 
 @Component({
   selector: 'app-dashboard',
@@ -17,9 +17,9 @@ export class DashboardComponent implements OnInit {
   title: string = "Dashboard";
   isAndroid;
   isIos;
-  constructor(private router: RouterExtensions, private _changeDetectionRef: ChangeDetectorRef) {
-  }
 
+  constructor(private router: RouterExtensions, private _changeDetectionRef: ChangeDetectorRef, private commonService: CommonService) {
+  }
 
   ngOnInit() {
     if (isAndroid) {
@@ -68,4 +68,29 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+
+  get isAddCounts() {
+    return this.commonService.isAddCountsPage;
+  }
+
+  submit() {
+    this.commonService.isAddCountsPage = false;
+    this.router.back();
+  }
+
+  reset() {
+    dialogs.confirm({
+      title: "Do you want to Reset Counter",
+      message: "In case you reset the counter your durood pak counts will be lost",
+      okButtonText: "Reset",
+      cancelButtonText: "Cancel",
+    }).then(result => {
+      // result argument is boolean
+      console.log("Dialog result: " + result);
+    });
+  }
+
 }
+
+

@@ -2,6 +2,12 @@
   <ActionItem android:position="actionBar">
     <Label horizontalAlignment="left" class="text-left md-icon f-s-25 color-menu" (tap)="openDrawer()" text="&#xe5d2;"></Label>
   </ActionItem>
+  <ActionItem (tap)="reset()"  [visibility]="isAddCounts ? 'visible' : 'collapsed'" ios.position="right">
+    <Button text="&#xe8ba;" class="action-item md-icon f-s-25 font"></Button>
+  </ActionItem>
+  <ActionItem (tap)="submit()" [visibility]="isAddCounts ? 'visible' : 'collapsed'"  ios.position="right">
+    <Button text="Submit" class="action-item"></Button>
+  </ActionItem>
   <NavigationButton visibility="collapsed" icon="res://ic_arrow_back_black_24dp" (tap)="goBack()"></NavigationButton>
 </ActionBar>
 
@@ -13,13 +19,14 @@
     <Label [text]="title" verticalAlignment="middle" horizontalAlignment="center" class="text-center titleAndroid h4" textWrap="true"></Label>
   </GridLayout>
 </ActionBar> 
+
 <GridLayout>
   <RadSideDrawer tkExampleTitle tkToggleNavButton drawerTransition="SlideAlongTransition">
     <GridLayout tkDrawerContent>
       <GridLayout padding="10%" rows="*,auto" verticalAlignment="top" height="30%"backgroundImage="res://dbb" class="bg">
         <Image class="margin rad " row="0" horizontalAlignment="left" src="https://play.nativescript.org/dist/assets/img/NativeScript_logo.png"></Image>
         <StackLayout row="1">
-          <Label fontSize="13" class="margin" text="Muhammad Tahir Awais"> </Label>
+          <Label fontSize="13" class="margin" [text]="isAddCounts"> </Label>
           <Label class="margin" fontSize="10" text="tahirawais113@yahoo.com"></Label>
         </StackLayout>
       </GridLayout>

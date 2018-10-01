@@ -5,6 +5,7 @@ import { Console } from '@angular/core/src/console';
 import { UserDataService } from '~/data-services/user-data.service';
 import * as _ from "lodash";
 import { RouterExtensions } from 'nativescript-angular/router';
+import { CommonService } from '~/data-services/common.service';
 @Component({
   selector: 'app-dashboard-content',
   templateUrl: './dashboard-content.component.html',
@@ -18,7 +19,7 @@ export class DashboardContentComponent implements OnInit {
   partyList;
   pTotal: number;
   fildata: any;
-  constructor(private _page: Page, private userService: UserDataService, private routerExtensions: RouterExtensions) {
+  constructor(private _page: Page, private userService: UserDataService, private routerExtensions: RouterExtensions, private commonService: CommonService) {
 
   }
 
@@ -26,6 +27,7 @@ export class DashboardContentComponent implements OnInit {
     this._page.actionBarHidden = true;
     //  this.fildata= _.filter(this.counting, function(o) { return o.count; });
     //  this.pTotal=_.sumBy(this.fildata);
+    this.commonService.isAddCountsPage = false;
 
   }
 

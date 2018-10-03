@@ -25,6 +25,7 @@ export class UserDataService {
 
   // party Queries
 
+
   login() {
     let headers = this.createRequestHeader();
     return this.http.get(this.serverUrl + '/party/username/password', { headers: headers });
@@ -44,7 +45,7 @@ export class UserDataService {
 
   postData(data: any) {
     let options = this.createRequestOptions();
-    return this.http.post(this.serverUrl+'/party', { data }, { headers: options });
+    return this.http.post(this.serverUrl+'/party',  data , { headers: options });
   }
   
   // Counts Queries
@@ -52,11 +53,9 @@ export class UserDataService {
     let options = this.createRequestOptions();
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + this.serverUrl + '/counts');
   
-    return  this.http.post(this.serverUrl+'/counts', {duroodCount: 11}, {headers: options});
+    return  this.http.post(this.serverUrl+'/counts', JSON.stringify({duroodCount: 11}), {headers: options});
   }
 
-
-  
   //statistics Queries
   getSatistics(filter) {
     let headers = this.createRequestHeader();

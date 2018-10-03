@@ -3,7 +3,7 @@
         <GridLayout height="50%" verticalAlignment="top" class="total-count" horizontalAlignment="center" width="80%">
             <StackLayout>
                 <Label text="Total Counts" horizontalAlignment="center" class="sec-font header-count" textWrap="true"></Label>
-                <Label  [text]='partytotal' horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
+                <Label  [text]='partytotal | number' horizontalAlignment="center" class="sec-font totalCountText" textWrap="true"></Label>
             </StackLayout>
         </GridLayout>
 
@@ -21,15 +21,16 @@
             <RadListView row="1" #myRadListView [items]="partyList" class="listview page">
                 <ng-template tkListItemTemplate let-item="item">
                     <GridLayout columns="auto,auto,*" class="list-item-padding main-font">
-                        <Label [text]= "item?.duroodCount" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
+                        <Image src="res://tsbh" class="tasbhiimage"></Image>
+                        <Label col="1" [text]= "item?.duroodCount" col="1" class="duroodCout" horizontalAlignment="left" verticalAlignment="middle" textWrap="true"></Label>
                         <StackLayout col="2" horizontalAlignment="right" verticalAlignment="middle">
-                            <Label [text]="item?.updated_at" class="date" textWrap="true"></Label>
-                            <!-- <Label [text]="time | date:'shortTime'"  class="time" textWrap="true"></Label> -->
+                            <Label [text]="item?.updated_at | date" class="date" textWrap="true"></Label>
                         </StackLayout>
                     </GridLayout>
                 </ng-template>
             </RadListView>
         </GridLayout>
+
     </GridLayout>
     <!-- <GridLayout class="tabs min-margin tab-color">
         <Label text="Remote User" class="remoteUser" horizontalAlignment="center" verticalAlignment="middle" textWrap="true"></Label>

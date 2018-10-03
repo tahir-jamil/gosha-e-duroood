@@ -33,3 +33,4 @@ export class SubmitDuroodComponent implements OnInit {
   }
 
 }
+

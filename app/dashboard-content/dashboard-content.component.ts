@@ -77,5 +77,4 @@ export class DashboardContentComponent implements OnInit {
     this.notificationState = !this.notificationState;
   }
 
-
 }

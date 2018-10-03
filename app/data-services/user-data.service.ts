@@ -52,7 +52,7 @@ export class UserDataService {
     let options = this.createRequestOptions();
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + this.serverUrl + '/counts');
   
-    return  this.http.post(this.serverUrl+'/applyGoashas', {duroodCount: 11}, {headers: options});
+    return  this.http.post(this.serverUrl+'/counts', {duroodCount: 11}, {headers: options});
   }
 
 

@@ -17,7 +17,7 @@ export class StatisticsComponent implements OnInit {
 
 
   statisticsData = [];
-  rangeList = [];
+  rangeList;
   chartData = [];
 
   Filters = [
@@ -25,7 +25,7 @@ export class StatisticsComponent implements OnInit {
     { name: "City" }
   ]
 
-  constructor(private _page: Page, private userData: UserDataService) {
+  constructor(private _page: Page, private userService: UserDataService) {
   }
 
   ngOnInit(): void {
@@ -33,8 +33,16 @@ export class StatisticsComponent implements OnInit {
     this.onfilterSelect("city");
     // this.statisticsData = this.userData.rangeListFilteredData;
     this.rangeList = this.statisticsData;
+  }
 
 
+  onLoaded(filter) {
+    this.userService.getSatistics(filter).subscribe(res => {
+      console.dir(res);
+      this.rangeList = res;
+    }, (error) => {
+      console.dir(error);
+    });
   }
 
 
@@ -47,13 +55,14 @@ export class StatisticsComponent implements OnInit {
   ];
 
   onfilterSelect(rangeName) {
-    this.rangeList = this.statisticsData;
 
-    let sortedArray = _.orderBy(this.rangeList,  ['count'],  ['desc']);
-    this.chartData = _.slice(sortedArray, 0, 5);
+    this.onLoaded(rangeName);
+    // this.rangeList = this.statisticsData;
+
+    // let sortedArray = _.orderBy(this.rangeList, ['count'], ['desc']);
+    // this.chartData = _.slice(sortedArray, 0, 5);
   }
-
-
+  
   // dataItems = ["1", "2", "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"];
 
   statisitcs = [

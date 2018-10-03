@@ -17,7 +17,7 @@ export class DashboardContentComponent implements OnInit {
   isTapped: boolean = false;
   notificationState: boolean = false;
   partyList;
-  pTotal: number;
+  partytotal;
   fildata: any;
   constructor(private _page: Page, private userService: UserDataService, private routerExtensions: RouterExtensions, private commonService: CommonService) {
 
@@ -55,14 +55,18 @@ export class DashboardContentComponent implements OnInit {
     this.isTapped = false;
   }
 
-  // get loaded() {
-  //   return this.notificationState;
-  // }
-
   onLoaded() {
-    this.userService.getCounts().subscribe(res => {
+    this.userService.getParty().subscribe(res => {
       console.dir(res);
       this.partyList = res;
+    }, (error) => {
+      console.dir(error);
+    });
+
+    this.userService.getPartyTotal().subscribe(res => {
+      console.log("wokring ~~~~~~~~~~~~~~~~~~~~~~~~````");
+      console.dir(res);
+      this.partytotal = res;
     }, (error) => {
       console.dir(error);
     });

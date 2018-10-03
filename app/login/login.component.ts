@@ -27,15 +27,15 @@ export class LoginComponent implements OnInit {
   }
 
   login(path) {
-    // if((this.user.email== this.userData.bussinessData[0].email) && (this.user.password== this.userData.bussinessData[0].password) )
-    this.navigateTo(path);
-    // this.userData.getParty().subscribe(res => {
-    //   console.dir(res);
-    // }, error => {
-    //   console.dir(error);
+    if ((this.user.email == this.userData.bussinessData[0].email) && (this.user.password == this.userData.bussinessData[0].password))
+      
+    this.userData.getParty().subscribe(res => {
+        console.dir(res);
+        this.navigateTo(path);
+      }, error => {
+        console.dir(error);
 
-    // });
-    // }
+      });
   }
 
   postData() {

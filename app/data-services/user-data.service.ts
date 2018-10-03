@@ -20,32 +20,50 @@ export class UserDataService {
       "AuthToken": "my-token",
       "Content-Type": "application/json",
     });
-
     return headers;
   }
 
   // party Queries
+
+  login() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/party/username/password', { headers: headers });
+  }
+
+
   getParty() {
     let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl + '/party', { headers: headers });
+    return this.http.get(this.serverUrl + '/counts/4', { headers: headers });
   }
+  
+  getPartyTotal() {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/userCounts/4', { headers: headers });
+  }
+  
 
   postData(data: any) {
     let options = this.createRequestOptions();
     return this.http.post(this.serverUrl+'/party', { data }, { headers: options });
   }
-
+  
   // Counts Queries
-  getCounts() {
-    let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl + '/counts', { headers: headers });
-  }
-
   postCountsData(data: any) {
     let options = this.createRequestOptions();
-    return this.http.post(this.serverUrl+'/counts', { data }, { headers: options } );
+    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + this.serverUrl + '/counts');
+  
+    return  this.http.post(this.serverUrl+'/applyGoashas', {duroodCount: 11}, {headers: options});
   }
 
+
+  
+  //statistics Queries
+  getSatistics(filter) {
+    let headers = this.createRequestHeader();
+    return this.http.get(this.serverUrl + '/statistics/'+filter, { headers: headers });
+  }
+
+  
   private createRequestOptions() {
     let headers = new HttpHeaders({
       "Content-Type": "application/x-www-form-urlencoded"

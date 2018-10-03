@@ -5,6 +5,7 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { RouterExtensions } from "nativescript-angular/router";
 import { CommonService } from "~/data-services/common.service";
 import * as dialogs from "tns-core-modules/ui/dialogs";
+import { TNSFancyAlert } from "nativescript-fancyalert";
 
 @Component({
   selector: 'app-dashboard',
@@ -69,13 +70,13 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-
   get isAddCounts() {
     return this.commonService.isAddCountsPage;
   }
 
   submit() {
     this.commonService.isAddCountsPage = false;
+    this.showSuccess();
     this.router.back();
   }
 
@@ -91,6 +92,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  public showSuccess() {
+    TNSFancyAlert.showSuccess("Successful", "You have Submitted Darood Succefully ", "Dismiss");
+  }
 }
 
 

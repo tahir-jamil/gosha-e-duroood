@@ -53,8 +53,10 @@ export class StatisticsComponent implements OnInit {
   ];
 
   onfilterSelect() {
-    let sortedArray = _.orderBy(this.rangeList, ['total'], ['desc'])
-    this.chartData = _.slice(sortedArray, 0, 5);
+    if(this.rangeList) {
+      let sortedArray = _.orderBy(this.rangeList, ['total'], ['desc'])
+      this.chartData = _.slice(sortedArray, 0, 5);
+    }
   }
 
   // dataItems = ["1", "2", "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"];

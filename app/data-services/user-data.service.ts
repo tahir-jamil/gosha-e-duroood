@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { URLSearchParams } from '@angular/http';
+
 
 @Injectable()
 export class UserDataService {
@@ -15,7 +17,7 @@ export class UserDataService {
 
   login(user) {
     let options = this.createRequestOptions();
-    return this.http.get(this.serverUrl + '/login/'+user.email+'/'+user.password, { headers: options });
+    return this.http.get(this.serverUrl + '/login/' + user.email + '/' + user.password, { headers: options });
   }
 
   getParty() {
@@ -28,9 +30,33 @@ export class UserDataService {
     return this.http.get(this.serverUrl + '/userCounts/4', { headers: headers });
   }
 
-  postData(data: any) {
+  postData(args: any) {
+    let data =  JSON.parse(args);;
     let options = this.createRequestOptions();
-    return this.http.post(this.serverUrl + '/party', data, { headers: options });
+    
+    // let body = new URLSearchParams();
+    // body.set('username', data.username);
+    // body.set('name', data.name);
+    // body.set('email', data.email);
+    // body.set('password', data.password);
+    // body.set('fatherName', data.fatherName);
+    // body.set('nic', data.nic);
+    // body.set('dob', data.dob);
+    // body.set('city', data.city);
+    // body.set('district', data.district);
+    // body.set('provience', data.provience);
+    // body.set('country', data.country);
+    // body.set('phoneRes', data.phoneRes);
+    // body.set('phoneOff', data.phoneOff);
+    // body.set('phoneCell', data.phoneCell);
+    // body.set('education', data.education);
+    // body.set('profession', data.profession);
+    // body.set('postalAddress', data.postalAddress);
+    // body.set('holyQuran', data.holyQuran);
+
+    let body = `username=${data.username}&name=${data.name}&email=${data.email}&password=${data.password}&fatherName=${data.fatherName}&nic=${data.nic}&dob=${data.dob}&city=${data.city}&district=${data.district}&provience=${data.provience}&country=${data.country}&phoneRes=${data.phoneRes}&phoneOff=${data.phoneOff}&phoneCell=${data.phoneCell}&education=${data.education}&profession=${data.profession}&postalAddress=${data.postalAddress}&holyQuran=${data.holyQuran}`;
+
+    return this.http.post(this.serverUrl + '/party', body, { headers: options });
   }
 
   // Counts Queries
@@ -59,212 +85,4 @@ export class UserDataService {
   }
 
 
-  countData = [
-    { date: '22/08/18', time: '2:30am', count: 100 },
-    { date: '22/08/18', time: '2:30am', count: 500 },
-    { date: '22/02/18', time: '2:30am', count: 300 },
-    { date: '22/08/18', time: '2:30am', count: 1900 },
-    { date: '22/04/18', time: '2:30am', count: 2300 },
-  ];
-
-
-
-  rangeListFilteredData = [
-    { rangeName: "Lahore", count: 5 },
-    { rangeName: "Karachi", count: 4 },
-    { rangeName: "Islamabad", count: 3 },
-    { rangeName: "Multan", count: 2 },
-    { rangeName: "Gujranwala", count: 200 },
-    { rangeName: "Sialkot", count: 6 },
-    { rangeName: "Rawalpindi", count: 7 },
-    { rangeName: "Wazirabad", count: 8 },
-    { rangeName: "Alipur", count: 9 },
-  ];
-
-
-
-  bussinessData = [
-    {
-      username: "itstahirjamil",
-      name: "tahir jamil",
-      email: "tahir@gmail.com",
-      password: "tahir.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "pakistan",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    },
-    {
-      username: "itstahirjamil",
-      name: "tahir jamil 2",
-      email: "tahirjamil9292@gmail.com",
-      password: "abc123.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "pakistan",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    },
-    {
-      username: "itstahirjamil",
-      name: "tahir jamil 2",
-      email: "taamil9292@gmail.com",
-      password: "abc123.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "pakistan",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    },
-    {
-      username: "itstahirjamil",
-      name: "tahir jamil 2",
-      email: "tahirjamil92@gmail.com",
-      password: "abc123.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "pakistan",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    },
-    {
-      username: "itstahirjamil",
-      name: "tahir jamil 2",
-      email: "t292@gmail.com",
-      password: "abc123.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "pakistan",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    },
-    {
-      username: "itstahirjamil",
-      name: "tahir jamil 2",
-      email: "tgmail.com",
-      password: "abc123.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "pakistan",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    },
-    {
-      username: "itstahirjamil",
-      name: "as",
-      email: "tahirjamil9292@.com",
-      password: "abc123.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "afghanistan",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    },
-    {
-      username: "itstahirjamil",
-      name: "ca",
-      email: "tahrjamil.com",
-      password: "abc123.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "canada",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    },
-    {
-      username: "itstahirjamil",
-      name: "awais",
-      email: "ta.com",
-      password: "abc123.",
-      fathername: "Jameel",
-      nic: "3510564781557",
-      dateofBirth: "2018-09-19",
-      city: "Lahore",
-      district: "Lahore",
-      provience: "punjab",
-      country: "india",
-      phoneres: "8997648267",
-      phoneoff: "976889680658",
-      phonecell: "4889678001",
-      holyQuran: "0",
-      education: "Masters",
-      profession: "IT professional",
-      postalAddress: "Gajumata"
-    }
-
-
-  ];
 }

@@ -1,12 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { RemoteUser } from '~/signup/user-data-service';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
-import { BehaviorSubject } from 'rxjs';
 import { UserDataService } from '~/data-services/user-data.service';
-import * as geolocation from "nativescript-geolocation";
-import { Accuracy } from "ui/enums"; // used to describe at what accuracy the location should be get
-import { Console } from '@angular/core/src/console';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -16,10 +11,10 @@ import { Console } from '@angular/core/src/console';
 
 export class SignupComponent implements OnInit {
 
+  signUpForm;
   // private _user: RemoteUser;
-  titleName: string = "Personal Information";
   @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
-  constructor(private _page: Page, private userData: UserDataService) {
+  constructor(private _page: Page, private userDataService: UserDataService) {
   }
 
   ngOnInit(): void {
@@ -27,108 +22,42 @@ export class SignupComponent implements OnInit {
   }
 
   signUPUser = {
-    name: "",
-    username: "",
-    email: "",
-    Password: "",
-    city: "",
-    district: "",
-    provience: "",
-    country: "",
-    phoneRes: 0,
-    phoneOff: 0,
-    phoneCell: 0,
-    holyQuran: true,
-    education: "",
+    name: "tahir",
+    username: "tahir",
+    fatherName: "father name",
+    email: "tahir@gmail.com",
     dateOfBirth: "",
-    fatherName: "",
-    profession: "",
-    nic: "",
-    postalAddress: "",
-
-
+    password: "tahir",
+    city: "lahore",
+    district: "lahore",
+    provience: "Punjab",
+    country: "pakistan",
+    phoneRes: "03030242",
+    phoneOff: "0342343",
+    phoneCell: "03242432",
+    education: "Bscs",
+    profession: "development",
+    nic: "034020424024234",
+    postalAddress: "043",
+    holyQuran: true,
   };
 
 
   options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
 
   onPropertyCommitted() {
-    if (this.signUPUser.name && this.signUPUser.username && this.signUPUser.email && this.signUPUser.Password && this.signUPUser.city && this.signUPUser.country)
-      UserDataService.setString("bussinessData", JSON.stringify(this.signUPUser));
-
+    if (this.myCommitDataFormComp.dataForm.editedObject) {
+      this.signUpForm = this.myCommitDataFormComp.dataForm.editedObject;
+    }
   }
-  
-  // submit() {
-  //   console.log("submit form");
-  //   console.dir(this.myCommitDataFormComp.dataForm.editedObject);
 
+  submitForm() {
+    console.log("submit form");
+    this.userDataService.postData(this.signUpForm).subscribe(res => {
+      console.dir(res);
+    }, (error) => {
+      console.dir(error);
+    });
+  }
 
-  // }
-
-
-
-
-
-  //   this.items = new BehaviorSubject([
-  //     {
-  //       title: 'Personal Information',
-  //       items: []
-  //     },
-
-
-  //     {
-  //      title: 'Education and Profession',
-  //       items: []
-  //      },
-  //      {
-  //        title: 'Address',
-  //        items: []
-  //      },
-  //      {
-  //        title: 'Contact',
-  //        items: []
-  //      },
-  //      {
-  //        title: 'Others',
-  //        items: []
-
-
-
-  //   ]);
-  //   this.numItems = this.items.value.length;
-  // }
-
-
-
-  // loadedImage($event) {
-  //   console.log(`loaded image ${JSON.stringify($event)}`);
-  // }
-
-  // prevPage() {
-  //   // this.debugObj(this.pager);
-  //   const newIndex = Math.max(0, this.currentPagerIndex - 1);
-  //   this.currentPagerIndex = newIndex;
-  //   this.latestReceivedIndex = newIndex;
-  // }
-
-  // nextPage() {
-  //   const newIndex = Math.min(this.numItems - 1, this.currentPagerIndex + 1);
-  //   this.currentPagerIndex = newIndex;
-  //   this.latestReceivedIndex = newIndex;
-  // }
-
-  // onIndexChanged($event) {
-  //   this.latestReceivedIndex = $event.newIndex;
-  //   this.titleName = this.items[this.latestReceivedIndex].title;
-  // }
-
-  // pageChanged(index: number) {
-  //   console.log(`pageChanged ${JSON.stringify(index)}`);
-  // }
-
-  // get getTitle() {
-  //   if(!!this.items[this.currentPagerIndex].title) {
-  //     return this.items[this.currentPagerIndex].title;
-  //   }
-  // }
 }

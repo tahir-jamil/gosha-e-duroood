@@ -31,9 +31,9 @@
 					<RadListView [items]="rangeList" >
 						<ng-template tkListItemTemplate let-item="item">
 							<GridLayout columns="auto,auto,*" class="list-item-padding">
-								<Label [text]="item.filterName" col="1" class="duroodCout main-font" horizontalAlignment="left" verticalAlignment="middle"
+								<Label [text]="item?.filterName" col="1" class="duroodCout main-font" horizontalAlignment="left" verticalAlignment="middle"
 								 textWrap="true"></Label>
-								<Label [text]="item.total" col="2" class="duroodCout main-font" horizontalAlignment="right" verticalAlignment="middle"
+								<Label [text]="item?.total" col="2" class="duroodCout main-font" horizontalAlignment="right" verticalAlignment="middle"
 								 textWrap="true"></Label>
 							</GridLayout>
 						</ng-template>

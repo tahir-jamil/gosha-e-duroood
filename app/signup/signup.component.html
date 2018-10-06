@@ -2,7 +2,7 @@
 </ActionBar>
 <GridLayout>
     <GridLayout marginBottom="10%">
-        <RadDataForm tkExampleTitle tkToggleNavButton [source]="signUPUser">
+        <RadDataForm #myCommitDataForm  commitMode="Immediate" tkExampleTitle tkToggleNavButton [source]="signUPUser" (propertyCommitted)="onPropertyCommitted()">
             <TKEntityProperty tkDataFormProperty name="username" displayName="chose your Username" index="0">
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
@@ -12,7 +12,7 @@
             <TKEntityProperty tkDataFormProperty name="email" displayName="Enter your E-mail  ID " index="2">
                 <TKPropertyEditor tkEntityPropertyEditor type="Email"></TKPropertyEditor>
             </TKEntityProperty>
-            <TKEntityProperty tkDataFormProperty name="Password" displayName="Chose Your Password" index="3">
+            <TKEntityProperty tkDataFormProperty name="password" displayName="Chose Your Password" index="3">
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
             <TKEntityProperty tkDataFormProperty name="fatherName" displayName="Father's name" index="4">
@@ -59,5 +59,5 @@
             </TKEntityProperty>
         </RadDataForm>
     </GridLayout>
-    <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="navigateTo('/dashboard')" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+    <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="submitForm()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
 </GridLayout>

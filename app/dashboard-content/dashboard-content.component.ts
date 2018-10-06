@@ -19,6 +19,7 @@ export class DashboardContentComponent implements OnInit {
   partyList;
   partytotal;
   fildata: any;
+
   constructor(private _page: Page, private userService: UserDataService, private routerExtensions: RouterExtensions, private commonService: CommonService) {
 
   }
@@ -78,3 +79,4 @@ export class DashboardContentComponent implements OnInit {
   }
 
 }
+

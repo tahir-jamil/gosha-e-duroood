@@ -30,9 +30,6 @@ export class StatisticsComponent implements OnInit {
 
   ngOnInit(): void {
     this._page.actionBarHidden = true;
-    this.onfilterSelect("city");
-    // this.statisticsData = this.userData.rangeListFilteredData;
-    this.rangeList = this.statisticsData;
   }
 
 
@@ -40,6 +37,7 @@ export class StatisticsComponent implements OnInit {
     this.userService.getSatistics(filter).subscribe(res => {
       console.dir(res);
       this.rangeList = res;
+      this.onfilterSelect();
     }, (error) => {
       console.dir(error);
     });
@@ -54,15 +52,11 @@ export class StatisticsComponent implements OnInit {
     { Brand: "BMW", Amount: 24 },
   ];
 
-  onfilterSelect(rangeName) {
-
-    this.onLoaded(rangeName);
-    // this.rangeList = this.statisticsData;
-
-    // let sortedArray = _.orderBy(this.rangeList, ['count'], ['desc']);
-    // this.chartData = _.slice(sortedArray, 0, 5);
+  onfilterSelect() {
+    let sortedArray = _.orderBy(this.rangeList, ['total'], ['desc'])
+    this.chartData = _.slice(sortedArray, 0, 5);
   }
-  
+
   // dataItems = ["1", "2", "3", "4", "1", "2", "3", "4", "1", "2", "3", "4"];
 
   statisitcs = [
@@ -70,7 +64,4 @@ export class StatisticsComponent implements OnInit {
     { range: "district" },
     { range: "provience" },
     { range: "country" }]
-
-
-
 }

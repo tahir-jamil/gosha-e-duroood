@@ -26,16 +26,26 @@ export class LoginComponent implements OnInit {
     this._page.actionBarHidden = true;
   }
 
-  login(path) {
-    if ((this.user.email == this.userData.bussinessData[0].email) && (this.user.password == this.userData.bussinessData[0].password))
-      
-    this.userData.getParty().subscribe(res => {
+
+  login() {
+    if ((this.user.email && this.user.password)) {
+      this.userData.login(this.user).subscribe(res => {
         console.dir(res);
-        this.navigateTo(path);
+        this.userData.user = res;
+        this.confirmLogin();
       }, error => {
         console.dir(error);
-
       });
+    }
+  }
+
+  confirmLogin() {
+    this.routerExtensions.navigate(['/dashboard'], {
+      transition: {
+        name: 'slideLeft',
+        curve: 'linear'
+      }
+    });
   }
 
   postData() {

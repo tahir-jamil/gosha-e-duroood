@@ -17,7 +17,7 @@
 		<GridLayout height="40%" class="padding-right" tkExampleTitle tkToggleNavButton rows="*" verticalAlignment="top">
 			<RadPieChart allowAnimation="true" height="100%" row="0">
 				<PieSeries tkPieSeries selectionMode="DataPoint" expandRadius="0.4" outerRadiusFactor="0.7" [items]="chartData"
-				 valueProperty="count" legendLabel="rangeName"></PieSeries>
+				 valueProperty="total" legendLabel="filterName"></PieSeries>
 				<RadLegendView tkPieLegend position="Right" title="Brands" offsetOrigin="TopRight" width="110" enableSelection="true"></RadLegendView>
 			</RadPieChart>
 			<Label text="Top 5 rated countries" verticalAlignment="top" class="ratedText"></Label>
@@ -31,9 +31,9 @@
 					<RadListView [items]="rangeList" >
 						<ng-template tkListItemTemplate let-item="item">
 							<GridLayout columns="auto,auto,*" class="list-item-padding">
-								<Label [text]="item.rangeName" col="1" class="duroodCout main-font" horizontalAlignment="left" verticalAlignment="middle"
+								<Label [text]="item.filterName" col="1" class="duroodCout main-font" horizontalAlignment="left" verticalAlignment="middle"
 								 textWrap="true"></Label>
-								<Label [text]="item.count" col="2" class="duroodCout main-font" horizontalAlignment="right" verticalAlignment="middle"
+								<Label [text]="item.total" col="2" class="duroodCout main-font" horizontalAlignment="right" verticalAlignment="middle"
 								 textWrap="true"></Label>
 							</GridLayout>
 						</ng-template>

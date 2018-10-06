@@ -13,7 +13,7 @@ import { CounterdaroodComponent } from './counterdarood/counterdarood.component'
 
 
 const routes: Routes = [
-    { path: "", redirectTo: "getting-started", pathMatch: "full" },
+    { path: "", redirectTo: "dashboard", pathMatch: "full" },
     { path: "getting-started", component: GettingStartedComponent },
     { path: "login", component: LoginComponent },
     { path: "signup", component: SignupComponent },

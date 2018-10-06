@@ -3,66 +3,54 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class UserDataService {
-  email: string;
 
-  static setString(arg0: any, arg1: any): any {
-    throw new Error("Method not implemented.");
-  }
+  // current user data saved
+  user;
 
   constructor(private http: HttpClient) { }
 
   private serverUrl = "http://localhost:8000/api";
 
-  private createRequestHeader() {
-    // set headers here e.g.
-    let headers = new HttpHeaders({
-      "AuthKey": "my-key",
-      "AuthToken": "my-token",
-      "Content-Type": "application/json",
-    });
-    return headers;
-  }
-
   // party Queries
 
-
-  login() {
-    let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl + '/party/username/password', { headers: headers });
+  login(user) {
+    let options = this.createRequestOptions();
+    return this.http.get(this.serverUrl + '/login/'+user.email+'/'+user.password, { headers: options });
   }
-
 
   getParty() {
-    let headers = this.createRequestHeader();
+    let headers = this.createRequestOptions();
     return this.http.get(this.serverUrl + '/counts/4', { headers: headers });
   }
-  
+
   getPartyTotal() {
-    let headers = this.createRequestHeader();
+    let headers = this.createRequestOptions();
     return this.http.get(this.serverUrl + '/userCounts/4', { headers: headers });
   }
-  
 
   postData(data: any) {
     let options = this.createRequestOptions();
-    return this.http.post(this.serverUrl+'/party',  data , { headers: options });
+    return this.http.post(this.serverUrl + '/party', data, { headers: options });
   }
-  
+
   // Counts Queries
-  postCountsData(data: any) {
+  postCountsData(data) {
     let options = this.createRequestOptions();
-    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" + this.serverUrl + '/counts');
-  
-    return  this.http.post(this.serverUrl+'/counts', JSON.stringify({duroodCount: 11}), {headers: options});
+
+    let body = new URLSearchParams();
+    body.set('duroodCount', "tahir");
+    body.set('party_id', "23");
+
+    return this.http.post(this.serverUrl + '/counts', body, { headers: options });
   }
 
   //statistics Queries
   getSatistics(filter) {
-    let headers = this.createRequestHeader();
-    return this.http.get(this.serverUrl + '/statistics/'+filter, { headers: headers });
+    let headers = this.createRequestOptions();
+    return this.http.get(this.serverUrl + '/statistics/' + filter, { headers: headers });
   }
 
-  
+
   private createRequestOptions() {
     let headers = new HttpHeaders({
       "Content-Type": "application/x-www-form-urlencoded"

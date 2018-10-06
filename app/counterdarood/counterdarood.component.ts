@@ -29,7 +29,7 @@ export class CounterdaroodComponent implements OnInit {
   }
   
   onButtonTap() {
-    this.userService.postCountsData(this.createCounts).subscribe(res => {
+    this.userService.postCountsData([]).subscribe(res => {
       console.dir(res);
       // this.router.back()
     }, (error) => {

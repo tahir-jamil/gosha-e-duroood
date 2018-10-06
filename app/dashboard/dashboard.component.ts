@@ -95,6 +95,16 @@ export class DashboardComponent implements OnInit {
   public showSuccess() {
     TNSFancyAlert.showSuccess("Successful", "You have Submitted Darood Succefully ", "Dismiss");
   }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/getting-started'], {
+      transition: {
+        name: 'SlideRight',
+        curve: 'linear'
+      }
+    });
+  }
 }
 
 

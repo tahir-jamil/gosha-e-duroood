@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { UserDataService } from '~/data-services/user-data.service';
-import { DashboardComponent } from '~/dashboard/dashboard.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-login',
@@ -29,8 +29,7 @@ export class LoginComponent implements OnInit {
   login() {
     if ((this.user.email && this.user.password)) {
       this.userData.login(this.user).subscribe(res => {
-        console.dir(res);
-        this.userData.user = res[0];
+        localStorage.setItem("partyId", res[0].id);
         this.confirmLogin();
       }, error => {
         console.dir(error);

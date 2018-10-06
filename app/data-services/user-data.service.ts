@@ -22,12 +22,12 @@ export class UserDataService {
 
   getParty() {
     let headers = this.createRequestOptions();
-    return this.http.get(this.serverUrl + '/counts/4', { headers: headers });
+    return this.http.get(this.serverUrl + '/counts/'+parseInt(localStorage.getItem("partyId")), { headers: headers });
   }
 
   getPartyTotal() {
     let headers = this.createRequestOptions();
-    return this.http.get(this.serverUrl + '/userCounts/4', { headers: headers });
+    return this.http.get(this.serverUrl + '/userCounts/'+parseInt(localStorage.getItem("partyId")), { headers: headers });
   }
 
   postData(args: any) {
@@ -43,7 +43,7 @@ export class UserDataService {
   postCountsData(data) {
     let options = this.createRequestOptions();
 
-    let body = `durrodCount=${data.duroodCount}&party_id=${data.party_id}`;
+    let body = `duroodCount=${data.duroodCount}&party_id=${data.party_id}`;
     return this.http.post(this.serverUrl + '/counts', body, { headers: options });
   }
 

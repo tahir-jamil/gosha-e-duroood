@@ -57,6 +57,7 @@ export class DashboardContentComponent implements OnInit {
       cancelable: true
     };
 
+
     prompt(options).then((result: PromptResult) => {
       let number = parseInt(result.text);
       if (number) {
@@ -67,10 +68,11 @@ export class DashboardContentComponent implements OnInit {
           else {
             let data = {
               duroodCount: number,
-              party_id: this.userService.user.id
+              party_id: parseInt(localStorage.getItem("partyId"))
             };
             this.userService.postCountsData(data).subscribe(res => {
                 console.dir(res);
+                this.onLoaded();
             },(error) => {
                 console.dir(error);
             });

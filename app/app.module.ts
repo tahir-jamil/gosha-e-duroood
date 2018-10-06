@@ -9,9 +9,10 @@ import { LoginComponent } from "~/login/login.component";
 // Uncomment and add to NgModule imports if you need to use two-way binding
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
+
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
-
+import "nativescript-localstorage";
 import { SignupComponent } from '~/signup/signup.component';
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular/dataform-directives";
 import { NativeScriptUISideDrawerModule  } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";

@@ -10,13 +10,15 @@ import { DashboardContentComponent } from "~/dashboard-content/dashboard-content
 import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.component";
 import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
+import { SubmitManualCountComponent } from "~/submitManualCount/submitManualCount.component";
 
 
 const routes: Routes = [
-    { path: "", redirectTo: "dashboard", pathMatch: "full" },
+    { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "getting-started", component: GettingStartedComponent },
     { path: "login", component: LoginComponent },
     { path: "signup", component: SignupComponent },
+    { path: 'submitDuroodManual', component: SubmitManualCountComponent},
     {
         path: 'dashboard', component: DashboardComponent, children: [
             { path: '', component: DashboardContentComponent },
@@ -24,10 +26,10 @@ const routes: Routes = [
             { path: 'applyForGosha', component:ApplyForGoshaENasheenComponent },
             { path: 'statistics', component: StatisticsComponent },
             { path: 'counterdarood', component: CounterdaroodComponent},
-            
         ]
     },
 ];
+
 ApplyForGoshaENasheenComponent
 @NgModule({
     imports: [NativeScriptRouterModule.forRoot(routes)],

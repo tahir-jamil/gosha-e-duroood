@@ -31,28 +31,8 @@ export class UserDataService {
   }
 
   postData(args: any) {
-    let data =  JSON.parse(args);;
+    let data =  JSON.parse(args);
     let options = this.createRequestOptions();
-    
-    // let body = new URLSearchParams();
-    // body.set('username', data.username);
-    // body.set('name', data.name);
-    // body.set('email', data.email);
-    // body.set('password', data.password);
-    // body.set('fatherName', data.fatherName);
-    // body.set('nic', data.nic);
-    // body.set('dob', data.dob);
-    // body.set('city', data.city);
-    // body.set('district', data.district);
-    // body.set('provience', data.provience);
-    // body.set('country', data.country);
-    // body.set('phoneRes', data.phoneRes);
-    // body.set('phoneOff', data.phoneOff);
-    // body.set('phoneCell', data.phoneCell);
-    // body.set('education', data.education);
-    // body.set('profession', data.profession);
-    // body.set('postalAddress', data.postalAddress);
-    // body.set('holyQuran', data.holyQuran);
 
     let body = `username=${data.username}&name=${data.name}&email=${data.email}&password=${data.password}&fatherName=${data.fatherName}&nic=${data.nic}&dob=${data.dob}&city=${data.city}&district=${data.district}&provience=${data.provience}&country=${data.country}&phoneRes=${data.phoneRes}&phoneOff=${data.phoneOff}&phoneCell=${data.phoneCell}&education=${data.education}&profession=${data.profession}&postalAddress=${data.postalAddress}&holyQuran=${data.holyQuran}`;
 
@@ -63,10 +43,7 @@ export class UserDataService {
   postCountsData(data) {
     let options = this.createRequestOptions();
 
-    let body = new URLSearchParams();
-    body.set('duroodCount', "tahir");
-    body.set('party_id', "23");
-
+    let body = `durrodCount=${data.duroodCount}&party_id=${data.party_id}`;
     return this.http.post(this.serverUrl + '/counts', body, { headers: options });
   }
 

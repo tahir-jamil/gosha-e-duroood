@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   user: { email: string, password: string } = {
     email: "",
     password: ""
-
   }
 
   constructor(private routerExtensions: RouterExtensions, private _page: Page, private userData: UserDataService, private http: HttpClient) {
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
     if ((this.user.email && this.user.password)) {
       this.userData.login(this.user).subscribe(res => {
         console.dir(res);
-        this.userData.user = res;
+        this.userData.user = res[0];
         this.confirmLogin();
       }, error => {
         console.dir(error);

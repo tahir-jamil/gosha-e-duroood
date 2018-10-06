@@ -18,14 +18,11 @@ export class CounterdaroodComponent implements OnInit {
   };
 
   constructor(private router: RouterExtensions, private _page: Page, private userService: UserDataService, private commonService: CommonService) { }
-   
-
   
 
   ngOnInit() {
     this._page.actionBarHidden = true;
-    this.commonService.isAddCountsPage = true;
-    
+    this.commonService.isAddCountsPage = true; 
   }
   
   onButtonTap() {

@@ -30,6 +30,7 @@ import { DropDownModule } from "nativescript-drop-down/angular";
 import { UserDataService } from "~/data-services/user-data.service";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { CommonService } from "~/data-services/common.service";
+import { SubmitManualCountComponent } from './submitManualCount/submitManualCount.component';
 
 @NgModule({
    bootstrap: [
@@ -60,8 +61,12 @@ import { CommonService } from "~/data-services/common.service";
       AboutGoshaComponent,
       SubmitDuroodComponent,
       CounterdaroodComponent,
+      SubmitManualCountComponent
    ],
-   providers: [UserDataService,CommonService],
+   providers: [
+      UserDataService,
+      CommonService
+   ],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

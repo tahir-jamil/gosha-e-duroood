@@ -20,7 +20,7 @@ export class StatisticsComponent implements OnInit {
   rangeList;
   chartData = [];
 
-  Filters = [
+  filters = [
     { name: "Country" },
     { name: "City" }
   ]
@@ -34,6 +34,10 @@ export class StatisticsComponent implements OnInit {
 
 
   onLoaded(filter) {
+    this.getFiltersData(filter);
+  }
+
+  getFiltersData(filter) {
     this.userService.getSatistics(filter).subscribe(res => {
       console.dir(res);
       this.rangeList = res;
@@ -43,6 +47,10 @@ export class StatisticsComponent implements OnInit {
     });
   }
 
+  filterChange(filter) {
+    console.log(filter);
+    this.getFiltersData(filter);
+  }
 
   pieSource: { Brand: string, Amount: number }[] = [
     { Brand: "Audi", Amount: 10 },

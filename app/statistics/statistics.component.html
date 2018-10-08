@@ -1,19 +1,19 @@
 <ActionBar title="Home" class="action-bar">
 </ActionBar>
 
-<GridLayout class="page" (loaded)="onLoaded('county')">
-	<GridLayout class="hor-list-hight" verticalAlignment="top">
-		<StackLayout>
-			<Label text="Filters" class="heading-filter sec-font" textWrap="true"></Label>
-			<StackLayout orientation="horizontal" class="alignScroll">
-				<Label text="Country" class="label-horizontal" (tap)="onfilterSelect('county')" horizontalAlignment="center"
-				 textWrap="true"></Label>
-				<Label text="City" class="label-horizontal" (tap)="onfilterSelect('city')" horizontalAlignment="center" textWrap="true"></Label>
-			</StackLayout>
+<GridLayout class="page" rows="*,6*" (loaded)="onLoaded('county')">
+	<StackLayout>
+		<Label text="Filters" class="heading-filter sec-font" textWrap="true"></Label>
+		<StackLayout class="alignScroll" verticalAlignemnt="top" orientation="horizontal">
+			<ScrollView orientation="horizontal">
+				<StackLayout orientation="horizontal"  class="scroll-menu">
+					<Label  *ngFor='let item of filters; let i=index' [text]="item.name" (tap)="filterChange(item.name)" class="filterItem"></Label>
+				</StackLayout>
+			</ScrollView>
 		</StackLayout>
-	</GridLayout>
+	</StackLayout>
 
-	<GridLayout height="88%" verticalAlignment="bottom">
+	<GridLayout row="1" rows="auto,*" verticalAlignment="bottom">
 		<GridLayout height="40%" class="padding-right" tkExampleTitle tkToggleNavButton rows="*" verticalAlignment="top">
 			<RadPieChart allowAnimation="true" height="100%" row="0">
 				<PieSeries tkPieSeries selectionMode="DataPoint" expandRadius="0.4" outerRadiusFactor="0.7" [items]="chartData"
@@ -23,16 +23,16 @@
 			<Label text="Top 5 rated countries" verticalAlignment="top" class="ratedText"></Label>
 		</GridLayout>
 
-		<GridLayout height="60%" tkExampleTitle tkToggleNavButton class="z-index1" verticalAlignment="bottom">
+		<GridLayout row="1" tkExampleTitle tkToggleNavButton class="z-index1" verticalAlignment="bottom">
 			<StackLayout>
 
 				<Label text="Statistics" class="heading-filter-list sec-font" textWrap="true"></Label>
 				<GridLayout tkExampleTitle tkToggleNavButton class="listview-align">
-					<RadListView [items]="rangeList" >
+					<RadListView [items]="rangeList">
 						<ng-template tkListItemTemplate let-item="item">
 							<GridLayout columns="auto,auto,*" class="list-item-padding">
-								<Label [text]="item?.filterName" col="1" class="duroodCout main-font" horizontalAlignment="left" verticalAlignment="middle"
-								 textWrap="true"></Label>
+								<Label [text]="item?.filterName" col="1" class="duroodCout main-font" horizontalAlignment="left"
+								 verticalAlignment="middle" textWrap="true"></Label>
 								<Label [text]="item?.total" col="2" class="duroodCout main-font" horizontalAlignment="right" verticalAlignment="middle"
 								 textWrap="true"></Label>
 							</GridLayout>

@@ -8,7 +8,7 @@ export class UserDataService {
 
   // current user data saved
   user;
-
+  totalCountsCounter = 0;
   constructor(private http: HttpClient) { }
 
   private serverUrl = "http://localhost:8000/api";
@@ -60,6 +60,4 @@ export class UserDataService {
     });
     return headers;
   }
-
-
 }

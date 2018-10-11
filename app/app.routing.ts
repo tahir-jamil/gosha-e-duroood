@@ -11,9 +11,8 @@ import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.compon
 import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
 
-
 const routes: Routes = [
-    { path: "", redirectTo: "dashboard/counterdarood", pathMatch: "full" },
+    { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "getting-started", component: GettingStartedComponent },
     { path: "login", component: LoginComponent },
     { path: "signup", component: SignupComponent },

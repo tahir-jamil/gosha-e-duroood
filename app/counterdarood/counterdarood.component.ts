@@ -12,16 +12,9 @@ import { CommonService } from '~/data-services/common.service';
 })
 export class CounterdaroodComponent implements OnInit {
 
-  counter = 500;
-  // createCounts:any = {
-  //   counter:500,
-  //   // partyId:10
-  // };
-
-  getCounter() {
-    return this.counter;
+  get getCounter() {
+    return this.userService.totalCountsCounter;
   }
-
 
   buttonToggle: boolean = true;
 
@@ -36,21 +29,13 @@ export class CounterdaroodComponent implements OnInit {
   onButtonTap() {
     console.log("~~~~~~~~~~~~~~~~~~~~~~~~tapped");
     this.buttonToggle = false;
-    this.counter = this.counter + 1;
-    this.getCounter();
+    this.userService.totalCountsCounter = this.userService.totalCountsCounter + 1;
     setTimeout(() => {
       this.buttonToggle = true;
     }, 1000);
   }
 
   
-  onSubmit() {
-    this.userService.postCountsData([]).subscribe(res => {
-      console.dir(res);
-      // this.router.back()
-    }, (error) => {
-      console.dir(error);
-    });
-  }
+  
 
 }

@@ -2,10 +2,12 @@
   <ActionItem android:position="actionBar">
     <Label horizontalAlignment="left" class="text-left md-icon f-s-25 color-menu" (tap)="openDrawer()" text="&#xe5d2;"></Label>
   </ActionItem>
-  <ActionItem (tap)="reset()"  [visibility]="isAddCounts ? 'visible' : 'collapsed'" [ngClass]="{'icon-animation' : isAddCounts }" ios.position="right">
+  <ActionItem (tap)="reset()"  [visibility]="isAddCounts ? 'visible' : 'collapsed'" ios.position="right">
     <Button text="&#xe8ba;" class="action-item md-icon f-s-25 font"></Button>
   </ActionItem>
-  <ActionItem (tap)="submit()" [visibility]="isAddCounts ? 'visible' : 'collapsed'" [ngClass]="{'icon-animation' : isAddCounts }" ios.position="right">
+  <!-- [ngClass]="{'icon-animation' : isAnimate == true }" 
+[ngClass]="{'icon-animation' : isAnimate == true }"  -->
+  <ActionItem (tap)="submit()" [visibility]="isAddCounts ? 'visible' : 'collapsed'" ios.position="right">
     <Button text="Submit" class="action-item"></Button>
   </ActionItem>
   <NavigationButton visibility="collapsed" icon="res://ic_arrow_back_black_24dp" (tap)="goBack()"></NavigationButton>

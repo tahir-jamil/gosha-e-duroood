@@ -20,9 +20,7 @@ export class DashboardContentComponent implements OnInit {
   partytotal;
   fildata: any;
 
-  constructor(private _page: Page, private userService: UserDataService, private routerExtensions: RouterExtensions, private commonService: CommonService) {
-
-  }
+  constructor(private _page: Page, private userService: UserDataService, private routerExtensions: RouterExtensions, private commonService: CommonService) {}
 
   ngOnInit() {
     this._page.actionBarHidden = true;

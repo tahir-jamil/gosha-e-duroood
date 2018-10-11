@@ -6,6 +6,7 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { CommonService } from "~/data-services/common.service";
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import { TNSFancyAlert } from "nativescript-fancyalert";
+import { UserDataService } from "~/data-services/user-data.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -18,8 +19,9 @@ export class DashboardComponent implements OnInit {
   title: string = "Dashboard";
   isAndroid;
   isIos;
+  animate: boolean = false;
 
-  constructor(private router: RouterExtensions, private _changeDetectionRef: ChangeDetectorRef, private commonService: CommonService) {
+  constructor(private router: RouterExtensions, private _changeDetectionRef: ChangeDetectorRef, private commonService: CommonService, private userService: UserDataService) {
   }
 
   ngOnInit() {
@@ -74,13 +76,41 @@ export class DashboardComponent implements OnInit {
     return this.commonService.isAddCountsPage;
   }
 
-  submit() {
-    this.commonService.isAddCountsPage = false;
-    this.showSuccess();
-    this.router.back();
+  get isAnimate() {
+    return this.animate;
   }
 
+
+  onSubmit() {
+    this.commonService.isAddCountsPage = false;
+
+    this.animate = true;
+    setTimeout(() => {
+      this.animate = false;
+    }, 200);
+    
+    let data = {
+      duroodCount: this.userService.totalCountsCounter,
+      party_id: parseInt(localStorage.getItem("partyId"))
+    };
+    this.userService.postCountsData(data).subscribe(res => {
+      console.dir(res);
+      this.showSuccess();
+    this.router.back();
+      // this.router.back()
+    }, (error) => {
+      console.dir(error);
+    });
+  }
+
+
   reset() {
+    
+    this.animate = true;
+    setTimeout(() => {
+      this.animate = false;
+    }, 200);
+
     dialogs.confirm({
       title: "Do you want to Reset Counter",
       message: "In case you reset the counter your durood pak counts will be lost",
@@ -90,6 +120,7 @@ export class DashboardComponent implements OnInit {
       // result argument is boolean
       console.log("Dialog result: " + result);
     });
+
   }
 
   public showSuccess() {

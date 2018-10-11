@@ -102,7 +102,6 @@ font-size: 25dp;
         width: 100;
 }
 
-
 @keyframes icon-animation {
     0% {  
             transform: scale(0);

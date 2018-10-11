@@ -1,20 +1,6 @@
 
-
-
-.label-horizontal {
-    background: linear-gradient(to right, #5c258d, #4389a2);
-    border-radius: 5%;
-    // margin-right:10dp;
-    // padding-left: 15%;
-    // padding-right: 15%;
-    // padding-top: 5%;
-    // padding-bottom: 5%;
-    color: white;
-    font-size: 14dp;
-}
-
 .heading-filter {
-    padding: 3% 0% 3% 10%;
+    padding: 10% 0% 0% 10%;
     font-size: 18;   
 }
 
@@ -57,3 +43,12 @@
 }
 
 
+// filter item 
+.filterItem {
+    background: rgb(148, 148, 148);
+    padding: 10dp 12dp 10dp 12dp;
+    margin: 3dp;
+    border-radius: 15%;
+    font-size: 14dp;
+    color: white;
+}

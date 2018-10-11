@@ -1,5 +1,6 @@
 <GridLayout class="page" (loaded)="onLoaded()">
     <GridLayout height="35%" class="gradient" verticalAlignment="top">
+        
         <GridLayout height="50%" verticalAlignment="top" class="total-count" horizontalAlignment="center" width="80%">
             <StackLayout>
                 <Label text="Total Counts" horizontalAlignment="center" class="sec-font header-count" textWrap="true"></Label>
@@ -10,6 +11,7 @@
         <GridLayout rows="auto" columns="auto" class="notification" [visibility]="loaded == true ? 'visible' : 'collapsed'" [ngClass]="{'notication-animation' : loaded == true , 'notication-animation-close' : loaded == false}" verticalAlignment="top" horizontalAlignment="right">
             <Label text="pending" class="color-white font-size-10" textWrap="true"></Label>
         </GridLayout>
+
     </GridLayout>
     <GridLayout height="65%" verticalAlignment="bottom">
         <GridLayout rows="auto,*" tkExampleTitle tkToggleNavButton>

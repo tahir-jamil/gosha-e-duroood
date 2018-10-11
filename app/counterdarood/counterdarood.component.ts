@@ -12,10 +12,18 @@ import { CommonService } from '~/data-services/common.service';
 })
 export class CounterdaroodComponent implements OnInit {
 
-  createCounts:any = {
-    duroodCount:500,
-    // partyId:10
-  };
+  counter = 500;
+  // createCounts:any = {
+  //   counter:500,
+  //   // partyId:10
+  // };
+
+  getCounter() {
+    return this.counter;
+  }
+
+
+  buttonToggle: boolean = true;
 
   constructor(private router: RouterExtensions, private _page: Page, private userService: UserDataService, private commonService: CommonService) { }
   
@@ -26,6 +34,17 @@ export class CounterdaroodComponent implements OnInit {
   }
   
   onButtonTap() {
+    console.log("~~~~~~~~~~~~~~~~~~~~~~~~tapped");
+    this.buttonToggle = false;
+    this.counter = this.counter + 1;
+    this.getCounter();
+    setTimeout(() => {
+      this.buttonToggle = true;
+    }, 1000);
+  }
+
+  
+  onSubmit() {
     this.userService.postCountsData([]).subscribe(res => {
       console.dir(res);
       // this.router.back()

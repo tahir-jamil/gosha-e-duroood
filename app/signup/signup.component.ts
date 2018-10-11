@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   signUpForm;
   // private _user: RemoteUser;
   @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
-  constructor(private _page: Page, private userDataService: UserDataService) {
+  constructor(private _page: Page, private userDataService: UserDataService, private routerExtensions: RouterExtensions) {
   }
 
   ngOnInit(): void {
@@ -54,6 +54,12 @@ export class SignupComponent implements OnInit {
     console.log("submit form");
     this.userDataService.postData(this.signUpForm).subscribe(res => {
       console.dir(res);
+      this.routerExtensions.navigate(['/login'], {
+        transition: {
+          name: 'fade',
+          curve: 'linear'
+        }
+      });
     }, (error) => {
       console.dir(error);
     });

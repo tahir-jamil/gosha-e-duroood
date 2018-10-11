@@ -10,10 +10,10 @@
             </StackLayout>
         </GridLayout>
 
-        <Label verticalAlignment="bottom" (tap)="postData()" class="text-center">
+        <Label verticalAlignment="bottom" [nsRouterLink]="['/signup']" (tap)="postData()" class="text-center">
             <FormattedString>
                 <Span text="Don't have an account? " class="f-s-14"></Span>
-                <Span text="SignUp " class="f-s-12 undeline text-primary"></Span>
+                <Span text="SignUp "  class="f-s-12 undeline text-primary"></Span>
             </FormattedString>
         </Label>
     </GridLayout>

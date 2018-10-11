@@ -81,7 +81,7 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  onSubmit() {
+  submit() {
     this.commonService.isAddCountsPage = false;
 
     this.animate = true;
@@ -93,6 +93,7 @@ export class DashboardComponent implements OnInit {
       duroodCount: this.userService.totalCountsCounter,
       party_id: parseInt(localStorage.getItem("partyId"))
     };
+    
     this.userService.postCountsData(data).subscribe(res => {
       console.dir(res);
       this.showSuccess();

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
 import { UserDataService } from '~/data-services/user-data.service';
+import { RouterExtensions } from 'nativescript-angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -27,15 +28,18 @@ export class SignupComponent implements OnInit {
     email: "tahir@gmail.com",
     dateOfBirth: "",
     password: "tahir",
+    union_council: "tahir",
+    Tehsil: "tahir",
     city: "lahore",
     district: "lahore",
     provience: "Punjab",
     country: "pakistan",
+    education: "Bscs",
+    profession: "development",
     phoneRes: "03030242",
     phoneOff: "0342343",
     phoneCell: "03242432",
-    education: "Bscs",
-    profession: "development",
+    dob: "034020424024234",
     nic: "034020424024234",
     postalAddress: "043",
     holyQuran: true,

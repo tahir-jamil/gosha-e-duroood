@@ -30,6 +30,7 @@ export class StatisticsComponent implements OnInit {
 
   ngOnInit(): void {
     this._page.actionBarHidden = true;
+    this.getFiltersData('country');
   }
 
 

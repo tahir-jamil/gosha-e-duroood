@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Goshaenasheen } from "~/data-services/user";
 import { Page } from 'tns-core-modules/ui/page/page';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { TNSFancyAlert } from "nativescript-fancyalert";
 import { CommonService } from '~/data-services/common.service';
+import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
+import { UserDataService } from '~/data-services/user-data.service';
 
 @Component({
   selector: 'app-applyGoasha',
@@ -13,9 +15,14 @@ import { CommonService } from '~/data-services/common.service';
 })
 export class ApplyForGoshaENasheenComponent implements OnInit {
   private _user: Goshaenasheen;
+  
+  signUpForm = {
+    ashra: ""
+  };
 
-  constructor(private routerExtensions: RouterExtensions, private _page: Page, private commonService: CommonService) {
+  constructor(private routerExtensions: RouterExtensions, private _page: Page, private commonService: CommonService, private userDataService: UserDataService) {
   }
+
   public showSuccess() {
     TNSFancyAlert.showSuccess("Successful", "You Have successfully Apply for Gosha nasheen", "navigateTo('/dashboard')");
   }
@@ -25,7 +32,7 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._user = new Goshaenasheen("", "", "", 0, 0, 0, false, "", "", "", "", "", "", "", "", "", "", "", false, "");
+    this._user = new Goshaenasheen("Aslam", "Aslam", "Aslam", 0, 0, 0, false, "", "", "", "", "", "", "", "", "", "", "", false, "");
     this._page.actionBarHidden = true;
     this.commonService.isAddCountsPage = false;
 
@@ -35,12 +42,31 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
   }
   options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
   options_ashra = ["first", "Second", "Third"];
-  navigateTo(path) {
-    this.routerExtensions.navigate([path], {
-      transition: {
-        name: "fade",
-        curve: "linear"
-      }
+  
+  navigateTo() {
+    this.routerExtensions.back();
+  }
+
+  @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
+
+  onPropertyCommitted() {
+    if (this.myCommitDataFormComp.dataForm.editedObject) {
+      this.signUpForm = this.myCommitDataFormComp.dataForm.editedObject;
+    }
+  }
+
+  submitForm() {
+    console.log("submit form");
+    this.userDataService.postData(this.signUpForm).subscribe(res => {
+      console.dir(res);
+      this.routerExtensions.navigate(['/login'], {
+        transition: {
+          name: 'fade',
+          curve: 'linear'
+        }
+      });
+    }, (error) => {
+      console.dir(error);
     });
   }
 }

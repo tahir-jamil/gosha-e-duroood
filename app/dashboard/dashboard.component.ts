@@ -17,6 +17,7 @@ import { UserDataService } from "~/data-services/user-data.service";
 export class DashboardComponent implements OnInit {
 
   title: string = "Dashboard";
+  email = "";
   isAndroid;
   isIos;
   animate: boolean = false;
@@ -31,6 +32,11 @@ export class DashboardComponent implements OnInit {
     else if (isIOS) {
       this.isIos = true;
     }
+    this.email = localStorage.getItem("email");
+  }
+
+  get getEmail() {
+    return this.email;
   }
 
   private _mainContentText: string;
@@ -98,6 +104,7 @@ export class DashboardComponent implements OnInit {
       console.dir(res);
       this.showSuccess();
     this.router.back();
+    this.userService.totalCountsCounter = 0;
       // this.router.back()
     }, (error) => {
       console.dir(error);

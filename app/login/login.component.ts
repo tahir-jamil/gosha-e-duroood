@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     if ((this.user.email && this.user.password)) {
       this.userData.login(this.user).subscribe(res => {
         localStorage.setItem("partyId", res[0].id);
+        localStorage.setItem("email", res[0].email);
         this.confirmLogin();
       }, error => {
         console.dir(error);

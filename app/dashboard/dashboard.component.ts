@@ -88,32 +88,41 @@ export class DashboardComponent implements OnInit {
 
 
   submit() {
-    this.commonService.isAddCountsPage = false;
 
     this.animate = true;
     setTimeout(() => {
       this.animate = false;
     }, 200);
-    
+
     let data = {
       duroodCount: this.userService.totalCountsCounter,
       party_id: parseInt(localStorage.getItem("partyId"))
     };
-    
-    this.userService.postCountsData(data).subscribe(res => {
-      console.dir(res);
-      this.showSuccess();
-    this.router.back();
-    this.userService.totalCountsCounter = 0;
-      // this.router.back()
-    }, (error) => {
-      console.dir(error);
-    });
-  }
 
+    if(data.duroodCount != 0 ){ 
+
+      
+      this.userService.postCountsData(data).subscribe(res => {
+
+        this.commonService.isAddCountsPage = false;
+        console.dir(res);
+        this.showSuccess();
+        
+        this.userService.totalCountsCounter = 0;
+        this.router.back();
+      }, (error) => {
+        console.dir(error);
+        this.showError();
+      });
+    }
+    else {
+      this.showError();
+    }
+  }
+    
 
   reset() {
-    
+
     this.animate = true;
     setTimeout(() => {
       this.animate = false;
@@ -125,6 +134,9 @@ export class DashboardComponent implements OnInit {
       okButtonText: "Reset",
       cancelButtonText: "Cancel",
     }).then(result => {
+      if(result==true){
+        this.userService.totalCountsCounter = 0;
+      }
       // result argument is boolean
       console.log("Dialog result: " + result);
     });
@@ -134,10 +146,13 @@ export class DashboardComponent implements OnInit {
   public showSuccess() {
     TNSFancyAlert.showSuccess("Successful", "You have Submitted Darood Succefully ", "Dismiss");
   }
+  public showError() {
+    TNSFancyAlert.showError("Error", "No Count Found ", "Dismiss");
+  }
 
   logout() {
     localStorage.clear();
-    this.router.navigate(['/getting-started'], {
+    this.router.navigate(['/login'], {
       transition: {
         name: 'SlideRight',
         curve: 'linear'

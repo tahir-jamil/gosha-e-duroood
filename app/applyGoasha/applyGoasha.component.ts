@@ -14,12 +14,32 @@ import { UserDataService } from '~/data-services/user-data.service';
   moduleId: module.id,
 })
 export class ApplyForGoshaENasheenComponent implements OnInit {
-  private _user: Goshaenasheen;
+  private _user = {
+    name: "goasha",
+    fatherName: "goasha",
+    postalAddress: "goasha",
+    union_council: "goasha",
+    Tehsil: "goasha",
+    city: "goasha",
+    district: "goasha",
+    provience: "goasha",
+    country: "goasha",
+    education: "goasha",
+    profession: "goasha",
+    dob: "goasha",
+    nic: "goasha",
+    email: "goasha",
+    phoneRes: "goasha",
+    phoneOff: "goasha",
+    phoneCell: "goasha",
+    holyQuran: "1",
+    ashra: "goasha",
+    updated_at: "2018-10-18 09:54:49",
+    created_at: "2018-10-18 09:54:49",
+    id: 1
+};
+  signUpForm : any;
   
-  signUpForm = {
-    ashra: ""
-  };
-
   constructor(private routerExtensions: RouterExtensions, private _page: Page, private commonService: CommonService, private userDataService: UserDataService) {
   }
 
@@ -32,14 +52,16 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._user = new Goshaenasheen("Aslam", "Aslam", "Aslam", 0, 0, 0, false, "", "", "", "", "", "", "", "", "", "", "", false, "");
+    // this._user = new Goshaenasheen("data","data","data",0,0,0,false,"data","data","data","data","data","data","data","data","data","data","data",false,"data" );
     this._page.actionBarHidden = true;
     this.commonService.isAddCountsPage = false;
 
   }
-  get user(): Goshaenasheen {
+
+  get user() {
     return this._user;
   }
+
   options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
   options_ashra = ["first", "Second", "Third"];
   
@@ -57,16 +79,12 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
 
   submitForm() {
     console.log("submit form");
-    this.userDataService.postData(this.signUpForm).subscribe(res => {
+    this.userDataService.postGoasha(this.signUpForm).subscribe(res => {
       console.dir(res);
-      this.routerExtensions.navigate(['/login'], {
-        transition: {
-          name: 'fade',
-          curve: 'linear'
-        }
-      });
+     this.routerExtensions.back();
     }, (error) => {
       console.dir(error);
     });
   }
 }
+

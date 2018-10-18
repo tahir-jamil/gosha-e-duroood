@@ -4,8 +4,7 @@ import { Page } from 'tns-core-modules/ui/page/page';
 import { UserDataService } from '~/data-services/user-data.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { platformNames } from "platform";
-import { device } from "platform";
+
 
 @Component({
   selector: 'app-login',
@@ -25,18 +24,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this._page.actionBarHidden = true;
-    var nativePlatformLocalhost;
-
-    /*in some function or globally*/
-    if (device.os === platformNames.ios) {
-      /*localhost for ios*/
-      nativePlatformLocalhost = "localhost";
-    }
-    else if (device.os === platformNames.android) {
-      /*localhost for android*/
-      nativePlatformLocalhost = "10.0.2.2";
-    }
-  }
+      if (localStorage.getItem("email")) {
+        this.confirmLogin();
+      }
+  } 
 
 
   login() {
@@ -50,6 +41,9 @@ export class LoginComponent implements OnInit {
       });
     }
   }
+
+
+
 
   confirmLogin() {
     this.routerExtensions.navigate(['/dashboard'], {

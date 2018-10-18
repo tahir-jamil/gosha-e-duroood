@@ -5,8 +5,6 @@
   <ActionItem (tap)="reset()"  [visibility]="isAddCounts ? 'visible' : 'collapsed'" ios.position="right">
     <Button text="&#xe8ba;" class="action-item md-icon f-s-25 font"></Button>
   </ActionItem>
-  <!-- [ngClass]="{'icon-animation' : isAnimate == true }" 
-[ngClass]="{'icon-animation' : isAnimate == true }"  -->
   <ActionItem (tap)="submit()" [visibility]="isAddCounts ? 'visible' : 'collapsed'" ios.position="right">
     <Button text="Submit" class="action-item"></Button>
   </ActionItem>
@@ -33,25 +31,26 @@
       </GridLayout>
       
       <GridLayout paddingtop="5%" paddingbottom="5%" rows="auto,auto,auto,auto,auto" verticalAlignment="bottom" height="70%" backgroundColor="#e1efe7">
-        <GridLayout row="0" columns="auto,*" class=" border">
+        
+        <GridLayout row="0" columns="auto,*" class=" border" (tap)="routeTo('/dashboard','Dashboard')">
           <Label text=" &#xe871;" color="#006600" class="icon-size md-icon"></Label>
-          <Label class="margintext" text="Dashboard" col="1" (tap)="routeTo('/dashboard','Dashboard')"></Label>
+          <Label class="margintext" text="Dashboard" col="1" ></Label>
         </GridLayout>
-        <GridLayout row="1" columns="auto,*" class=" border">
-          <Label text=" &#xe6c4;" color="#006600" class="icon-size md-icon"></Label>
-          <Label class="margintext" text="Statistics" col="1" (tap)="routeTo('/dashboard/statistics','Statistics')"></Label>
+        <GridLayout row="1" columns="auto,*" class=" border" (tap)="routeTo('/dashboard/statistics','Statistics')">
+          <Label text=" &#xe6c4;" color="#006600" class="icon-size md-icon" ></Label>
+          <Label class="margintext" text="Statistics" col="1" ></Label>
         </GridLayout>
-        <GridLayout row="2" columns="auto,*" class=" border">
-          <Label text=" &#xe913;" color="#006600" class="icon-size md-icon"></Label>
-          <Label class="margintext" text="Apply for Gosha E darood" col="1" (tap)="routeTo('/dashboard/about-gosha','Goasha E Nasheen')"></Label>
+        <GridLayout row="2" columns="auto,*" class=" border" (tap)="routeTo('/dashboard/about-gosha','Goasha E Nasheen')">
+          <Label text=" &#xe913;" color="#006600" class="icon-size md-icon" ></Label>
+          <Label class="margintext" text="Apply for Gosha E darood" col="1" ></Label>
         </GridLayout>
-        <GridLayout row="3" columns="auto,*" class=" border">
+        <GridLayout row="3" columns="auto,*" class=" border" (tap)="routeTo('/dashboard/counterdarood','Counterdarood')">
           <Label text=" &#xe856;" color="#006600" class="icon-size md-icon"></Label>
-          <Label class="margintext" text="Counter" col="1" (tap)="routeTo('/dashboard/counterdarood','Counterdarood')"></Label>
+          <Label class="margintext" text="Counter" col="1" ></Label>
         </GridLayout>
-        <GridLayout row="4" columns="auto,*" class=" border">
+        <GridLayout row="4" columns="auto,*" class=" border" (tap)="logout()">
           <Label text=" &#xe860;" color="#006600" class="icon-size md-icon"></Label>
-          <Label class="margintext" text="Logout" col="1" (tap)="logout()"></Label>
+          <Label class="margintext" text="Logout" col="1" ></Label>
         </GridLayout>
         
       </GridLayout>

@@ -18,7 +18,6 @@ import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular/d
 import { NativeScriptUISideDrawerModule  } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 import { NativeScriptUIChartModule  } from "nativescript-ui-chart/angular/chart-directives";
 import { NativeScriptUIListViewModule  } from "nativescript-ui-listview/angular/listview-directives";
-import { GettingStartedComponent } from '~/getting-started/getting-started.component';
 import { DashboardComponent } from '~/dashboard/dashboard.component';
 import { StatisticsComponent } from '~/statistics/statistics.component';
 import { DashboardContentComponent } from '~/dashboard-content/dashboard-content.component';
@@ -54,7 +53,6 @@ import { CommonService } from "~/data-services/common.service";
       AppComponent,
       LoginComponent,
       SignupComponent,
-      GettingStartedComponent,
       DashboardComponent,
       StatisticsComponent,
       DashboardContentComponent,

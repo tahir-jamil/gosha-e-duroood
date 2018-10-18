@@ -4,7 +4,7 @@
         <Image src="res://logo" verticalAlignment="top" width="150dp" height="150dp"></Image>
         <GridLayout rows="auto,auto,auto,auto" verticalAlignment="middle">
             <StackLayout row="0" class="p-b-10 form"   >
-                <TextField backgroundcolor="white" hint="Email" [(ngModel)]="user.email" class="input input-rounded"></TextField>
+                <TextField backgroundcolor="white" hint="username" [(ngModel)]="user.email" class="input input-rounded"></TextField>
                 <TextField backgroundcolor="white"  hint="Password" [(ngModel)]="user.password" class="input input-rounded m-t-10"></TextField> 
                 <Button text="Sign In" row="1" (tap)="login()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
             </StackLayout>

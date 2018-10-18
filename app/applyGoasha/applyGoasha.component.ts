@@ -15,28 +15,25 @@ import { UserDataService } from '~/data-services/user-data.service';
 })
 export class ApplyForGoshaENasheenComponent implements OnInit {
   private _user = {
-    name: "goasha",
-    fatherName: "goasha",
-    postalAddress: "goasha",
-    union_council: "goasha",
-    Tehsil: "goasha",
-    city: "goasha",
-    district: "goasha",
-    provience: "goasha",
-    country: "goasha",
-    education: "goasha",
-    profession: "goasha",
-    dob: "goasha",
-    nic: "goasha",
-    email: "goasha",
-    phoneRes: "goasha",
-    phoneOff: "goasha",
-    phoneCell: "goasha",
-    holyQuran: "1",
-    ashra: "goasha",
-    updated_at: "2018-10-18 09:54:49",
-    created_at: "2018-10-18 09:54:49",
-    id: 1
+    name: "",
+    fatherName: "",
+    postalAddress: "",
+    union_council: "",
+    Tehsil: "",
+    city: "",
+    district: "",
+    provience: "",
+    country: "",
+    education: "",
+    profession: "",
+    dob: "",
+    nic: "",
+    email: "",
+    phoneRes: "",
+    phoneOff: "",
+    phoneCell: "",
+    holyQuran: "",
+    ashra: ""
 };
   signUpForm : any;
   

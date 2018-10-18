@@ -118,8 +118,7 @@ export class DashboardComponent implements OnInit {
     else {
       this.showError();
     }
-  }
-    
+  }    
 
   reset() {
 

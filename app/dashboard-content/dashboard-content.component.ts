@@ -5,6 +5,7 @@ import { UserDataService } from '~/data-services/user-data.service';
 import * as _ from "lodash";
 import { RouterExtensions } from 'nativescript-angular/router';
 import { CommonService } from '~/data-services/common.service';
+import * as dialogs from "tns-core-modules/ui/dialogs";
 import { prompt, PromptResult, inputType, PromptOptions } from "tns-core-modules/ui/dialogs";
 @Component({
   selector: 'app-dashboard-content',
@@ -20,7 +21,7 @@ export class DashboardContentComponent implements OnInit {
   partytotal;
   fildata: any;
 
-  constructor(private _page: Page, private userService: UserDataService, private routerExtensions: RouterExtensions, private commonService: CommonService) {}
+  constructor(private _page: Page, private userService: UserDataService, private routerExtensions: RouterExtensions, private commonService: CommonService) { }
 
   ngOnInit() {
     this._page.actionBarHidden = true;
@@ -55,12 +56,19 @@ export class DashboardContentComponent implements OnInit {
       cancelable: true
     };
 
-
     prompt(options).then((result: PromptResult) => {
       let number = parseInt(result.text);
       if (number) {
         if (_.isNumber(number)) {
-          if (number < 0) {
+          if (number == 0) {
+            dialogs.alert({
+              title: "Error",
+              message: "Enter Correct Number",
+              okButtonText: "ok"
+            }).then(() => {
+              console.log("Dialog closed!");
+            });
+
             console.log("enter correct number");
           }
           else {
@@ -69,15 +77,22 @@ export class DashboardContentComponent implements OnInit {
               party_id: parseInt(localStorage.getItem("partyId"))
             };
             this.userService.postCountsData(data).subscribe(res => {
-                console.dir(res);
-                this.onLoaded();
-            },(error) => {
-                console.dir(error);
+              console.dir(res);
+              this.onLoaded();
+            }, (error) => {
+              console.dir(error);
             });
           }
         }
       } else {
         console.log("enter correct number");
+        dialogs.alert({
+          title: "Error",
+          message: "Enter Correct Number",
+          okButtonText: "ok"
+        }).then(() => {
+          console.log("Dialog closed!");
+        });
       }
     });
     // << prompt-dialog-code

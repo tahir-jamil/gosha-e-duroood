@@ -19,26 +19,31 @@ export class StatisticsComponent implements OnInit {
   statisticsData = [];
   rangeList;
   chartData = [];
-
   filters = [
     { name: "Country" },
     { name: "City" }
   ]
+  currentFilter = this.filters[0].name;
+
 
   constructor(private _page: Page, private userService: UserDataService) {
   }
 
   ngOnInit(): void {
     this._page.actionBarHidden = true;
-    this.getFiltersData('country');
+    this.getFiltersData('Country');
   }
 
+  get getCurrentFilter() {
+    return this.currentFilter;
+  }
 
   onLoaded(filter) {
     this.getFiltersData(filter);
   }
 
   getFiltersData(filter) {
+    this.currentFilter = filter;
     this.userService.getSatistics(filter).subscribe(res => {
       console.dir(res);
       this.rangeList = res;

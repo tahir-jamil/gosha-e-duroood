@@ -1,10 +1,39 @@
-<GridLayout>
-    <GridLayout marginBottom="10%">
-        <RadDataForm tkExampleTitle tkToggleNavButton [source]="signUpForm"  (propertyCommitted)="onPropertyCommitted()">
-            <TKEntityProperty tkDataFormProperty name="ashra" displayName="Select Ashra" index="0" >
-                <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
-            </TKEntityProperty>
-        </RadDataForm>
-    </GridLayout>
-    <Button verticalAlignment="bottom" text="Apply" row="1"  (tap)="navigateTo()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
-</GridLayout>
+<ScrollView class="page">
+    <StackLayout class="form">
+        <TextField hint="UserName" [(ngModel)]="goshaenasheen.username" class="  input input-border margin"> </TextField>
+        <TextField hint="Name" [(ngModel)]="goshaenasheen.name" class="  input input-border margin"> </TextField>
+        <TextField hint="Email" [(ngModel)]="goshaenasheen.email" class="  input input-border margin"> </TextField>
+        <TextField hint="Password" [(ngModel)]="goshaenasheen.password" class="  input input-border margin"> </TextField>
+        <TextField hint="Father's Name" [(ngModel)]="goshaenasheen.fatherName" class="  input input-border margin"> </TextField>
+        <TextField hint="CNIC" [(ngModel)]="goshaenasheen.nic" class="  input input-border margin"> </TextField>
+        <TextField hint="Date of Birth" [(ngModel)]="goshaenasheen.dateOfBirth" class="  input input-border margin"> </TextField>
+        <TextField hint="Union Council" [(ngModel)]="goshaenasheen.unionCouncil" class="  input input-border margin"> </TextField>
+        <TextField hint="Tehsil" [(ngModel)]="goshaenasheen.tehseel" class="  input input-border margin"> </TextField>
+        <TextField hint="City" [(ngModel)]="goshaenasheen.city" class="  input input-border margin"> </TextField>
+        <TextField hint="District" [(ngModel)]="goshaenasheen.district" class="  input input-border margin"> </TextField>
+        <TextField hint="Provience" [(ngModel)]="goshaenasheen.provience" class="  input input-border margin"> </TextField>
+        <TextField hint="Country" [(ngModel)]="goshaenasheen.country" class="  input input-border margin"> </TextField>
+        <TextField hint="Phonecell" [(ngModel)]="goshaenasheen.phoneCell" class="  input input-border margin"> </TextField>
+        <TextField hint="phoneRes" [(ngModel)]="goshaenasheen.phoneRes" class="  input input-border margin"> </TextField>
+        <TextField hint="phoneOff" [(ngModel)]="goshaenasheen.phoneOff" class="  input input-border margin"> </TextField>
+        <GridLayout rows="auto" columns="*,*" class="margin">
+            <Label class="margin color" col="0" text="Can You read Holy Quran" textWrap="true"></Label>
+            <Switch class="margin" col="1" checked="true" class="switch" [(ngModel)]="goshaenasheen.holyQuran" horizontalAlignment="left"></Switch>
+        </GridLayout>
+        <GridLayout rows="auto" columns="auto, auto" class="margin">
+            <Label class="mtop" text="Education" col="0" textWrap="true"></Label>
+            <DropDown #dd class="color" [items]="options_edu" [(ngModel)]="selectedIndex" (selectedIndexChanged)="onchange($event)"
+                (opened)="onopen()" (closed)="onclose()" row="0" col="1">
+            </DropDown>
+        </GridLayout>
+        <TextField hint="Profession" [(ngModel)]="goshaenasheen.profession" class="  input input-border margin"> </TextField>
+        <GridLayout rows="auto" columns="auto, auto" class="margin">
+            <Label class="mtop" text="Desired Ashra"  col="0" textWrap="true"></Label>
+            <DropDown #dd class="color" [items]="ashra" [(ngModel)]="selectedIndex" (selectedIndexChanged)="onchange($event)"
+                (opened)="onopen()" (closed)="onclose()" row="0" col="1">
+            </DropDown>
+        </GridLayout>
+        <TextField hint="Postal Address" [(ngModel)]="goshaenasheen.postalAddress" class="  input input-border margin"> </TextField>
+        <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="submitForm()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+    </StackLayout>
+</ScrollView>

@@ -1,19 +1,23 @@
-
-<GridLayout class="page padding-12" height="120%"  backgroundImage="res://bg"  >
+<GridLayout class="page padding-12" height="120%" >
     <GridLayout height="100%" verticalAlignment="middle">
         <Image src="res://logo" verticalAlignment="top" width="150dp" height="150dp"></Image>
-        <GridLayout rows="auto,auto,auto,auto" verticalAlignment="middle">
-            <StackLayout row="0" class="p-b-10 form"   >
+        <GridLayout rows="auto,auto,auto,auto" verticalAlignment="middle"  >
+            <StackLayout row="0" class="p-b-10 m-t-80 form">
                 <TextField backgroundcolor="white" hint="Email" [(ngModel)]="user.email" class="input input-rounded"></TextField>
-                <TextField backgroundcolor="white"  hint="Password" [(ngModel)]="user.password" class="input input-rounded m-t-10"></TextField> 
+                <TextField backgroundcolor="white" hint="Password" [(ngModel)]="user.password" class="input input-rounded m-t-10"></TextField>
                 <Button text="Sign In" row="1" (tap)="login()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+                <Label [nsRouterLink]="['/signup']" (tap)="postData()"  class="text-center p-b-10 "  >
+                    <FormattedString>
+                        <Span text="Forget Password? " class="f-s-10"></Span>
+                        <Span text="Reset Now " class="f-s-10 undeline text-primary"></Span>
+                    </FormattedString>
+                </Label>
             </StackLayout>
         </GridLayout>
-
-        <Label verticalAlignment="bottom" [nsRouterLink]="['/signup']" (tap)="postData()" class="text-center">
+        <Label [nsRouterLink]="['/signup']" (tap)="postData()" verticalAlignment="bottom" class="text-center">
             <FormattedString>
-                <Span text="Don't have an account? " class="f-s-14"></Span>
-                <Span text="SignUp "  class="f-s-12 undeline text-primary"></Span>
+                <Span text="Don't have an account? " class="f-s-10"></Span>
+                <Span text="SignUp " class="f-s-10 undeline text-primary"></Span>
             </FormattedString>
         </Label>
     </GridLayout>

@@ -3,7 +3,10 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { UserDataService } from '~/data-services/user-data.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { GestureEventData } from 'tns-core-modules/ui/gestures/gestures';
+import * as _ from "lodash";
+import { CommonService } from '~/data-services/common.service';
+import { prompt, PromptResult, inputType, PromptOptions } from "tns-core-modules/ui/dialogs";
 import { platformNames } from "platform";
 import { device } from "platform";
 
@@ -37,7 +40,6 @@ export class LoginComponent implements OnInit {
       nativePlatformLocalhost = "10.0.2.2";
     }
   }
-
 
   login() {
     if ((this.user.email && this.user.password)) {

@@ -6,6 +6,7 @@ import { TNSFancyAlert } from "nativescript-fancyalert";
 import { CommonService } from '~/data-services/common.service';
 import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
 import { UserDataService } from '~/data-services/user-data.service';
+import { SelectedIndexChangedEventData } from "nativescript-drop-down";
 
 @Component({
   selector: 'app-applyGoasha',
@@ -15,9 +16,12 @@ import { UserDataService } from '~/data-services/user-data.service';
 })
 export class ApplyForGoshaENasheenComponent implements OnInit {
   private _user: Goshaenasheen;
+  public selectedIndex = 0;
+  public items: Array<string>;
+  
   
   signUpForm = {
-    ashra: ""
+    
   };
 
   constructor(private routerExtensions: RouterExtensions, private _page: Page, private commonService: CommonService, private userDataService: UserDataService) {
@@ -37,11 +41,37 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
     this.commonService.isAddCountsPage = false;
 
   }
+  
   get user(): Goshaenasheen {
     return this._user;
   }
-  options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
-  options_ashra = ["first", "Second", "Third"];
+  goshaenasheen = {
+    
+    username: "",
+    name:"",
+    email: "",
+    password: "",
+    fatherName: "",
+    nic: "",
+    dateOfBirth: "",
+    unionCouncil:"",
+    tehseel:"",
+    city: "",
+    district: "",
+    provience: "",
+    country: "",
+    phoneRes: "",
+    phoneOff: "",
+    phoneCell: "",
+    holyQuran: "",
+    education: "",
+    profession: "",
+    ashra:"",
+    postalAddress: "",
+  };
+
+  options_edu = ["Matriculation", "Diploma", "Intermediate", "Undergraduate", "Graduate","Postgraduate"];
+  ashra = ["first", "Second", "Third"];
   
   navigateTo() {
     this.routerExtensions.back();
@@ -56,7 +86,7 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
   }
 
   submitForm() {
-    console.log("submit form");
+    console.log(this.goshaenasheen);
     this.userDataService.postData(this.signUpForm).subscribe(res => {
       console.dir(res);
       this.routerExtensions.navigate(['/login'], {
@@ -68,5 +98,10 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
     }, (error) => {
       console.dir(error);
     });
+  }
+  public onchange(args: SelectedIndexChangedEventData) {
+    console.log(`Drop Down selected index changed from ${args.oldIndex} to ${args.newIndex}`);
+    this.goshaenasheen.education = this.options_edu[args.newIndex];
+    this.goshaenasheen.ashra= this.ashra[args.newIndex];
   }
 }

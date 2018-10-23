@@ -3,6 +3,7 @@ import { Page } from 'tns-core-modules/ui/page/page';
 import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
 import { UserDataService } from '~/data-services/user-data.service';
 import { RouterExtensions } from 'nativescript-angular/router';
+import { SelectedIndexChangedEventData } from "nativescript-drop-down";
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -10,43 +11,46 @@ import { RouterExtensions } from 'nativescript-angular/router';
   moduleId: module.id
 })
 
-export class SignupComponent implements OnInit {
 
+export class SignupComponent implements OnInit {
+  public selectedIndex = 0;
+  public items: Array<string>;
+
+  
   signUpForm;
   // private _user: RemoteUser;
   @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
   constructor(private _page: Page, private userDataService: UserDataService, private routerExtensions: RouterExtensions) {
+    
   }
 
   ngOnInit(): void {
   }
 
   signUPUser = {
-    name: "tahir",
-    username: "tahir",
-    fatherName: "father name",
-    email: "tahir@gmail.com",
+    
+    username: "",
+    name:"",
+    email: "",
+    password: "",
+    fatherName: "",
+    nic: "",
     dateOfBirth: "",
-    password: "tahir",
-    union_council: "tahir",
-    Tehsil: "tahir",
-    city: "lahore",
-    district: "lahore",
-    provience: "Punjab",
-    country: "pakistan",
-    education: "Bscs",
-    profession: "development",
-    phoneRes: "03030242",
-    phoneOff: "0342343",
-    phoneCell: "03242432",
-    dob: "034020424024234",
-    nic: "034020424024234",
-    postalAddress: "043",
-    holyQuran: true,
+    city: "",
+    district: "",
+    provience: "",
+    country: "",
+    phoneRes: "",
+    phoneOff: "",
+    phoneCell: "",
+    holyQuran: "",
+    education: "",
+    profession: "",
+    postalAddress: "",
   };
 
 
-  options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
+  options_edu = ["Matriculation", "Diploma", "Intermediate", "Undergraduate", "Graduate","Postgraduate"];
 
   onPropertyCommitted() {
     if (this.myCommitDataFormComp.dataForm.editedObject) {
@@ -55,7 +59,9 @@ export class SignupComponent implements OnInit {
   }
 
   submitForm() {
-    console.log("submit form");
+    console.log(this.signUPUser);
+
+    
     this.userDataService.postData(this.signUpForm).subscribe(res => {
       console.dir(res);
       this.routerExtensions.navigate(['/login'], {
@@ -68,5 +74,11 @@ export class SignupComponent implements OnInit {
       console.dir(error);
     });
   }
+
+
+  public onchange(args: SelectedIndexChangedEventData) {
+    console.log(`Drop Down selected index changed from ${args.oldIndex} to ${args.newIndex}`);
+    this.signUPUser.education = this.options_edu[args.newIndex];
+}
 
 }

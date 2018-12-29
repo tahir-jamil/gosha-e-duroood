@@ -28,7 +28,12 @@
     margin-bottom: 25%;
 }
  */
-
+ .background{
+    background-image:  url("res://ged");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+}
 .alignForm {
     padding:  10% 12% 10% 12%;
 }

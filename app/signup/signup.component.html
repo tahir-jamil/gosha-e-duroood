@@ -1,36 +1,49 @@
-<ActionBar title="Sign  UP" icon="" class="action-bar">
+<ActionBar title="Sign  UP" class="action-bar">
 </ActionBar>
-<ScrollView class="page">
-    <StackLayout class="form">
-        <TextField hint="UserName" [(ngModel)]="signUPUser.username" class="  input input-border margin"> </TextField>
-        <TextField hint="Name" [(ngModel)]="signUPUser.name" class="  input input-border margin"> </TextField>
-        <TextField hint="Email" [(ngModel)]="signUPUser.email" class="  input input-border margin"> </TextField>
-        <TextField hint="Password" [(ngModel)]="signUPUser.password" class="  input input-border margin"> </TextField>
-        <TextField hint="Father's Name" [(ngModel)]="signUPUser.fatherName" class="  input input-border margin"> </TextField>
-        <TextField hint="CNIC" [(ngModel)]="signUPUser.nic" class="  input input-border margin"> </TextField>
-        <TextField hint="Date of Birth" [(ngModel)]="signUPUser.dateOfBirth" class="  input input-border margin"> </TextField>
-        <TextField hint="City" [(ngModel)]="signUPUser.city" class="  input input-border margin"> </TextField>
-        <TextField hint="District" [(ngModel)]="signUPUser.district" class="  input input-border margin"> </TextField>
-        <TextField hint="Provience" [(ngModel)]="signUPUser.provience" class="  input input-border margin"> </TextField>
-        <TextField hint="Country" [(ngModel)]="signUPUser.country" class="  input input-border margin"> </TextField>
-        <TextField hint="Phonecell" [(ngModel)]="signUPUser.phoneCell" class="  input input-border margin"> </TextField>
-        <TextField hint="phoneRes" [(ngModel)]="signUPUser.phoneRes" class="  input input-border margin"> </TextField>
-        <TextField hint="phoneOff" [(ngModel)]="signUPUser.phoneOff" class="  input input-border margin"> </TextField>
-        <GridLayout rows="auto" columns="*,*" class="margin">
-            <Label class="margin" col="0" text="Can You read Holy Quran" textWrap="true"></Label>
-            <Switch class="margin" col="1" checked="true" class="switch" [(ngModel)]="signUPUser.holyQuran" horizontalAlignment="left"></Switch>
-        </GridLayout>
-        <TextField hint="Profession" [(ngModel)]="signUPUser.profession" class="  input input-border margin"> </TextField>
+<StackLayout>
+    <ScrollView class="page">
+        <StackLayout class="form">
+            <TextField hint="UserName" [(ngModel)]="signUPUser.username" class="  input input-border margin">
+            </TextField>
+            <TextField hint="Name" [(ngModel)]="signUPUser.name" class="  input input-border margin"> </TextField>
+            <TextField hint="Email" [(ngModel)]="signUPUser.email" class="  input input-border margin"> </TextField>
+            <TextField hint="Password" [(ngModel)]="signUPUser.password" class="  input input-border margin">
+            </TextField>
+            <TextField hint="Father's Name" [(ngModel)]="signUPUser.fatherName" class="  input input-border margin">
+            </TextField>
+            <TextField hint="CNIC" [(ngModel)]="signUPUser.nic" class="  input input-border margin"> </TextField>
+            <TextField hint="Date of Birth" [(ngModel)]="signUPUser.dateOfBirth" class="  input input-border margin">
+            </TextField>
+            <TextField hint="City" [(ngModel)]="signUPUser.city" class="  input input-border margin"> </TextField>
+            <TextField hint="District" [(ngModel)]="signUPUser.district" class="  input input-border margin">
+            </TextField>
+            <TextField hint="Provience" [(ngModel)]="signUPUser.provience" class="  input input-border margin">
+            </TextField>
+            <TextField hint="Country" [(ngModel)]="signUPUser.country" class="  input input-border margin"> </TextField>
+            <TextField hint="Phonecell" [(ngModel)]="signUPUser.phoneCell" class="  input input-border margin">
+            </TextField>
+            <TextField hint="phoneRes" [(ngModel)]="signUPUser.phoneRes" class="  input input-border margin">
+            </TextField>
+            <TextField hint="phoneOff" [(ngModel)]="signUPUser.phoneOff" class="  input input-border margin">
+            </TextField>
+            <TextField hint="Profession" [(ngModel)]="signUPUser.profession" class="  input input-border margin">
+            </TextField>
+            <TextField hint="Postal Address" [(ngModel)]="signUPUser.postalAddress" class="  input input-border margin">
+            </TextField>
+            <GridLayout rows="auto" columns="*,*" class="margin">
+                <Label class="margin" col="0" text="Can You read Holy Quran" textWrap="true"></Label>
+                <Switch class="margin" col="1" checked="true" class="switch" [(ngModel)]="signUPUser.holyQuran"
+                    horizontalAlignment="left"></Switch>
+            </GridLayout>
             <StackLayout class="margin">
                 <GridLayout rows="auto" columns="auto, auto">
                     <Label class="mtop" text="Education" col="0" textWrap="true"></Label>
-                    
-                    <DropDown #dd backroundColor="red" [items]="options_edu" [(ngModel)]="signUPUser.education" (selectedIndexChanged)="onchange($event)"
-                        (opened)="onopen()" (closed)="onclose()" row="0" col="1"></DropDown>
+
+                    <DropDown #dd backroundColor="red" [items]="options_edu" [(ngModel)]="signUPUser.education"
+                        (selectedIndexChanged)="onchange($event)" (opened)="onopen()" (closed)="onclose()" row="0" col="1"></DropDown>
                 </GridLayout>
             </StackLayout>
-        <TextField hint="Postal Address" [(ngModel)]="signUPUser.postalAddress" class="  input input-border margin"> </TextField>
-        <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="submitForm()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
-    </StackLayout>
-</ScrollView>
-
+            <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="submitForm()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

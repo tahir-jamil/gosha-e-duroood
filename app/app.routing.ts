@@ -12,7 +12,7 @@ import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
 
 const routes: Routes = [
-    { path: "", redirectTo: "login", pathMatch: "full" },
+    { path: "", redirectTo: "getting-started", pathMatch: "full" },
     { path: "getting-started", component: GettingStartedComponent },
     { path: "login", component: LoginComponent },
     { path: "signup", component: SignupComponent },

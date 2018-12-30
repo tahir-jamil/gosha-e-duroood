@@ -37,7 +37,7 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
     phoneCell: "",
     tehsil: "",
     nic: "",
-    ashra: "",
+    ashra: null,
     postalAddress: "",
     holyQuran: false,
   };
@@ -66,6 +66,7 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
 
   selectAshra(index) {
     this.selectArsha = index;
+    this.signUpUser.ashra = index;
   }
 
   get activeAshra() {
@@ -77,7 +78,7 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
     picker.pickDate({
       title: 'Please enter your birthday',
       theme: 'dark',
-      maxDate: new Date(),
+      maxDate: new Date(1/1/1990),
       is24HourView: false
     }).then((result) => {
       this.signUpUser.dateOfBirth = result['year'] + '-' + result['month'] + '-' + result['day'];
@@ -111,7 +112,15 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
       } else {
         textField.text = '';
       }
-      console.log("validating number");
+      console.log("validating phone");
+    } else if (textField.hint == 'Email') {
+      this.validateEmail(textField.text);
+      if (this.validateEmail(textField.text)) {
+        return true;
+      } else {
+        textField.text = '';
+      }
+      console.log("validating email");
 
     } else {
       if (this.validateString(textField.text)) {
@@ -124,6 +133,17 @@ export class ApplyForGoshaENasheenComponent implements OnInit {
     }
   }
 
+
+  validateEmail(value) {
+    let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+    if (reg.test(value) == false) 
+    {
+        alert('Invalid Email Address');
+        return false;
+    }
+    return true;
+  }
 
   validateString(text) {
     if (!/^[a-zA-Z\s]*$/g.test(text)) {

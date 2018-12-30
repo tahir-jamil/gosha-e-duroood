@@ -20,10 +20,9 @@
                     <Label text="Account Information" class="header-text m-t-5" textWrap="true"></Label>
                     <TextField [(ngModel)]='signUpUser.username' keyboardType="email" (blur)="onBlur($event)" hint="User name"
                         class="input inputField input-border"></TextField>
-                    <TextField [(ngModel)]='signUpUser.email' keyboardType="email" hint="Email" class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.email' keyboardType="email" (blur)="onBlur($event)"  hint="Email" class="input inputField input-border"></TextField>
                     <TextField [(ngModel)]='signUpUser.password' keyboardType="email" secure="true" hint="password"
                         class="input inputField input-border"></TextField>
-
 
                     <Label text="Area Details" class="header-text m-t-5" textWrap="true"></Label>
                     <TextField [(ngModel)]='signUpUser.country' keyboardType="email" (blur)="onBlur($event)" hint="Country"

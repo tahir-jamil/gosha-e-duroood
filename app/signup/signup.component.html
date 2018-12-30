@@ -1,8 +1,50 @@
 <ActionBar title="Sign  UP" icon="" class="action-bar">
 </ActionBar>
-<GridLayout>
-    <GridLayout marginBottom="10%">
-        <RadDataForm #myCommitDataForm  commitMode="Immediate" tkExampleTitle tkToggleNavButton [source]="signUPUser" (propertyCommitted)="onPropertyCommitted()">
+<GridLayout backgroundColor="#f3f3f3">
+    <GridLayout class="alignForm">
+
+        <StackLayout>
+            <ScrollView>
+                <StackLayout class="form m-b-100">
+                    <!-- Option 4: An input with a simple border and no label -->
+                    <Label text="Personal Information" class="header-text" textWrap="true"></Label>
+
+                    <TextField  [(ngModel)]='signUpUser.name' hint="name" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.fatherName' hint="fatherName" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.dateOfBirth' hint="Enter date of birth"  class="input inputField input-border"
+                        (tap)="pickDate()" editable="false"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.nic' keyboardType="number" hint="nic" class="input inputField input-border"></TextField>
+
+                    <Label text="Account Information" class="header-text m-t-5" textWrap="true"></Label>
+                    <TextField  [(ngModel)]='signUpUser.username'  hint="username" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.email' keyboardType="email" hint="email" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.password'  secure="true" hint="password" class="input inputField input-border"></TextField>
+
+                    <Label text="Area Details" class="header-text m-t-5" textWrap="true"></Label>
+                    <TextField  [(ngModel)]='signUpUser.country' hint="country" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.provience' hint="provience" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.district' hint="district" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.city' hint="city" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.union_council' hint="union_council" class="input inputField input-border"></TextField>
+
+                    <Label text="Educational Information" class="header-text m-t-5" textWrap="true"></Label>
+                    <TextField  [(ngModel)]='signUpUser.education' hint="education" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.profession' hint="profession" class="input inputField input-border"></TextField>
+
+                    <Label text="Contact Information" class="header-text m-t-5" textWrap="true"></Label>
+                    <TextField  [(ngModel)]='signUpUser.phoneRes' keyboardType="phone" returnKeyType="done"  hint="phoneRes" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.phoneOff' keyboardType="phone" returnKeyType="done"  hint="phoneOff" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.phoneCell' keyboardType="phone" returnKeyType="done"  hint="phoneCell" class="input inputField input-border"></TextField>
+                    <TextField  [(ngModel)]='signUpUser.postalAddress' hint="postalAddress" class="input inputField input-border"></TextField>
+
+                    <StackLayout orientation="horizontal" class="m-t-5 ">
+                        <Label text="Do you read Holy Quran?"  class="header-text m-r-5" textWrap="true"></Label>
+                        <Switch [checked]="signUpUser.holyQuran" class="switch" (tap)="toggleCheck()"  ></Switch>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <!-- <RadDataForm #myCommitDataForm  commitMode="Immediate" tkExampleTitle tkToggleNavButton [source]="signUPUser" (propertyCommitted)="onPropertyCommitted()">
             <TKEntityProperty tkDataFormProperty name="username" displayName="Username" index="0">
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
@@ -57,7 +99,9 @@
             <TKEntityProperty tkDataFormProperty name="postalAddress" displayName="Your postal address" index="17">
                 <TKPropertyEditor tkEntityPropertyEditor type="Text"></TKPropertyEditor>
             </TKEntityProperty>
-        </RadDataForm>
+        </RadDataForm> -->
+        </StackLayout>
     </GridLayout>
+
     <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="submitForm()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
 </GridLayout>

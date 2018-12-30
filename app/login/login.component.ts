@@ -62,41 +62,4 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  postData() {
-    this.userData.postData([
-      { username: 'secondName' },
-      { name: 'secondName' },
-      { email: 'secondName' },
-      { password: 'secondName' },
-      { fatherName: 'secondName' },
-      { nic: 'secondName' },
-      { dob: 'secondName' },
-      { city: 'secondName' },
-      { district: 'secondName' },
-      { provience: 'secondName' },
-      { country: 'secondName' },
-      { phoneRes: 'secondName' },
-      { phoneOff: 'secondName' },
-      { phoneCell: 'secondName' },
-      { education: 'secondName' },
-      { profession: 'secondName' },
-      { postalAddress: 'secondName' },
-      { holyQuran: 0 },
-    ]).subscribe(res => {
-      console.dir(res);
-    }, error => {
-      console.dir(error);
-
-    });
-  }
-
-  navigateTo(path) {
-    this.routerExtensions.navigate([path], {
-      transition: {
-        name: "fade",
-        curve: "linear"
-      }
-    });
-  }
-
 }

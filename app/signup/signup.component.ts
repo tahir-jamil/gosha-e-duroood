@@ -3,6 +3,9 @@ import { Page } from 'tns-core-modules/ui/page/page';
 import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
 import { UserDataService } from '~/data-services/user-data.service';
 import { RouterExtensions } from 'nativescript-angular/router';
+import * as ModalPicker from 'nativescript-modal-datetimepicker';
+
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -12,24 +15,25 @@ import { RouterExtensions } from 'nativescript-angular/router';
 
 export class SignupComponent implements OnInit {
 
-  signUpForm;
+  birthday: string;
   // private _user: RemoteUser;
-  @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
+  // @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
   constructor(private _page: Page, private userDataService: UserDataService, private routerExtensions: RouterExtensions) {
   }
 
   ngOnInit(): void {
   }
 
-  signUPUser = {
+  signUpUser = {
     name: "",
-    username: "",
     fatherName: "",
+    
+    username: "",
     email: "",
-    dateOfBirth: "",
     password: "",
+    
+    dateOfBirth: "",
     union_council: "",
-    Tehsil: "",
     city: "",
     district: "",
     provience: "",
@@ -41,21 +45,41 @@ export class SignupComponent implements OnInit {
     phoneCell: "",
     nic: "",
     postalAddress: "",
-    holyQuran: true,
+    holyQuran: false,
   };
 
 
-  options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
+  toggleCheck() {
+    this.signUpUser.holyQuran = !this.signUpUser.holyQuran;
+  }
+  // options_edu = ["  Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
 
-  onPropertyCommitted() {
-    if (this.myCommitDataFormComp.dataForm.editedObject) {
-      this.signUpForm = this.myCommitDataFormComp.dataForm.editedObject;
-    }
+  // onPropertyCommitted() {
+    // if (this.myCommitDataFormComp.dataForm.editedObject) {
+    //   this.signUpForm = this.myCommitDataFormComp.dataForm.editedObject;
+    // }
+  // }
+  
+
+  pickDate() {
+    const picker = new ModalPicker.ModalDatetimepicker();
+    picker.pickDate({
+      title: 'Please enter your birthday',
+      theme: 'dark',
+      maxDate: new Date(),
+      is24HourView: false
+    }).then((result) => {
+      this.signUpUser.dateOfBirth = result['year'] + '-' + result['month'] + '-' + result['day'];
+      console.dir(this.birthday);
+    }).catch((error) => {
+      console.log('Error: ' + error);
+    });
   }
 
   submitForm() {
-    console.log("submit form");
-    this.userDataService.postData(this.signUpForm).subscribe(res => {
+    console.dir(this.signUpUser);
+
+    this.userDataService.postData(this.signUpUser).subscribe(res => {
       console.dir(res);
       this.routerExtensions.navigate(['/login'], {
         transition: {

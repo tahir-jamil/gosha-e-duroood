@@ -19,7 +19,7 @@ export class UserDataService {
       nativePlatformLocalhost = "localhost";
       this.serverUrl = "http://localhost:8000/api";
     }
-    else if (device.os === platformNames.android) {
+    else {
       /*localhost for android*/
       nativePlatformLocalhost = "10.0.0.2";
       this.serverUrl = "http://10.0.0.2:8000/api";
@@ -46,7 +46,7 @@ export class UserDataService {
   }
 
   postData(args: any) {
-    let data =  JSON.parse(args);
+    let data = args;
     let options = this.createRequestOptions();
     let body = `username=${data.username}&name=${data.name}&email=${data.email}&password=${data.password}&fatherName=${data.fatherName}&nic=${data.nic}&dob=${data.dateOfBirth}&city=${data.city}&district=${data.district}&provience=${data.provience}&country=${data.country}&phoneRes=${data.phoneRes}&phoneOff=${data.phoneOff}&phoneCell=${data.phoneCell}&education=${data.education}&profession=${data.profession}&postalAddress=${data.postalAddress}&holyQuran=${data.holyQuran}`;
 
@@ -73,6 +73,7 @@ export class UserDataService {
     return this.http.post(this.serverUrl + '/counts', body, { headers: options });
   }
 
+  
   //statistics Queries
   getSatistics(filter) {
     let headers = this.createRequestOptions();

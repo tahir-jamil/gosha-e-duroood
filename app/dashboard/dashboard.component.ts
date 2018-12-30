@@ -100,7 +100,6 @@ export class DashboardComponent implements OnInit {
     };
 
     if(data.duroodCount != 0 ){ 
-
       
       this.userService.postCountsData(data).subscribe(res => {
 
@@ -109,7 +108,12 @@ export class DashboardComponent implements OnInit {
         this.showSuccess();
         
         this.userService.totalCountsCounter = 0;
-        this.router.back();
+        this.router.navigate(['dashboard'], {
+          transition: {
+            name: 'fade',
+            curve: 'linear'
+          }
+        });
       }, (error) => {
         console.dir(error);
         this.showError();

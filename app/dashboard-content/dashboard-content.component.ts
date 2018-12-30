@@ -120,4 +120,9 @@ export class DashboardContentComponent implements OnInit {
     this.notificationState = !this.notificationState;
   }
 
+  changeDate(date) {
+    let newDate = new Date(date);
+    return newDate;
+  }
+
 }

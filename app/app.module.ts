@@ -31,7 +31,6 @@ import { UserDataService } from "~/data-services/user-data.service";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { CommonService } from "~/data-services/common.service";
 
-
 @NgModule({
    bootstrap: [
       AppComponent

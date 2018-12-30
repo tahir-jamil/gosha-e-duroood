@@ -1,50 +1,78 @@
-<ActionBar title="Sign  UP" icon="" class="action-bar">
-    </ActionBar>
-    <GridLayout backgroundColor="#f3f3f3">
-        <GridLayout class="alignForm">
-    
-            <StackLayout>
-                <ScrollView>
-                    <StackLayout class="form m-b-100">
-                        <!-- Option 4: An input with a simple border and no label -->
-                        <Label text="Personal Information" class="header-text" textWrap="true"></Label>
-    
-                        <TextField  [(ngModel)]='signUpUser.name' hint="name" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.fatherName' hint="fatherName" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.dateOfBirth' hint="Enter date of birth"  class="input inputField input-border"
-                            (tap)="pickDate()" editable="false"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.nic' keyboardType="number" hint="nic" class="input inputField input-border"></TextField>
-    
-                        <Label text="Account Information" class="header-text m-t-5" textWrap="true"></Label>
-                        <TextField  [(ngModel)]='signUpUser.username'  hint="username" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.email' keyboardType="email" hint="email" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.password'  secure="true" hint="password" class="input inputField input-border"></TextField>
-    
-                        <Label text="Area Details" class="header-text m-t-5" textWrap="true"></Label>
-                        <TextField  [(ngModel)]='signUpUser.country' hint="country" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.provience' hint="provience" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.district' hint="district" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.city' hint="city" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.union_council' hint="union_council" class="input inputField input-border"></TextField>
-    
-                        <Label text="Educational Information" class="header-text m-t-5" textWrap="true"></Label>
-                        <TextField  [(ngModel)]='signUpUser.education' hint="education" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.profession' hint="profession" class="input inputField input-border"></TextField>
-    
-                        <Label text="Contact Information" class="header-text m-t-5" textWrap="true"></Label>
-                        <TextField  [(ngModel)]='signUpUser.phoneRes' keyboardType="phone" returnKeyType="done"  hint="phoneRes" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.phoneOff' keyboardType="phone" returnKeyType="done"  hint="phoneOff" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.phoneCell' keyboardType="phone" returnKeyType="done"  hint="phoneCell" class="input inputField input-border"></TextField>
-                        <TextField  [(ngModel)]='signUpUser.postalAddress' hint="postalAddress" class="input inputField input-border"></TextField>
-    
-                        <StackLayout orientation="horizontal" class="m-t-5 ">
-                            <Label text="Do you read Holy Quran?"  class="header-text m-r-5" textWrap="true"></Label>
-                            <Switch [checked]="signUpUser.holyQuran" class="switch" (tap)="toggleCheck()"  ></Switch>
+<ActionBar title="Apply Goasha" icon="" class="action-bar">
+</ActionBar>
+
+<GridLayout backgroundColor="#f3f3f3">
+    <GridLayout class="alignForm">
+
+        <StackLayout>
+            <ScrollView>
+                <StackLayout class="form m-b-100">
+                    <!-- Option 4: An input with a simple border and no label -->
+                    <Label text="Personal Information" class="header-text" textWrap="true"></Label>
+
+                    <TextField [(ngModel)]='signUpUser.name' keyboardType="email" (blur)="onBlur($event)" hint="Name"
+                        class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.fatherName' keyboardType="email" (blur)="onBlur($event)" hint="Father name"
+                        class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.dateOfBirth' hint="Enter date of birth" class="input inputField input-border"
+                        (tap)="pickDate()" editable="false"></TextField>
+
+                    <Label text="Account Information" class="header-text m-t-5" textWrap="true"></Label>
+                    <TextField [(ngModel)]='signUpUser.username' keyboardType="email" (blur)="onBlur($event)" hint="User name"
+                        class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.email' keyboardType="email" hint="Email" class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.password' keyboardType="email" secure="true" hint="password"
+                        class="input inputField input-border"></TextField>
+
+
+                    <Label text="Area Details" class="header-text m-t-5" textWrap="true"></Label>
+                    <TextField [(ngModel)]='signUpUser.country' keyboardType="email" (blur)="onBlur($event)" hint="Country"
+                        class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.provience' keyboardType="email" (blur)="onBlur($event)" hint="Provience"
+                        class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.district' (blur)="onBlur($event)" keyboardType="email" hint="District"
+                        class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.city' (blur)="onBlur($event)" keyboardType="email" hint="City"
+                        class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.union_council' hint="Union council number (Optional)" (blur)="onBlur($event)"
+                        keyboardType="number" class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.tehsil' hint="Tehsil (Optional)" (blur)="onBlur($event)"
+                        keyboardType="email" class="input inputField input-border"></TextField>
+
+                    <Label text="Educational Information" class="header-text m-t-5" textWrap="true"></Label>
+                    <TextField [(ngModel)]='signUpUser.education' (blur)="onBlur($event)" keyboardType="email" hint="Education"
+                        class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.profession' (blur)="onBlur($event)" keyboardType="email" hint="Profession"
+                        class="input inputField input-border"></TextField>
+
+                    <Label text="Contact Information" class="header-text m-t-5" textWrap="true"></Label>
+                    <TextField [(ngModel)]='signUpUser.phoneRes' (blur)="onBlur($event)" keyboardType="phone"
+                        returnKeyType="done" hint="Phone residence number" class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.phoneOff' (blur)="onBlur($event)" keyboardType="phone"
+                        returnKeyType="done" hint="Phone office number" class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.phoneCell' (blur)="onBlur($event)" keyboardType="phone"
+                        returnKeyType="done" hint="Personal cell number" class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.postalAddress' hint="Postal address" class="input inputField input-border"></TextField>
+                    <TextField [(ngModel)]='signUpUser.nic' keyboardType="number" (blur)="onBlur($event)" hint="Nic"
+                        class="input inputField input-border"></TextField>
+
+                    <Label text="Select your Ashra" class="header-text m-t-5" textWrap="true"></Label>
+                    <GridLayout rows="*" columns="*">
+                        <StackLayout class="alignScroll" verticalAlignemnt="top" orientation="vertical">
+                            <StackLayout orientation="vertical" horizontalAlignment="center">
+                                <Label *ngFor='let item of ashra; let i=index' [text]="item.item" [ngClass]="{'activeClass' : activeAshra == i}"
+                                    (tap)="selectAshra(i)" class="filterItem"></Label>
+                            </StackLayout>
                         </StackLayout>
+                    </GridLayout>
+                    <StackLayout orientation="horizontal" class="m-t-5 ">
+                        <Label text="Do you read Holy Quran?" class="header-text m-r-5" textWrap="true"></Label>
+                        <Switch [checked]="signUpUser.holyQuran" class="switch" (tap)="toggleCheck()"></Switch>
                     </StackLayout>
-                </ScrollView>
-            </StackLayout>
-        </GridLayout>
-    
-        <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="submitForm()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
     </GridLayout>
+
+    <Button verticalAlignment="bottom" text="Apply" row="1" (tap)="submitForm()" class="m-t-5 btn width-100 btn-primary btn-rounded-lg uppercase  b-r-10 height-8"></Button>
+</GridLayout>

@@ -23,3 +23,18 @@
 .m-r-5 {
     padding-right: 5dp;
 }
+
+
+.filterItem {
+    background: rgb(148, 148, 148);
+    padding: 10dp 12dp 10dp 12dp;
+    margin: 3dp;
+    border-radius: 15%;
+    font-size: 14dp;
+    color: white;
+}
+
+.activeClass {
+    background: e57b34;
+    color: black;
+}

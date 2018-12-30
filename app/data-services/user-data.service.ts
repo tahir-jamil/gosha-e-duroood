@@ -72,7 +72,7 @@ export class UserDataService {
     } else {
       holyQuran = 0;
     }
-    let body = `name=${data.name}&fatherName=${data.fatherName}&postalAddress=${data.postalAddress}&union_council=${data.union_council}&Tehsil=${data.Tehsil}&city=${data.city}&district=${data.district}&provience=${data.provience}&country=${data.country}&education=${data.education}&profession=${data.profession}&dob=${data.dob}&nic=${data.nic}&email=${data.email}&phoneRes=${data.phoneRes}&phoneOff=${data.phoneOff}&phoneCell=${data.phoneCell}&holyQuran=${holyQuran}&ashra=${data.ashra}&updated_at=${data.updated_at}&created_at=${data.created_at}&party_id=${parseInt(localStorage.getItem("partyId"))}`;
+    let body = `name=${data.name}&fatherName=${data.fatherName}&postalAddress=${data.postalAddress}&union_council=${data.union_council}&Tehsil=${data.tehsil}&city=${data.city}&district=${data.district}&provience=${data.provience}&country=${data.country}&education=${data.education}&profession=${data.profession}&dob=${data.dateOfBirth}&nic=${data.nic}&email=${data.email}&phoneRes=${data.phoneRes}&phoneOff=${data.phoneOff}&phoneCell=${data.phoneCell}&holyQuran=${holyQuran}&ashra=${data.ashra}&updated_at=${data.updated_at}&created_at=${data.created_at}&party_id=${parseInt(localStorage.getItem("partyId"))}`;
 
     return this.http.post(this.serverUrl + '/applyGoashas', body, { headers: options });
   }

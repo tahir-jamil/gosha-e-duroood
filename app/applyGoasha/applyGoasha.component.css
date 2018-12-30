@@ -1,1 +1,25 @@
+.alignForm {
+    margin:  4% 4% 4% 4%;
+}
 
+.inputField {
+    margin: 4dp 0dp 4dp 0dp;
+    background-color: white;
+}
+
+.m-b-100 {
+    margin-bottom: 270dp;
+}
+
+.header-text {
+    color: #e57b34;
+    margin: 2dp 0dp 2dp 0dp;
+}
+
+.m-t-5 {
+    padding-top: 15dp;
+}
+
+.m-r-5 {
+    padding-right: 5dp;
+}

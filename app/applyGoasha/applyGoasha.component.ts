@@ -1,11 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Goshaenasheen } from "~/data-services/user";
 import { Page } from 'tns-core-modules/ui/page/page';
-import { RouterExtensions } from 'nativescript-angular/router';
-import { TNSFancyAlert } from "nativescript-fancyalert";
-import { CommonService } from '~/data-services/common.service';
-import { RadDataFormComponent } from 'nativescript-ui-dataform/angular/dataform-directives';
 import { UserDataService } from '~/data-services/user-data.service';
+import { RouterExtensions } from 'nativescript-angular/router';
+import * as ModalPicker from 'nativescript-modal-datetimepicker';
 
 @Component({
   selector: 'app-applyGoasha',
@@ -14,74 +11,80 @@ import { UserDataService } from '~/data-services/user-data.service';
   moduleId: module.id,
 })
 export class ApplyForGoshaENasheenComponent implements OnInit {
-  private _user = {
+  
+  birthday: string;
+  constructor(private _page: Page, private userDataService: UserDataService, private routerExtensions: RouterExtensions) {
+  }
+
+  ngOnInit(): void {
+    this._page.actionBarHidden = true;
+  }
+
+  signUpUser = {
     name: "",
     fatherName: "",
-    postalAddress: "",
+    
+    username: "",
+    email: "",
+    password: "",
+    
+    dateOfBirth: "",
     union_council: "",
-    Tehsil: "",
     city: "",
     district: "",
     provience: "",
     country: "",
     education: "",
     profession: "",
-    dob: "",
-    nic: "",
-    email: "",
     phoneRes: "",
     phoneOff: "",
     phoneCell: "",
-    holyQuran: "",
-    ashra: ""
-};
-  signUpForm : any;
+    nic: "",
+    postalAddress: "",
+    holyQuran: false,
+  };
+
+
+  toggleCheck() {
+    setTimeout(() => {
+      this.signUpUser.holyQuran = !this.signUpUser.holyQuran;
+    }, 200);
+  }
+  // options_edu = ["  Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
+
   
-  constructor(private routerExtensions: RouterExtensions, private _page: Page, private commonService: CommonService, private userDataService: UserDataService) {
-  }
 
-  public showSuccess() {
-    TNSFancyAlert.showSuccess("Successful", "You Have successfully Apply for Gosha nasheen", "navigateTo('/dashboard')");
-  }
-
-  public showError() {
-    TNSFancyAlert.showError("Error!", "Oh no, something went wrong.", "Dismiss");
-  }
-
-  ngOnInit() {
-    // this._user = new Goshaenasheen("data","data","data",0,0,0,false,"data","data","data","data","data","data","data","data","data","data","data",false,"data" );
-    this._page.actionBarHidden = true;
-    this.commonService.isAddCountsPage = false;
-
-  }
-
-  get user() {
-    return this._user;
-  }
-
-  options_edu = ["Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
-  options_ashra = ["first", "Second", "Third"];
-  
-  navigateTo() {
-    this.routerExtensions.back();
-  }
-
-  @ViewChild('myCommitDataForm') myCommitDataFormComp: RadDataFormComponent;
-
-  onPropertyCommitted() {
-    if (this.myCommitDataFormComp.dataForm.editedObject) {
-      this.signUpForm = this.myCommitDataFormComp.dataForm.editedObject;
-    }
+  pickDate() {
+    const picker = new ModalPicker.ModalDatetimepicker();
+    picker.pickDate({
+      title: 'Please enter your birthday',
+      theme: 'dark',
+      maxDate: new Date(),
+      is24HourView: false
+    }).then((result) => {
+      this.signUpUser.dateOfBirth = result['year'] + '-' + result['month'] + '-' + result['day'];
+      console.dir(this.birthday);
+    }).catch((error) => {
+      console.log('Error: ' + error);
+    });
   }
 
   submitForm() {
-    console.log("submit form");
-    this.userDataService.postGoasha(this.signUpForm).subscribe(res => {
+    console.dir(this.signUpUser);
+
+
+    this.userDataService.postGoasha(this.signUpUser).subscribe(res => {
       console.dir(res);
-     this.routerExtensions.back();
+      this.routerExtensions.navigate(['/login'], {
+        transition: {
+          name: 'fade',
+          curve: 'linear'
+        }
+      });
     }, (error) => {
       console.dir(error);
     });
   }
+
 }
 

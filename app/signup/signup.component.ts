@@ -50,7 +50,9 @@ export class SignupComponent implements OnInit {
 
 
   toggleCheck() {
-    this.signUpUser.holyQuran = !this.signUpUser.holyQuran;
+    setTimeout(() => {
+      this.signUpUser.holyQuran = !this.signUpUser.holyQuran;
+    }, 200);
   }
   // options_edu = ["  Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
 

@@ -94,6 +94,15 @@ export class SignupComponent implements OnInit {
       }
       console.log("validating number");
 
+    } else if (textField.hint == 'Email') {
+      this.validateEmail(textField.text);
+      if (this.validateEmail(textField.text)) {
+        return true;
+      } else {
+        textField.text = '';
+      }
+      console.log("validating email");
+
     } else {
       if (this.validateString(textField.text)) {
         return true;
@@ -125,6 +134,17 @@ export class SignupComponent implements OnInit {
     }
   }
 
+
+  validateEmail(value) {
+    let reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+    if (reg.test(value) == false) 
+    {
+        alert('Invalid Email Address');
+        return false;
+    }
+    return true;
+  }
 
 
   submitForm() {

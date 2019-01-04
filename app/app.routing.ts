@@ -10,11 +10,13 @@ import { DashboardContentComponent } from "~/dashboard-content/dashboard-content
 import { ApplyForGoshaENasheenComponent } from "~/applyGoasha/applyGoasha.component";
 import { AboutGoshaComponent } from "~/about-gosha/about-gosha.component";
 import { CounterdaroodComponent } from './counterdarood/counterdarood.component';
+import { AdminComponent } from "./admin/admin.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "login", pathMatch: "full" },
+    { path: "", redirectTo: "admin", pathMatch: "full" },
     { path: "login", component: LoginComponent },
     { path: "signup", component: SignupComponent },
+    { path: 'admin', component: AdminComponent},
     {
         path: 'dashboard', component: DashboardComponent, children: [
             { path: '', component: DashboardContentComponent },

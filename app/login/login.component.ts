@@ -14,6 +14,7 @@ import { TNSFancyAlert } from "nativescript-fancyalert";
   moduleId: module.id
 })
 export class LoginComponent implements OnInit {
+  adminData;
 
   user: { email: string, password: string } = {
     email: "",
@@ -61,5 +62,9 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+
+
+  
 
 }

@@ -1,0 +1,10 @@
+<GridLayout rows="*,*" columns="*">
+    <GridLayout rows="" columns="">
+        <Label [text]="adminData | json" textWrap="true"></Label>
+        
+    </GridLayout>
+    <GridLayout rows="" columns="">
+        <Button text="show admin" (tap)="showAdmin()"></Button>
+        
+    </GridLayout>
+</GridLayout>

@@ -17,7 +17,7 @@ export class UserDataService {
     if (device.os === platformNames.ios) {
       /*localhost for ios*/
       nativePlatformLocalhost = "localhost";
-      this.serverUrl = "http://localhost:8000/api";
+      this.serverUrl = "http://goshaedurood-env.qyciexcfrw.us-east-2.elasticbeanstalk.com/public/api";
     }
     else {
       /*localhost for android*/
@@ -29,6 +29,12 @@ export class UserDataService {
 
 
   // party Queries
+
+  getAdmin() {
+    let options = this.createRequestOptions();
+    return this.http.get(this.serverUrl + '/admin', { headers: options });
+  }
+
 
   login(user) {
     let options = this.createRequestOptions();

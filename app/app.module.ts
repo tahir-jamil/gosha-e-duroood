@@ -30,6 +30,7 @@ import { DropDownModule } from "nativescript-drop-down/angular";
 import { UserDataService } from "~/data-services/user-data.service";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { CommonService } from "~/data-services/common.service";
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
    bootstrap: [
@@ -59,6 +60,7 @@ import { CommonService } from "~/data-services/common.service";
       AboutGoshaComponent,
       SubmitDuroodComponent,
       CounterdaroodComponent,
+      AdminComponent
    ],
    providers: [
       UserDataService,

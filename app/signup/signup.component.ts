@@ -43,7 +43,6 @@ export class SignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._page.actionBarHidden = true;
   }
 
   toggleCheck() {
@@ -51,7 +50,6 @@ export class SignupComponent implements OnInit {
       this.signUpUser.holyQuran = !this.signUpUser.holyQuran;
     }, 200);
   }
-  // options_edu = ["  Post Graduation", "Under Graduation ", "Graduation", "Matriculation", "Diploma"];
 
   pickDate() {
     const picker = new ModalPicker.ModalDatetimepicker();
